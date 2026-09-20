@@ -61,17 +61,6 @@ pull requests (`.github/workflows/ci.yml`); pushes to `main` deploy via
 - Python blocks are scaffolding, not solutions: they set up the fit and leave
   the physics to the student.
 
-## Provenance
-
-This manual replaces a `laboratoryHandouts/` directory that used to live
-alongside the `modernPhysics` textbook repo, which held thirty-seven Word
-and PDF documents covering roughly fifteen experiments with substantial
-duplication (multiple year-stamped revisions, unfinished drafts, and a
-duplicated `forTroy/` copy of the whole set). Apparatus that is no longer
-serviceable — the electron diffraction tube, the Franck–Hertz apparatus, the
-Millikan bench, and the X-ray diffractometer — has been replaced rather than
-assumed.
-
 ## License
 
 © 2026 Martin Veillette. Licensed under
