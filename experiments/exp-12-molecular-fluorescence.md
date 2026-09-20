@@ -12,7 +12,7 @@ numbering:
 :class: seealso
 
 **Accompanies** Chapter 12, *Molecular Structure*
-**Apparatus** Spectrometer kit, UV/blue LEDs, cuvettes, fluorescein or quinine solutions
+**Apparatus** Quantitative spectrometer with fiber/cuvette coupling, UV/blue LEDs, cuvettes, fluorescein or quinine solutions
 **You will measure** absorption and emission spectra, a molar absorptivity, and a Stokes shift
 **Report** Short
 :::
@@ -139,8 +139,9 @@ the vibrational relaxation, the emission transition, and the Stokes shift.
 
 ## Apparatus
 
-- Thorlabs EDU-SPEA1/SPEB1 spectrometer kit, or a compact USB spectrometer
-  with a fibre and a cuvette holder
+- EDU-SPEB2 with the EDU-SPEBCT1 scanning detector extension, or a calibrated
+  USB spectrometer with fibre input and a cuvette holder; the EDU-SPEB2 viewing
+  screen alone cannot record absorbance or emission spectra
 - Broadband white LED or tungsten lamp, for the absorption measurement
 - Excitation LEDs: $405\ \text{nm}$ and $470\ \text{nm}$, and a $365\ \text{nm}$
   UV LED if quinine is used

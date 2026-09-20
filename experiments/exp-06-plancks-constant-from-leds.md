@@ -12,7 +12,7 @@ numbering:
 :class: seealso
 
 **Accompanies** Chapter 6, *Particle Properties of Waves*
-**Apparatus** Set of LEDs spanning the visible, spectrometer kit, microcontroller or bench supply, tungsten lamp
+**Apparatus** Set of LEDs spanning the visible, spectrometer with quantitative detector, microcontroller or bench supply, tungsten lamp
 **You will measure** $h$ to $\sim10\%$, and the Stefan–Boltzmann exponent
 **Report** Short
 :::
@@ -178,7 +178,10 @@ lamp is switched on? (This is why filament lamps fail at switch-on.)
 - Two digital multimeters, or a microcontroller with two ADC channels and a
   known current-sense resistor
 - $100\ \Omega$ series resistor
-- Thorlabs EDU-SPEA1/SPEB1 spectrometer kit, or a compact USB spectrometer
+- EDU-SPEB2 built spectrometer **with a quantitative detector** (EDU-SPEBCT1
+  scanning extension and calibrated power meter), or a calibrated USB
+  spectrometer; a viewing screen alone is insufficient for the recorded
+  spectra
 - Small tungsten filament lamp (a $6\ \text{V}$ automotive or torch bulb) with
   a clear envelope
 - Bench supply capable of $0$–$8\ \text{V}$ at $2\ \text{A}$, with a four-wire

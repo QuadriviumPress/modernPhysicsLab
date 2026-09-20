@@ -30,11 +30,11 @@ All PASCO prices are before PASCO's current 5% tariff surcharge.
    PASCO Capstone). It is **not** a substitute for Experiment 14's
    coincidence telescope, which needs a per-tube TTL pulse to feed external
    pulse-shaping electronics — see that section below for the actual fix.
-2. **`EDU-SPEA1` and `EDU-SPEB1`**, named in the Exp 6/10/11/12 apparatus
-   text, were discontinued by Thorlabs in 2020. The current equivalent is the
-   single **`EDU-SPEB2`** kit (grating + prism spectrometer in one kit); this
-   document sources that instead. Worth a one-line update to the experiment
-   text itself at some point, but that's outside this file's scope.
+2. **`EDU-SPEA1` and `EDU-SPEB1`**, named in older experiment text, were
+   discontinued by Thorlabs in 2020. The current base instrument is
+   **`EDU-SPEB2`**; quantitative scans additionally require the
+   **`EDU-SPEBCT1`** detector extension or a calibrated USB spectrometer. The
+   experiment text has been updated accordingly.
 :::
 
 ## Experiment 1 — The Michelson Interferometer and the Ether Null Result
@@ -53,8 +53,8 @@ All PASCO prices are before PASCO's current 5% tariff surcharge.
 
 | Item | Supplier | Part # | Approx. price | Notes |
 |---|---|---|---|---|
-| Fast pulsed laser diode / driven LED | Thorlabs | CPS635F module, driven through a MOSFET gate driver | **$129.65** | Do not drive from a bare GPIO pin |
-| Fast amplified photodiode ×2 | Thorlabs | PDA36A2 switchable-gain Si detector | **$400.01** each (×2) | 350–1100 nm, up to 12 MHz — matches the BPW34-class sensor the text calls for |
+| Fast pulsed laser diode / driven LED | Thorlabs or equivalent | CPS635F-class source plus MOSFET gate driver | **$129.65 + driver** | Verify the optical pulse edge and use a proper 5 V supply; do not drive from a bare GPIO pin |
+| Fast amplified photodiode ×2 | Thorlabs or equivalent | ≥200 MHz amplified Si detector | quote | The previously listed PDA36A2 (12 MHz) is too slow for the 3.3 ns/m path-delay slope |
 | Front-surface mirror + kinematic mount ×2 | Thorlabs | BB1-E02 mirror + KM100 mount | **$86.91** + **$44.78** each (×2) | |
 | Oscilloscope, ≥100 MHz, with averaging | Rigol or Siglent | DS1104Z-S / SDS1104X-E | ~$500–650 | Not a Thorlabs or PASCO product line |
 | Function generator | Rigol or Siglent, or PASCO 850 Universal Interface | DG822 / UI-5000 | ~$400 (Rigol) or $1,199 (PASCO, shared, see below) | |
@@ -76,7 +76,8 @@ All PASCO prices are before PASCO's current 5% tariff surcharge.
 | Item | Supplier | Part # | Approx. price | Notes |
 |---|---|---|---|---|
 | 650 nm diode laser | Thorlabs | CPS635R | **$114.39** | Shared with Exp 1/5/7/8 |
-| Optics bench + double-slit / multi-slit sets | PASCO | OS-8515D Basic Optics System | $599 | Includes 4 double-slits, multi-slit disk, variable double-slit (0.125–0.75 mm) |
+| Optics bench | PASCO | OS-8515D Basic Optics System | $599 | Bench, holders, screen, and lenses; slit wheels are not included |
+| Precision single-/multiple-slit wheels | PASCO | OS-8453 | $275 | Required for the quantitative slit and multiple-slit measurements; shared with Exp 5 |
 | USB machine-vision camera (lens removed) | Generic (Amazon/Edmund Optics) | e.g. ELP board camera | ~$30–50 | Or a phone on manual exposure |
 | Microscope slides, binder clips, human hair, foil | Generic lab supply | — | Consumables, ~$10–20 | |
 
@@ -84,12 +85,12 @@ All PASCO prices are before PASCO's current 5% tariff surcharge.
 
 | Item | Supplier | Part # | Approx. price | Notes |
 |---|---|---|---|---|
-| Single-slit / circular-aperture set | PASCO | OS-8515D (included Single-Slit Disk) | Shared with Exp 4 | |
+| Single-slit / circular-aperture wheels | PASCO | OS-8453 | Shared with Exp 4 ($275) | Includes four single slits, two circular apertures, variable slit, and multiple slits |
 | Precision diffraction slits | PASCO | OS-8453 | $275 | |
-| Transmission grating, ~300–1000 l/mm | Thorlabs | GR25-0605 (600/mm, 500 nm blaze) | **$137.27** | Reflective ruled grating; transmission alternatives also fine |
+| Transmission grating, ~300–1000 l/mm | Edmund Optics or equivalent | — | ~$50–150 | The procedure uses transmission geometry; the reflective GR25-0605 is not a substitute without rewriting the procedure |
 | CD / DVD / Blu-ray disc | Generic | — | Scrap media | |
 | Rotation stage | Thorlabs | RP01/M manual rotation mount | **$119.18** (RP01) | |
-| Camera / scanning photodiode | Shared with Exp 4 / PDA36A2 | | | |
+| Camera / scanning photodiode | Shared with Exp 4 | | | A camera is adequate for patterns; add a calibrated light sensor for quantitative profiles |
 
 ## Experiment 6 — Planck's Constant from Light-Emitting Diodes
 
@@ -99,7 +100,8 @@ All PASCO prices are before PASCO's current 5% tariff surcharge.
 | Variable DC supply 0–5 V, or microcontroller DAC/PWM | Rigol bench supply, or Arduino/Pico + RC filter | — | ~$150–300 (bench) / ~$25 (microcontroller) | |
 | Two digital multimeters | Fluke or Extech | 115 / EX330 | ~$100–150 each | Or microcontroller ADC + current-sense resistor |
 | 100 Ω series resistor | Digi-Key | — | <$1 | |
-| Spectrometer kit | Thorlabs | **EDU-SPEB2** (successor to discontinued EDU-SPEA1/SPEB1) | **$2,246.39** | Confirm near-IR range reaches 940 nm before trusting that LED's peak |
+| Built spectrometer | Thorlabs | **EDU-SPEB2** | **$2,246.39** | Viewing-screen instrument for alignment and qualitative line identification |
+| Quantitative detector for spectrometer | Thorlabs | **EDU-SPEBCT1** extension + PM16-120 power meter (or calibrated USB spectrometer) | **$1,816.83 + detector** | Required for recorded LED, absorption, and fluorescence spectra; verify detector response through 940 nm |
 | 6 V clear-envelope filament lamp | Generic (automotive) | #1156 bulb or torch bulb | ~$5 | Consumable — reorder yearly |
 | Bench supply, 0–8 V / 2 A, 4-wire sense | Rigol DP832 or Siglent SPD3303X | — | ~$350–500 | |
 
@@ -107,7 +109,8 @@ All PASCO prices are before PASCO's current 5% tariff surcharge.
 
 | Item | Supplier | Part # | Approx. price | Notes |
 |---|---|---|---|---|
-| Quantum eraser demonstration kit | Thorlabs | EDU-QE1 (imperial) / EDU-QE1/M (metric) | **$2,284.11** (confirmed, imperial) | 532 nm laser, double slit, slit polarizers, rotatable analyzer, mounts, breadboard — complete kit |
+| Quantum eraser demonstration kit | Thorlabs | EDU-QE1 (imperial) / EDU-QE1/M (metric) | **$2,284.11** (confirmed, imperial) | Mach–Zehnder kit with 532 nm laser, polarizers, analyzer, mounts, and breadboard |
+| Double-slit quantum-eraser add-on | Fabricated / optical supplier | double-slit mask + two rotatable slit polarizers | ~$100–300 | Required because EDU-QE1 itself is Mach–Zehnder, while Exp 7 uses a double-slit geometry |
 | USB camera / scanning photodiode | Shared with Exp 4/5 | | | |
 | Neutral-density filter kit | Thorlabs | NDC-25C-4 or NEK01 | **$402.93** (NDC-25C-4) / **$678.85** (NEK01) | Shared with Exp 8/11; NEK01S square set is $992.56 if preferred |
 
@@ -116,7 +119,7 @@ All PASCO prices are before PASCO's current 5% tariff surcharge.
 | Item | Supplier | Part # | Approx. price | Notes |
 |---|---|---|---|---|
 | Right-angle N-BK7 prism (n ≈ 1.52) | Thorlabs | PS912 (40 mm uncoated) or PS608 (20 mm UVFS) | **$118.52** (PS912) / **$96.62** (PS608) | Prefer N-BK7 PS912 for the n ≈ 1.52 the text assumes |
-| Long plano-convex lens, f ≈ 200–500 mm | Thorlabs | LA1708-A (f = 200 mm) or LA1461-A (f = 250 mm) | ~$35–40 (LA1708-A class) | LA17xx-A series; longer f also available |
+| Long-radius plano-convex lens, R ≈ 500–2000 mm | Thorlabs | LA1978-A through LA1258-A (select by radius) | ~$20–50 | The 200/250 mm focal-length lenses previously listed have R ≈ 103/129 mm and are unsuitable for the stated Newton-ring gap geometry |
 | Adjustable clamp / spring-loaded mount | Thorlabs | PM4 prism mount or spring clamp | **$28.60** | |
 | 650 nm diode laser + beam expander | Thorlabs | CPS635R + **GBE02-A** (successor to BE02M-A) | **$114.39** + **$512.24** | GBE02-A is 2× Galilean, AR 400–650 nm |
 | USB microscope or macro camera, or photodiode on translation stage | Generic (Dino-Lite) or Thorlabs PDA36A2 + MT1 stage | — | ~$70–100 (microscope) | |
@@ -130,7 +133,8 @@ All PASCO prices are before PASCO's current 5% tariff surcharge.
 | Rigid rectangular cavity (plywood/acrylic box) | Fabricated locally (hardware store / TAP Plastics) | — | ~$20–60 materials | Not a catalog item |
 | Small full-range speaker + amplifier | Adafruit or generic | — | ~$20–40 | |
 | Electret microphone + preamp | Adafruit | MAX9814 mic amp module | ~$8 | Into sound card or microcontroller ADC |
-| Function generator / swept-sine source | PASCO | 850 Universal Interface (UI-5000) | $1,199 | Doubles as DAQ; shared with Exp 2. A standalone Rigol DG822 (~$400) is cheaper if the 850 isn't already owned |
+| Function generator / swept-sine source | PASCO | 850 Universal Interface (UI-5000) | $1,199 | Doubles as DAQ; shared with Exp 2. Add a current-capable driver or power amplifier for WA-9855 |
+| Wave-driver power stage | PASCO | PI-9525 AC/DC Smart Power Supply or equivalent ±8 V, 0.5 A driver | ~$300–500 | WA-9855 cannot be driven directly by an ordinary low-current function-generator output |
 | Chladni plates kit | PASCO | WA-9607 | $125 | Includes 24×24 cm square plate, round plate, sand, shaker |
 | Mechanical wave driver | PASCO | **WA-9855** (replaces discontinued WA-9753 / SF-9324) | **$155** | Required to drive the Chladni plate; banana cords SE-9751 ($23) also needed |
 | Fine sand / salt | Included with WA-9607, or generic craft supply | — | ~$5 if buying separately | |
@@ -144,7 +148,7 @@ All PASCO prices are before PASCO's current 5% tariff surcharge.
 | Hydrogen spectral tube | PASCO | SE-9461 | $40 | Ages quickly at full current — reorder yearly per `instructor/README.md` |
 | Mercury spectral tube (calibration) | PASCO | SE-9466 | **$40** | Shared with Exp 11 |
 | Helium spectral tube (calibration) | PASCO | SE-9462 | **$40** | Shared with Exp 11 |
-| Spectrometer | Thorlabs | EDU-SPEB2 | **$2,246.39** | Shared across Exp 6/10/11/12 |
+| Spectrometer | Thorlabs | EDU-SPEB2 + EDU-SPEBCT1 detector extension | **$2,246.39 + $1,816.83** | Shared across Exp 6/10/11/12; the extension or a calibrated USB spectrometer is required for quantitative spectra |
 | Thermometer / barometer (optional) | Generic lab supply | — | ~$15–40 | For the air-index correction |
 
 ## Experiment 11 — Alkali Spectra, Screening, and the Quantum Defect
@@ -153,7 +157,7 @@ All PASCO prices are before PASCO's current 5% tariff surcharge.
 |---|---|---|---|---|
 | Sodium discharge lamp (with housing / PSU) | **Not carried by PASCO or Thorlabs** — 3B Scientific 1003159 (Na low-pressure lamp + housing) | 1003159 / U21829-230 | **~$1,160** | Flagged gap: PASCO's spectral-tube line (SE-9461…9468) does not include sodium. Bare Na tube alone is cheaper (~$283–688) if a ballast/housing is already owned |
 | Mercury / helium calibration tubes | PASCO | SE-9466 / SE-9462 | Shared with Exp 10 ($40 each) | |
-| Grating spectrometer | Thorlabs | EDU-SPEB2 | Shared with Exp 10/12 ($2,246.39) | Best resolving power the manual assumes |
+| Grating spectrometer | Thorlabs | EDU-SPEB2 + EDU-SPEBCT1 | Shared with Exp 10/12 | The base kit can resolve lines visually; detector extension is required for quantitative scans |
 | Neutral-density filters | Shared with Exp 7/8 | | | |
 | Potassium or lithium lamps (optional extension) | 3B Scientific or Edmund Scientific | — | ~$600–900 (lamp) + ballast | Same spectral-lamp product family as Na; confirm ballast compatibility |
 
@@ -161,7 +165,7 @@ All PASCO prices are before PASCO's current 5% tariff surcharge.
 
 | Item | Supplier | Part # | Approx. price | Notes |
 |---|---|---|---|---|
-| Spectrometer kit, fiber input | Thorlabs | EDU-SPEB2 | **$2,246.39** | |
+| Spectrometer kit, fiber input | Thorlabs | EDU-SPEB2 + EDU-SPEBCT1 or calibrated USB spectrometer | **$2,246.39 + $1,816.83** | Quantitative detector and fiber/cuvette coupling required |
 | Cuvette holder, SMA905 fiber adapter | Thorlabs | CVH100/M | **$490** (confirmed) | Add CVH100-COL SMA-to-SM1 adapter ($88) if a different collimating lens is needed |
 | Broadband white LED or tungsten source | Thorlabs | SLS201L/M stabilized tungsten-halogen | **$1,283.79** | Or a Digi-Key white LED for a cheaper start |
 | Excitation LEDs: 405, 470 nm, 365 nm UV | Thorlabs (405 nm: M405L4) or Digi-Key | M405L4 | **$274.16** (M405L4) / ~$2 each (Digi-Key THT) | 365 nm UV needed specifically for quinine sulfate; M405L4 needs a current driver (LEDD1B class) |
@@ -177,17 +181,18 @@ All PASCO prices are before PASCO's current 5% tariff surcharge.
 | Cs-137/Ba-137m isotope generator kit | PASCO | SN-7995 | **$339** (confirmed) | Includes generator, eluting solution, syringe, 5 planchets |
 | Extra eluting solution / planchets | United Nuclear or Spectrum Techniques (PASCO spares by quote) | — | ~$29 (250 mL eluting) / ~$69 (100 planchets) | Consumable — reorder yearly |
 | Long-lived check source, Cs-137, 5 µCi | PASCO | SN-9795 | $125 | US license-exempt sealed disk |
-| Lead sheets / aluminium absorbers | PASCO | SN-8111 | **$339** | Shared with Exp 3 |
+| Lead sheets / aluminium absorbers | PASCO | SN-8111 | **$339** | Shared with Exp 3; aluminium thickness is not enough for four 662-keV half-value layers, so Exp 13 uses the available range |
 | Collimator | Fabricated (lead pipe or brass stock) | — | ~$15–40 materials | Improves the narrow-beam approximation substantially |
 
 ## Experiment 14 — A Cosmic-Ray Muon Telescope
 
 | Item | Supplier | Part # | Approx. price | Notes |
 |---|---|---|---|---|
-| Two GM tubes with an accessible raw pulse output | LND Inc. (bare tube) or a complete kit with a TTL pulse pin (e.g. an SBM-20-based "Mightyohm"-style Geiger kit) | LND712 (bare tube) | ~$50–80/tube (bare) or ~$30–50/unit (complete kit) + a custom HV supply for the bare-tube route | **PASCO's PS-3238 will not work here** — it's a closed Bluetooth/USB unit with no exposed per-tube pulse for the coincidence circuit |
+| Two larger-area GM tubes with an accessible raw pulse output | LND Inc. or complete TTL-output kits | **LND7126** (bare tube) | ~$80–150/tube plus matched HV supply, or quote a complete two-channel kit | The 101.6 mm × 22 mm tube provides useful side-area acceptance; PS-3238 remains unsuitable because it has no exposed per-tube pulse |
+| Matched two-channel high-voltage supply and enclosure | Specialist radiation-electronics supplier | — | ~$200–500 | Required for the bare-tube route; include current limiting, shielding, interlocks, and documented pulse output |
 | Microcontroller | Adafruit or SparkFun | Arduino Uno R4, or Raspberry Pi Pico | ~$20–28 | |
 | Per-tube pulse-shaping components (limiting resistor, clamp diode pair, comparator) | Digi-Key or Mouser | e.g. LM339 comparator, 1N4148 diodes | <$5 per channel | |
-| Lead absorber sheets | PASCO | SN-8111 | Shared with Exp 3/13 ($339) | |
+| Lead absorber sheets | PASCO | SN-8111 | Shared with Exp 3/13 ($339) | Adequate for the lead range study; aluminium thickness is limited, so Exp 13 must state that limitation |
 | Rotating mount / rigid frame at measured zenith angles | Fabricated locally | — | ~$30–80 materials | Long unattended counting periods — see `instructor/README.md`'s "Long-running experiments" note |
 
 ## Shared across multiple experiments

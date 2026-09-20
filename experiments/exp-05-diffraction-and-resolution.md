@@ -166,13 +166,14 @@ comment.
 - Diode laser, $\lambda \approx 650\ \text{nm}$ (with the uncertainty you
   established in [](#exp-michelson))
 - Single slits of several widths; circular apertures; the "unknown" slide
-- Transmission grating, $\sim300$–$1000\ \text{lines/mm}$
+- Transmission grating, $\sim300$–$1000\ \text{lines/mm}$ (use a genuine
+  transmission grating; a reflective grating requires a different geometry)
 - CD, DVD, and if available a Blu-ray disc, with the reflective layer exposed
   or used in reflection
 - Rotation stage or a large protractor and a metre stick, for large angles
 - Camera or scanning photodiode; screen
-- Two pinholes on a card with a lamp behind, for the resolution test; variable
-  iris
+- Two pinholes on a card with a lamp behind, for the resolution test; a
+  calibrated variable iris or aperture set
 
 :::{danger}
 Class 2 laser, plus specular reflection from the discs. A CD sends beams in

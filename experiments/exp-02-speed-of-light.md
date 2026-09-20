@@ -154,8 +154,8 @@ determining, and why the experiment is still worth doing.
   square wave with a fast edge, or a red/IR LED driven hard by a MOSFET
   gate-driver. A microcontroller GPIO pin alone is too slow; use the driver.
 - Function generator or microcontroller producing the drive pulse
-- Two photodiodes with fast amplifiers (BPW34 or similar with a transimpedance
-  stage; the kit boards on the bench are prewired)
+- Two photodiodes with fast amplifiers (target bandwidth at least 200 MHz;
+  a 12 MHz PDA36A2 is too slow for the 3.3 ns-per-metre delay used here)
 - Oscilloscope, $\ge 100\ \text{MHz}$, with averaging
 - Two front-surface mirrors on adjustable mounts, to fold the path
 - Tape measure ($\pm 2\ \text{mm}$) and a target card

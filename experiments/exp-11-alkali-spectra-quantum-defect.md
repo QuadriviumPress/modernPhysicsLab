@@ -178,7 +178,9 @@ assign your measured lines, so bring it.
   needs — a cold Na lamp emits mostly neon and looks red
 - Mercury and helium lamps for calibration
 - Grating spectrometer with the best resolving power available, or the
-  EDU-SPEB1 kit; a narrow entrance slit is essential
+  EDU-SPEB2 kit; a narrow entrance slit is essential. The kit resolves the
+  sodium D doublet, but the weaker-series objective is exploratory and depends
+  on detector sensitivity.
 - Neutral-density filters (the D lines are extremely bright and will saturate
   a detector that is set correctly for the weaker series members)
 - Optionally: potassium or lithium lamps, for the $Z$ dependence
@@ -227,8 +229,10 @@ doublet and your measured splitting before moving on.
 7. Remove the attenuation and search the visible for the weaker sodium lines
    from your NIST table. They are much fainter than the D lines; work in a
    darkened room and give the detector time.
-8. Measure as many as you can find — aim for at least six lines beyond the
-   doublet.
+8. Measure as many as you can find. Treat six lines beyond the doublet as an
+   aspirational target, not a pass/fail requirement: the D lines are much
+   brighter than the higher-series lines, so report the detection limit and any
+   unassigned lines.
 9. Assign each to a transition using your table, and record which assignments
    you are confident in and which you are not. An honest "unassigned" is
    better than a forced assignment.

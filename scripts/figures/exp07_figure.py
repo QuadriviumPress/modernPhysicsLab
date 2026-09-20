@@ -31,7 +31,7 @@ def eraser_layout():
     cam = (2.6, 0.0)
 
     from labstyle import box
-    box(ax, laser, 0.85, 0.4, "532 nm\nlaser", fontsize=7.6)
+    box(ax, laser, 0.85, 0.4, "EDU-QE1\n532 nm laser", fontsize=7.6)
     source_dot(ax, (laser[0] + 0.5, 0), color="#4caf50", ms=7, glow=False)
     beam(ax, (laser[0] + 0.6, 0), (slits[0] - 0.12, 0), color="#4caf50")
 
@@ -39,9 +39,12 @@ def eraser_layout():
     ax.plot([slits[0], slits[0]], [-1.0, -d - 0.1], color=DARK, lw=2.2, zorder=2)
     ax.plot([slits[0], slits[0]], [-d + 0.1, d - 0.1], color=DARK, lw=2.2, zorder=2)
     ax.plot([slits[0], slits[0]], [d + 0.1, 1.0], color=DARK, lw=2.2, zorder=2)
+    ax.add_patch(Rectangle((slits[0] - 0.18, -1.08), 0.36, 2.16,
+                           facecolor="none", edgecolor=GRAY, lw=1.0,
+                           linestyle="--", zorder=1))
     _polarizer(ax, (slits[0], d), 0, RED)
     _polarizer(ax, (slits[0], -d), 90, BLUE)
-    label(ax, (slits[0], -1.35), "double slit,\nH / V polarizers\non each slit", fontsize=7.2)
+    label(ax, (slits[0], -1.35), "separate double-slit add-on,\nH / V polarizers\non each slit", fontsize=7.0)
 
     for dy0, c in ((d, RED), (-d, BLUE)):
         beam(ax, (slits[0] + 0.08, dy0), (analyzer[0] - 0.28, 0.15 * (dy0 / d)), color=c, lw=1.1, alpha=0.75)

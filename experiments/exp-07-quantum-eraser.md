@@ -12,7 +12,8 @@ numbering:
 :class: seealso
 
 **Accompanies** Chapter 7, *Wave Properties of Particles*
-**Apparatus** Thorlabs EDU-QE1 quantum eraser kit (double slit, polarizers, 532 nm laser), camera
+**Apparatus** Thorlabs EDU-QE1 laser/polarizer hardware plus a separately
+mounted double-slit and analyzer, camera
 **You will measure** fringe visibility as a function of which-path information, and test $V^2 + D^2 \le 1$
 **Report** Short
 :::
@@ -161,8 +162,10 @@ exists.
 
 ## Apparatus
 
-- Thorlabs EDU-QE1 quantum eraser kit: $532\ \text{nm}$ laser, double slit,
-  slit polarizers, rotatable analyzer, mounts, breadboard
+- Thorlabs EDU-QE1 kit for the $532\ \text{nm}$ laser, polarizers, analyzer,
+  mounts, and breadboard. EDU-QE1 is a Mach–Zehnder demonstration kit; the
+  double-slit mask and its two independently mounted polarizers required by
+  this procedure must be supplied as a separate add-on.
 - Camera (lens removed) or scanning photodiode with a narrow entrance slit
 - Rotation mount with a scale readable to $1°$ or better
 - Neutral-density filters
@@ -178,9 +181,9 @@ off before moving any optic. See [](#lab-safety).
 
 ```{figure} ../images/exp07-quantum-eraser-schematic.svg
 :label: fig:exp07-eraser
-:alt: A 532 nm laser illuminates a double slit with a horizontal polarizer on one slit and a vertical polarizer on the other; the beams pass through a rotatable analyzer before reaching a camera.
+:alt: The EDU-QE1 532 nm laser illuminates a separately mounted double-slit add-on with a horizontal polarizer on one slit and a vertical polarizer on the other; the beams pass through a rotatable analyzer before reaching a camera.
 
-The quantum-eraser bench. Orthogonal polarizers on the two slits tag which-path information; rotating the analyzer to 45 degrees erases that tag and the fringes return.
+The quantum-eraser bench. The EDU-QE1 supplies the laser and optical hardware; a separate double-slit add-on carries the orthogonal path-marking polarizers. Rotating the analyzer to 45 degrees erases the path mark and restores the fringes.
 ```
 
 ## Procedure

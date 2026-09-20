@@ -169,8 +169,9 @@ parameter that sets $\kappa$.
 ## Apparatus
 
 - Right-angle prism, $n \approx 1.52$, faces clean
-- Plano-convex lens of long radius of curvature, $R \approx 500$–$2000\ \text{mm}$,
-  with $R$ known or measurable
+- Plano-convex lens with radius of curvature $R \approx 500$–$2000\ \text{mm}$,
+  with $R$ known or measurable; select the radius, not merely a 200–500 mm
+  focal length
 - Adjustable clamp or spring mount to press the lens against the hypotenuse
   face, with a fine adjustment
 - Diode laser, $650\ \text{nm}$, with beam expander

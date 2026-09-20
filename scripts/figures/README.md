@@ -46,7 +46,7 @@ with any change to the scripts, so the site and the source stay in step.
 | `exp04_figure.py` | Laser, slit set, and camera on a common optical rail | Two-slit fringes modulated by the single-slit envelope, with a missing order |
 | `exp05_figure.py` | Laser, sample on a rotation mount, diffracted orders to a screen or rotating detector | Rayleigh criterion: two point-spread functions just resolved |
 | `exp06_figure.py` | (a) LED forward-bias I-V circuit; (b) tungsten lamp through a slit/grating spectrometer | $V_{\rm on}$ vs. $1/\lambda$ fit: slope $=hc/e$, nonzero intercept |
-| `exp07_figure.py` | Double slit with orthogonal polarizers, rotatable analyzer, camera | Visibility/distinguishability vs. analyzer angle, and the $V$–$D$ unit circle |
+| `exp07_figure.py` | EDU-QE1 laser plus separate double-slit add-on with orthogonal polarizers, rotatable analyzer, camera | Visibility/distinguishability vs. analyzer angle, and the $V$–$D$ unit circle |
 | `exp08_figure.py` | Right-angle prism, long-radius lens pressed on the hypotenuse, reflected/tunneled beams | Rectangular quantum barrier: oscillating, decaying, oscillating wavefunction |
 | `exp09_figure.py` | (a) corner-driven rectangular acoustic cavity; (b) Chladni plate with sand | Mode counting: lattice points inside a constant-frequency quarter circle |
 | `exp10_figure.py` | Discharge tube, entrance slit, collimating lens, grating on a vernier turntable, Balmer lines | Hydrogen energy levels with the Balmer series (and one Lyman/Paschen line) marked |

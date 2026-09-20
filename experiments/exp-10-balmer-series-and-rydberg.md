@@ -12,7 +12,7 @@ numbering:
 :class: seealso
 
 **Accompanies** Chapter 10, *The Hydrogen Atom*
-**Apparatus** Hydrogen discharge tube, calibration lamps, grating spectrometer or Thorlabs EDU-SPEB1 kit
+**Apparatus** Hydrogen discharge tube, calibration lamps, grating spectrometer or Thorlabs EDU-SPEB2 kit
 **You will measure** four Balmer wavelengths and the Rydberg constant to $\sim0.1\%$
 **Report** **Full report** — this is one of the three
 :::
@@ -164,8 +164,9 @@ uncertainty is that? Compare with the resolving power you computed in
 - Hydrogen discharge tube with a high-voltage power supply
 - Mercury and helium discharge tubes, for calibration
 - Either: a constant-deviation or grating spectrometer with a vernier
-  circle, or the Thorlabs EDU-SPEB1 spectrometer kit, or a compact USB
-  spectrometer with a fibre input
+  circle, or the Thorlabs EDU-SPEB2 spectrometer kit, or a compact USB
+  spectrometer with a fibre input. For quantitative detector scans, use the
+  EDU-SPEBCT1 extension or the USB spectrometer.
 - Entrance slit of adjustable width
 - Thermometer and barometer, if you intend to make the air-index correction
   yourself

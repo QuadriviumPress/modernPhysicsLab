@@ -23,7 +23,8 @@ By the end of this experiment you should be able to:
 
 - Build and validate a coincidence detector, and distinguish true coincidences
   from accidentals.
-- Measure the absolute vertical flux of cosmic-ray muons at sea level.
+- Estimate the absolute vertical flux of cosmic-ray muons at sea level, using
+  a measured detector efficiency and geometric acceptance.
 - Measure the angular distribution of that flux and fit it to $\cos^n\theta$.
 - Show quantitatively that muons could not reach the ground without
   relativistic time dilation, and extract the Lorentz factor required.
@@ -181,8 +182,8 @@ your expected true rate.
 
 ## Apparatus
 
-- Two GM tubes with matched high voltage, mounted rigidly one above the other
-  with adjustable separation
+- Two larger-area GM tubes with matched high voltage and accessible pulse
+  outputs, mounted rigidly one above the other with adjustable separation
 - Microcontroller (Arduino, Raspberry Pi Pico) with pulse-shaping input
   circuitry for each tube: a limiting resistor, a clamp diode pair, and a
   comparator or Schmitt input. **The tube's raw pulse must not reach a GPIO
@@ -243,11 +244,15 @@ into evidence, and it is graded accordingly.
 
 7. With the tubes vertical ($\theta = 0$), count for at least $30\ \text{min}$.
 8. Rotate to $\theta = 30°, 45°, 60°, 75°$, counting at each for as long as the
-   period allows — longer at large $\theta$, where the rate is lowest.
+   period allows — longer at large $\theta$, where the rate is lowest. With
+   small-area tubes, these runs must be overnight or the angular fit should be
+   reported as qualitative only.
 9. Return to $\theta = 0$ at the end and re-count for 15 minutes. A change
    indicates drift, which must be included in the systematic budget.
-10. Measure the tube active areas and their separation carefully; the absolute
-    flux depends on these and nothing else in the apparatus.
+10. Measure the tube active areas and their separation carefully, and determine
+    the single-tube detection efficiency with a calibrated reference or a
+    documented manufacturer value. The absolute flux depends on these factors,
+    not just the raw coincidence count.
 
 :::{tip} Use the week, not just the period
 This experiment is limited by counting statistics, and the apparatus needs no

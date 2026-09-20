@@ -163,7 +163,7 @@ and what does that imply for the early part of your decay curve?
   gloves, tray
 - Long-lived check source ($^{137}$Cs or $^{60}$Co sealed button) for the
   attenuation measurement
-- Lead sheets ($1$–$10\ \text{mm}$) and aluminium absorbers
+- Lead sheets ($1$–$10\ \text{mm}$) and the available aluminium absorber set
 - Collimator, if available
 - Stopwatch; the source log
 
@@ -225,7 +225,10 @@ counts and confirm they are near 3 and 30 before committing to the full runs.
     spanning zero to about four half-value layers. Increase the counting time
     as the rate falls, aiming for a comparable relative uncertainty at every
     point.
-12. Repeat with aluminium, spanning a comparable number of half-value layers.
+12. Repeat with aluminium over the full thickness supplied. This set does not
+    provide four aluminium half-value layers at 662 keV, so report the
+    measured range and fit a mass attenuation coefficient only over that
+    range; do not claim a four-HVL comparison.
 13. Measure the background with the source removed and the absorbers in place.
 
 ## Analysis
