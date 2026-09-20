@@ -8,7 +8,11 @@ deliberately:
 myst build instructor/*.md --pdf
 ```
 
-Each file follows the same structure:
+`equipment-sourcing.md` is the exception: a single purchasing-oriented bill
+of materials covering all fourteen experiments, with Thorlabs/PASCO catalog
+numbers and prices, for actually placing an order.
+
+Each experiment file follows the same structure:
 
 - **Prep** — what must be done before the period, and how long it takes
 - **Bill of materials** — with rough costs where the item is not already owned
