@@ -99,21 +99,6 @@ to look in all the others:
 9. **Post-lab questions** — what goes in the discussion section of your report.
 10. **Going further** — optional extensions for students who finish early.
 
-## How this manual differs from the one it replaces
-
-This is a rewrite, not a reformatting. Four things changed on purpose:
-
-**One experiment per week, with no duplicates.** The previous handout folder
-had grown to thirty-seven documents describing roughly fifteen experiments —
-several of them in two, three, or four near-identical revisions. Every
-experiment now appears exactly once.
-
-**Apparatus that still works.** Experiments that depended on the electron
-diffraction tube, the Franck–Hertz apparatus, the Millikan oil-drop bench, or
-the X-ray diffractometer have been retired or replaced with equivalents built
-from a diode laser, a Geiger–Müller tube, a microcontroller, or an LED. The
-Michelson interferometer, the Thorlabs educational kits, the oscilloscopes,
-and the GM counters are still central because they are still reliable.
 
 **Python instead of point-and-click.** Analysis is done in Jupyter with
 `numpy`, `scipy.optimize`, and `matplotlib`. Fits report parameter
