@@ -173,6 +173,13 @@ shielded holder except while counting, and wash your hands when you leave.
 Read [](#lab-safety).
 :::
 
+```{figure} ../images/exp03-beta-shelf-schematic.svg
+:label: fig:exp03-beta-shelf
+:alt: A sealed beta source sits on the lowest shelf of a stand, emitting electrons through an interchangeable aluminium absorber stack toward a Geiger-Mueller tube connected to a counter and timer.
+
+The fixed source-absorber-tube geometry. Swapping absorber thicknesses and reading the transmitted count rate through each maps the range of the beta electrons in aluminium.
+```
+
 ## Procedure
 
 ### Part A — The plateau and the operating voltage

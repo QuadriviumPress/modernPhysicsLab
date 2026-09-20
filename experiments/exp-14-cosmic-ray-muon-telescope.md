@@ -192,6 +192,13 @@ from the high-voltage side; do not modify the interface circuit. See
 [](#lab-safety).
 :::
 
+```{figure} ../images/exp14-muon-telescope-schematic.svg
+:label: fig:exp14-telescope
+:alt: Two Geiger-Mueller tubes are mounted horizontally one above the other on a rigid, rotatable frame with adjustable separation; muon tracks pass through both tubes at an adjustable zenith angle, and both tubes feed a coincidence microcontroller, with optional lead absorbers below.
+
+The two-tube coincidence telescope. Only muons crossing both tubes' overlap volume trigger a coincidence count; rotating the frame to a zenith angle $\theta$ maps out the $\cos^2\theta$ angular distribution.
+```
+
 ## Procedure
 
 ### Part A — Build and validate the coincidence unit

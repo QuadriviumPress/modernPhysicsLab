@@ -153,6 +153,13 @@ Ethanol and acetone are flammable; keep them away from the lamp. Gloves for
 the dyes. See [](#lab-safety).
 :::
 
+```{figure} ../images/exp12-fluorescence-schematic.svg
+:label: fig:exp12-fluorescence
+:alt: Panel (a), an excitation LED illuminates a cuvette from the side, and a long-pass filter blocks the excitation light before the emitted fluorescence reaches the spectrometer at 90 degrees. Panel (b), a white lamp shines through the same cuvette in-line to the spectrometer for the absorption measurement.
+
+Two geometries, one cuvette. (a) Excitation at 90 degrees to detection, with a long-pass filter, keeps the weak fluorescence from being swamped by scattered excitation light. (b) In-line transmission gives the absorption spectrum.
+```
+
 ## Procedure
 
 ### Part A — Spectrometer setup

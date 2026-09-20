@@ -164,6 +164,13 @@ slides are excellent unintended beamsplitters — know where every reflection
 goes before you power up. See [](#lab-safety).
 :::
 
+```{figure} ../images/exp04-interference-bench-schematic.svg
+:label: fig:exp04-bench
+:alt: A laser beam passes through a slit set on an optical rail, and the diverging fan of transmitted beams reaches a camera or scanning photodiode a distance L away.
+
+The interference bench. Laser, slide, and camera share a common rail so the slit-to-detector distance $L$ is known and the slide can be swapped for any of the $(a, d)$ combinations.
+```
+
 ## Procedure
 
 ### Part A — Verifying the fringe-spacing law

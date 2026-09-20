@@ -184,6 +184,13 @@ Violet and near-UV LEDs at $405\ \text{nm}$ are bright and should not be
 viewed directly.
 :::
 
+```{figure} ../images/exp06-led-planck-schematic.svg
+:label: fig:exp06-planck
+:alt: Panel (a), an LED forward-biased through a series resistor with an ammeter and a voltmeter reading its turn-on voltage. Panel (b), a tungsten lamp shining through a slit and grating spectrometer onto a linear detector array.
+
+Two independent routes to $h$. (a) The LED turn-on voltage, read from a simple current-limited circuit. (b) The tungsten filament's continuum spectrum, resolved by the spectrometer kit.
+```
+
 ## Procedure
 
 ### Part A — Emission spectra

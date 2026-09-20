@@ -169,6 +169,13 @@ your head above beam height, remove watches and rings, and switch the source
 off before moving any optic. See [](#lab-safety).
 :::
 
+```{figure} ../images/exp07-quantum-eraser-schematic.svg
+:label: fig:exp07-eraser
+:alt: A 532 nm laser illuminates a double slit with a horizontal polarizer on one slit and a vertical polarizer on the other; the beams pass through a rotatable analyzer before reaching a camera.
+
+The quantum-eraser bench. Orthogonal polarizers on the two slits tag which-path information; rotating the analyzer to 45 degrees erases that tag and the fringes return.
+```
+
 ## Procedure
 
 ### Part A — The baseline pattern

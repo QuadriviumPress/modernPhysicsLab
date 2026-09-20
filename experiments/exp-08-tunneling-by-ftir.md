@@ -184,6 +184,13 @@ Class 2 laser plus prism faces that produce reflections in several directions.
 Map every beam before powering up. See [](#lab-safety).
 :::
 
+```{figure} ../images/exp08-ftir-schematic.svg
+:label: fig:exp08-ftir
+:alt: A laser beam totally internally reflects off the hypotenuse of a right-angle prism, except where a long-radius plano-convex lens is pressed against it, where light instead tunnels across the thin air gap.
+
+Frustrated total internal reflection. Away from the contact point the reflected beam is bright; near it, light tunnels across the air gap $r(x)$ and the reflected spot goes dark.
+```
+
 ## Procedure
 
 ### Part A — Establishing total internal reflection

@@ -167,6 +167,13 @@ half an hour, but it is loose while you have it. Sealed sources are handled
 with tongs and returned to shielded storage. See [](#lab-safety).
 :::
 
+```{figure} ../images/exp13-counting-schematic.svg
+:label: fig:exp13-counting
+:alt: Panel (a), a GM tube mounted directly above an eluted barium-137m planchet on a fixed shelf, feeding a counter and timer. Panel (b), a sealed check source facing a GM tube through an interchangeable stack of lead absorber sheets.
+
+Two fixed geometries. (a) The short-lived $^{137m}$Ba planchet counted at close, unchanging range for the half-life run. (b) A long-lived check source counted through increasing lead thickness for the attenuation run.
+```
+
 ## Procedure
 
 ### Part A — The statistics of counting

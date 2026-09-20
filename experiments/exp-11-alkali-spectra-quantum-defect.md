@@ -181,6 +181,13 @@ Discharge tube supplies at several kilovolts; lamps get hot. Sodium lamps in
 particular run hot and take many minutes to cool. See [](#lab-safety).
 :::
 
+```{figure} ../images/exp11-sodium-spectrometer-schematic.svg
+:label: fig:exp11-spectrometer
+:alt: The same grating spectrometer as the Balmer experiment, now fed by a sodium discharge lamp, with the closely spaced D1 and D2 lines diffracting to nearly the same angle.
+
+The same spectrometer at its highest resolving power. The sodium D lines sit close enough together that resolving them is itself a test of the instrument, not just of the source.
+```
+
 ## Procedure
 
 ### Part A — Calibration, again

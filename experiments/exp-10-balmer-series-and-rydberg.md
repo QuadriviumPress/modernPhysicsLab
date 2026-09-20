@@ -170,6 +170,13 @@ and the glass is fragile. Hydrogen tubes have a limited life at full current —
 run them at the recommended setting and switch them off between measurements.
 :::
 
+```{figure} ../images/exp10-balmer-spectrometer-schematic.svg
+:label: fig:exp10-spectrometer
+:alt: Light from a hydrogen discharge tube passes through an adjustable entrance slit and a collimating lens, then diffracts off a grating mounted on a vernier turntable, spreading the Balmer lines to different angles.
+
+The grating spectrometer. Collimated light from the entrance slit meets the grating; each Balmer line diffracts to its own angle, read off the turntable vernier and converted to wavelength.
+```
+
 ## Procedure
 
 ### Part A — Calibration

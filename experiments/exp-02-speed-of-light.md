@@ -160,6 +160,13 @@ room at head height. Mark the path, keep the room clear, and terminate the
 beam on a block. See [](#lab-safety).
 :::
 
+```{figure} ../images/exp02-time-of-flight-schematic.svg
+:label: fig:exp02-tof
+:alt: A pulsed source is split at a beamsplitter into a short reference path to one photodiode and a folded path via two mirrors to a second photodiode, both feeding a fast oscilloscope.
+
+The time-of-flight bench. A fast pulse is split into a short reference path and a folded path of measured length $L$; the delay between the two pulses on the scope gives $c = L/\Delta t$.
+```
+
 ## Procedure
 
 ### Part A — Setting up the two channels

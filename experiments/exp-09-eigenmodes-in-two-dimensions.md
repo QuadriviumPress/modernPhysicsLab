@@ -193,6 +193,13 @@ much higher than outside, and prolonged exposure at high level is a hearing
 hazard. Sweeps should be quiet enough to hold a conversation over.
 :::
 
+```{figure} ../images/exp09-eigenmodes-schematic.svg
+:label: fig:exp09-eigenmodes
+:alt: Panel (a), a rectangular cavity with a corner-mounted speaker and an opposite-corner microphone, driven by a function generator and read by a sound card. Panel (b), a circular Chladni plate driven from below by a speaker on a central bolt, with sand collecting along the nodal lines.
+
+Two ways to see standing-wave eigenmodes. (a) A swept sine drives the rectangular cavity while a corner microphone records the resonance spectrum. (b) Sand on a Chladni plate collects along the nodal lines of a driven bending mode.
+```
+
 ## Procedure
 
 ### Part A — The mode spectrum

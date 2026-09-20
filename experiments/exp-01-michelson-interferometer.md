@@ -163,6 +163,13 @@ rings, terminate every beam on a block, and switch the source off before
 moving an optic. See [](#lab-safety).
 :::
 
+```{figure} ../images/exp01-michelson-schematic.svg
+:label: fig:exp01-michelson
+:alt: A laser beam is split at a beamsplitter into two arms, one to a fixed mirror and one to a micrometer-driven movable mirror, recombining to form circular fringes on a screen.
+
+The Michelson interferometer. The beamsplitter sends light down two perpendicular arms; translating the movable mirror by $d$ sweeps $N = 2d/\lambda$ fringes past a point on the screen.
+```
+
 ## Procedure
 
 ### Part A — Alignment

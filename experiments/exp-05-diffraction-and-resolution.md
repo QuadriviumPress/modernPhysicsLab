@@ -173,6 +173,13 @@ several directions at once. Establish where every order goes before powering
 up, and never work with your eye at beam height. See [](#lab-safety).
 :::
 
+```{figure} ../images/exp05-diffraction-bench-schematic.svg
+:label: fig:exp05-bench
+:alt: A laser beam strikes an interchangeable sample on a rotation mount, and several diffracted orders fan out to a screen or camera at the far end of the rail.
+
+The diffraction bench. The same rail carries every sample in this experiment — single slit, aperture, grating, or disc — and for large angles the screen is replaced by a rotation stage.
+```
+
 ## Procedure
 
 ### Part A — Single slit
