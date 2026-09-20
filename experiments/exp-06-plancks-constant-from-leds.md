@@ -65,6 +65,13 @@ $$
 V_{\text{on}} = \frac{hc}{e}\cdot\frac{1}{\lambda} + V_{\text{offset}} .
 $$ (eq-led-fit)
 
+```{figure} ../images/exp06-led-fit-concept.svg
+:label: fig:exp06-led-fit
+:alt: A scatter of turn-on voltage against inverse wavelength for several LED colours falls on a straight line whose slope is hc/e and whose intercept is a small negative voltage offset.
+
+The working plot for this experiment. Six LEDs, six points; the slope recovers $h$, and the small negative intercept is the systematic discussed below.
+```
+
 ### Why this is honest but imperfect
 
 [](#eq-led-basic) is an approximation, and a report that does not say so is

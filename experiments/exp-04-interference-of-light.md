@@ -85,6 +85,13 @@ A pattern with, say, nine fringes across the central lobe has $d/a = 5$.
 Checking this by eye before you fit anything is the fastest sanity check
 available in this experiment.
 
+```{figure} ../images/exp04-envelope-fringes-concept.svg
+:label: fig:exp04-envelope-fringes
+:alt: The two-slit interference fringes, a rapid cosine-squared oscillation, are modulated by the slower single-slit sinc-squared envelope; where the envelope hits zero, an interference maximum is suppressed, producing a missing order.
+
+The two-slit pattern is the fringes ($\cos^2$, fast) times the envelope ($\text{sinc}^2$, slow). For $d/a = 5$ the envelope's first zero lands exactly on the fifth interference maximum, extinguishing it — the signature you count by eye in [](#q-int-02).
+```
+
 ### The air wedge
 
 Press two flat glass slides together and slip a thin object — a hair, a strip

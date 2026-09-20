@@ -76,6 +76,13 @@ This is a general and important technique: **when an unknown offset
 contaminates a measurement, vary the quantity of interest and fit a slope.**
 It reappears in Experiments 6, 8, and 13.
 
+```{figure} ../images/exp02-slope-fit-concept.svg
+:label: fig:exp02-slope-fit
+:alt: A plot of delay against path length: the data fall on a straight line whose slope is 1/c and whose y-intercept is the fixed instrumental delay tau, which is unknown but drops out of the slope.
+
+The slope-fit trick. $\tau$ shifts every point up by the same fixed amount, so it changes the intercept but not the slope — the fit recovers $c$ without ever needing to know $\tau$.
+```
+
 ### What limits you
 
 An oscilloscope of analogue bandwidth $B$ has a 10–90% rise time of about

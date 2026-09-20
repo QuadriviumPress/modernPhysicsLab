@@ -1,10 +1,12 @@
-"""Apparatus schematic for Experiment 12, molecular fluorescence."""
+"""Figures for Experiment 12, molecular fluorescence: the apparatus
+schematic, and the Franck-Condon potential-energy-curve concept figure."""
 
 import matplotlib.pyplot as plt
+import numpy as np
 from matplotlib.patches import Rectangle
 
 from labstyle import (
-    BLUE, GRAY, ORANGE, PURPLE, RED, DARK,
+    BLUE, GRAY, GREEN, ORANGE, PURPLE, RED, DARK,
     beam, box, grating_lines, label, save, source_dot, use_style,
 )
 
@@ -75,6 +77,73 @@ def fluorescence_panels():
     save(fig, "exp12-fluorescence-schematic")
 
 
+def franck_condon_figure():
+    """Ground and excited electronic potential-energy curves, offset in
+    bond length, with the vertical absorption/emission transitions,
+    vibrational relaxation, and the resulting Stokes shift."""
+    fig, ax = plt.subplots(figsize=(6.6, 5.2))
+
+    k, r_g, r_e, E0 = 1.0, 0.0, 1.3, 6.0
+    r = np.linspace(-1.6, 3.2, 400)
+    Eg = k * (r - r_g) ** 2
+    Ee = E0 + k * (r - r_e) ** 2
+    ax.plot(r, Eg, color=DARK, lw=2.0, zorder=2)
+    ax.plot(r, Ee, color=DARK, lw=2.0, zorder=2)
+    label(ax, (r_g - 1.3, 0.3), "$S_0$\n(ground)", fontsize=9, color=DARK, ha="center")
+    label(ax, (r_e + 1.4, E0 + 0.3), "$S_1$\n(excited)", fontsize=9, color=DARK, ha="center")
+
+    dv = 0.65
+    for well_min, r0, n in ((0.0, r_g, 3), (E0, r_e, 3)):
+        for v in range(n):
+            Ev = well_min + dv * (v + 0.5)
+            half_width = np.sqrt(max(Ev - well_min, 0) / k)
+            ax.plot([r0 - half_width, r0 + half_width], [Ev, Ev], color=GRAY, lw=1.0, alpha=0.7, zorder=1)
+
+    Eg_v0 = 0.5 * dv
+    Ee_v0 = E0 + 0.5 * dv
+    Ee_at_rg = E0 + k * (r_g - r_e) ** 2
+    Eg_at_re = k * (r_e - r_g) ** 2
+
+    ax.annotate("", xy=(r_g, Ee_at_rg), xytext=(r_g, Eg_v0),
+                arrowprops=dict(arrowstyle="-|>", color=BLUE, lw=2.0))
+    label(ax, (r_g - 0.32, (Eg_v0 + Ee_at_rg) / 2), "absorption", color=BLUE, fontsize=8.5, ha="right")
+
+    ax.annotate("", xy=(r_e, Ee_v0), xytext=(r_g + 0.12, Ee_at_rg - 0.12),
+                arrowprops=dict(arrowstyle="->", color=GRAY, lw=1.3, ls=(0, (2, 2))))
+
+    ax.annotate("", xy=(r_e, Eg_at_re), xytext=(r_e, Ee_v0),
+                arrowprops=dict(arrowstyle="-|>", color=GREEN, lw=2.0))
+    label(ax, (r_e + 0.32, (Eg_at_re + Ee_v0) / 2), "emission", color=GREEN, fontsize=8.5, ha="left")
+
+    ax.annotate("", xy=(r_g + 0.1, Eg_v0 + 0.1), xytext=(r_e - 0.1, Eg_at_re - 0.1),
+                arrowprops=dict(arrowstyle="->", color=GRAY, lw=1.3, ls=(0, (2, 2))))
+
+    ax.annotate("", xy=(4.3, Eg_v0), xytext=(4.3, Ee_at_rg),
+                arrowprops=dict(arrowstyle="<->", color=BLUE, lw=1.3))
+    label(ax, (4.5, (Eg_v0 + Ee_at_rg) / 2), "$h\\nu_{\\rm abs}$", color=BLUE, fontsize=8.5, ha="left")
+
+    ax.annotate("", xy=(5.3, Eg_at_re), xytext=(5.3, Ee_v0),
+                arrowprops=dict(arrowstyle="<->", color=GREEN, lw=1.3))
+    label(ax, (5.5, (Eg_at_re + Ee_v0) / 2), "$h\\nu_{\\rm em}$", color=GREEN, fontsize=8.5, ha="left")
+
+    label(ax, (4.9, E0 + 2.1),
+          f"Stokes shift $= h\\nu_{{\\rm abs}} - h\\nu_{{\\rm em}}$", color=PURPLE, fontsize=8.2, ha="center")
+
+    ax.set_xlabel("nuclear coordinate (bond length)")
+    ax.set_ylabel("energy")
+    ax.set_xlim(-2.0, 6.4)
+    ax.set_ylim(-0.4, E0 + 2.6)
+    ax.set_xticks([])
+    ax.set_yticks([])
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+    ax.set_title("Franck-Condon: vertical transitions,\nvibrational relaxation, and the Stokes shift", fontsize=10)
+
+    fig.tight_layout()
+    save(fig, "exp12-franck-condon-concept")
+
+
 if __name__ == "__main__":
     use_style()
     fluorescence_panels()
+    franck_condon_figure()

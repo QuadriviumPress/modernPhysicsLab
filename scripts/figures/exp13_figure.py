@@ -1,12 +1,24 @@
-"""Apparatus schematic for Experiment 13, counting statistics, half-life, and gamma attenuation."""
+"""Figures for Experiment 13, counting statistics, half-life, and gamma
+attenuation: the apparatus schematic, and the Poisson-vs-Gaussian figure."""
+
+from math import exp, lgamma, log, pi, sqrt
 
 import matplotlib.pyplot as plt
+import numpy as np
 from matplotlib.patches import Circle, Rectangle
 
 from labstyle import (
     BLUE, GRAY, ORANGE, PURPLE, RED, DARK,
     absorber_stack, box, gm_tube, label, save, use_style,
 )
+
+
+def _poisson_pmf(N, mu):
+    return np.array([exp(n * log(mu) - mu - lgamma(n + 1)) for n in N])
+
+
+def _gaussian_pdf(x, mu, sigma):
+    return np.exp(-0.5 * ((x - mu) / sigma) ** 2) / (sigma * sqrt(2 * pi))
 
 
 def counting_panels():
@@ -59,6 +71,31 @@ def counting_panels():
     save(fig, "exp13-counting-schematic")
 
 
+def poisson_gaussian_figure():
+    """Poisson PMFs for a small and a large mean, each with the matching
+    Gaussian overlaid, showing the small-mu asymmetry and the large-mu
+    convergence to a symmetric bell -- matches q-count-01."""
+    fig, (axL, axR) = plt.subplots(1, 2, figsize=(8.6, 3.8))
+
+    for ax, mu, N in ((axL, 3, np.arange(0, 13)), (axR, 30, np.arange(10, 51))):
+        P = _poisson_pmf(N, mu)
+        ax.bar(N, P, color=BLUE, width=0.7, alpha=0.85, zorder=2, label="Poisson")
+        xg = np.linspace(N[0], N[-1], 300)
+        ax.plot(xg, _gaussian_pdf(xg, mu, sqrt(mu)), color=RED, lw=2.0, zorder=3,
+                label=f"Gaussian ($\\sigma=\\sqrt{{{mu}}}$)")
+        ax.axvline(mu, color=GRAY, lw=1.0, ls=":", zorder=1)
+        ax.set_xlabel("$N$ (counts)")
+        ax.set_title(f"$\\mu = {mu}$", fontsize=10)
+        ax.legend(loc="upper right", fontsize=8, frameon=False)
+    axL.set_ylabel("probability")
+    axL.set_title("$\\mu = 3$: visibly asymmetric", fontsize=10)
+    axR.set_title("$\\mu = 30$: nearly symmetric", fontsize=10)
+
+    fig.tight_layout()
+    save(fig, "exp13-poisson-gaussian-concept")
+
+
 if __name__ == "__main__":
     use_style()
     counting_panels()
+    poisson_gaussian_figure()

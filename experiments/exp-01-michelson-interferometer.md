@@ -78,6 +78,13 @@ mirror makes them swallow into, or boil out of, the centre. If the mirrors are
 usable, and in fact easier to count. Either pattern obeys
 [](#eq-mich-lambda) at the centre of the field.
 
+```{figure} ../images/exp01-fringe-geometry.svg
+:label: fig:exp01-fringe-geometry
+:alt: Two parallel mirror planes separated by d, with a ray leaving the source at angle theta picking up path difference 2d cos theta; a plot of the fringe order against theta shows the bright rings crowding together at larger angles.
+
+Left: unfolding the interferometer into two parallel mirror planes $M_1'$ and $M_2'$ shows that every ray leaving the source at the *same* angle $\theta$ to the axis acquires the *same* path difference $\Delta = 2d\cos\theta$ — hence a ring, not a spot, of constant phase. Right: because $\cos\theta$ falls off faster as $\theta$ grows, successive orders $m$ crowd closer together at larger $\theta$ — the rings are not evenly spaced.
+```
+
 ### What Michelson and Morley were looking for
 
 If light propagated in a medium at rest in some absolute frame, and the Earth

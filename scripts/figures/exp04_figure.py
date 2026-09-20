@@ -1,4 +1,8 @@
-"""Apparatus schematic for Experiment 4, interference of light."""
+"""Figures for Experiment 4, interference of light: the apparatus schematic,
+and a concept figure for the envelope-modulated two-slit pattern."""
+
+import matplotlib.pyplot as plt
+import numpy as np
 
 from labstyle import (
     BLUE, GRAY, ORANGE, PURPLE, RED, DARK,
@@ -40,6 +44,41 @@ def interference_bench_layout():
     save(fig, "exp04-interference-bench-schematic")
 
 
+def envelope_fringes_figure():
+    """The two-slit pattern as an interference fringe pattern modulated by
+    the single-slit diffraction envelope, with a missing order marked."""
+    fig, ax = plt.subplots(figsize=(6.6, 4.0))
+
+    d_over_a = 5  # matches the d/a = 5 worked example in the theory text
+    x = np.linspace(-12.4, 12.4, 2000)  # x = d*sin(theta)/lambda
+
+    with np.errstate(divide="ignore", invalid="ignore"):
+        beta = np.pi * x / d_over_a
+        envelope = np.where(np.abs(beta) < 1e-9, 1.0, (np.sin(beta) / beta) ** 2)
+    fringes = np.cos(np.pi * x) ** 2
+    intensity = envelope * fringes
+
+    ax.plot(x, envelope, color=GRAY, lw=1.3, ls="--", zorder=2, label="single-slit envelope")
+    ax.fill_between(x, intensity, color=RED, alpha=0.25, zorder=1)
+    ax.plot(x, intensity, color=RED, lw=1.5, zorder=3, label="two-slit pattern")
+
+    for m in (-d_over_a, d_over_a):
+        ax.annotate("missing\norder", xy=(m, 0.02), xytext=(m, 0.32),
+                    fontsize=8, color=PURPLE, ha="center",
+                    arrowprops=dict(arrowstyle="->", color=PURPLE, lw=1.0))
+
+    ax.set_xlabel(r"$x = d\sin\theta/\lambda$  (interference order)")
+    ax.set_ylabel(r"intensity $I/I_0$")
+    ax.set_xlim(-12.4, 12.4)
+    ax.set_ylim(0, 1.08)
+    ax.legend(loc="upper right", fontsize=8.5)
+    ax.set_title(r"$d/a = 5$: every 5th interference order is missing", fontsize=10)
+
+    fig.tight_layout()
+    save(fig, "exp04-envelope-fringes-concept")
+
+
 if __name__ == "__main__":
     use_style()
     interference_bench_layout()
+    envelope_fringes_figure()

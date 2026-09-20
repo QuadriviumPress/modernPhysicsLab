@@ -53,6 +53,13 @@ state, in picoseconds, dumping that vibrational energy into the solvent. Only
 then does it emit — and the vertical transition back down lands on a
 vibrationally excited level of the *ground* state, which again relaxes.
 
+```{figure} ../images/exp12-franck-condon-concept.svg
+:label: fig:exp12-franck-condon
+:alt: Ground and excited electronic potential energy curves offset in bond length, with a vertical absorption transition, diagonal vibrational relaxation, a vertical emission transition at lower energy, and a second relaxation back to the ground vibrational level, plus a comparison of the absorption and emission photon energies showing the Stokes shift.
+
+The Franck-Condon cycle. Absorption and emission are both vertical (fast compared with nuclear motion); vibrational relaxation (dashed) happens in between, at constant electronic state, and is what makes $h\nu_{\rm em} < h\nu_{\rm abs}$.
+```
+
 The consequence: **emission is always at lower photon energy than absorption**,
 by the sum of the two relaxation energies. That difference is the **Stokes
 shift**,

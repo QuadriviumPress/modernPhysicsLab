@@ -91,6 +91,13 @@ crosses comfortably in about one lifetime. The two descriptions are the same
 physics in different coordinates, and being able to give both is one of the
 things this course is for.
 
+```{figure} ../images/exp14-time-dilation-concept.svg
+:label: fig:exp14-time-dilation
+:alt: Left, in the lab frame the atmosphere is 15 km while the muon decay length grows from 0.66 km without dilation to 13.2 km with it. Right, in the muon's own frame the atmosphere is contracted to 0.75 km, almost matching the undilated proper decay length of 0.66 km.
+
+The same numbers, both ways. Left: without dilation the decay length is far too short to matter; with it, the decay length nearly spans the atmosphere. Right: in the muon's frame it is the atmosphere, not the muon's lifetime, that shrinks — down to almost exactly one proper decay length.
+```
+
 ### The angular distribution
 
 Muons arriving from a zenith angle $\theta$ must traverse a longer slant path

@@ -93,6 +93,13 @@ $$
 V^2 + D^2 = 1 .
 $$ (eq-qe-complementarity)
 
+```{figure} ../images/exp07-complementarity-concept.svg
+:label: fig:exp07-complementarity
+:alt: Left, visibility V and distinguishability D plotted against analyzer angle, crossing at 45 degrees. Right, plotting V against D traces a quarter circle from full distinguishability and no visibility at theta equals 0 to full visibility and no distinguishability at theta equals 45 degrees.
+
+$V$ and $D$ trade off smoothly with analyzer angle (left), and every $(D,V)$ pair you can reach by rotating the analyzer sits exactly on the unit circle (right) — the quantitative content of [](#eq-qe-complementarity).
+```
+
 This is the quantitative statement of complementarity, due to Greenberger,
 Yasin, Englert, and others. It is not a binary "either wave or particle": you
 can have partial which-path information and partial visibility, and the

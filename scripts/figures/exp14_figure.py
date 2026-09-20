@@ -1,10 +1,12 @@
-"""Apparatus schematic for Experiment 14, a cosmic-ray muon telescope."""
+"""Figures for Experiment 14, a cosmic-ray muon telescope: the apparatus
+schematic, and the time-dilation / length-contraction concept figure."""
 
+import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.patches import Arc
 
 from labstyle import (
-    BLUE, GRAY, ORANGE, PURPLE, RED, DARK,
+    BLUE, GRAY, GREEN, ORANGE, PURPLE, RED, DARK,
     absorber_stack, beam, box, gm_tube, label, new_ax, save, use_style,
 )
 
@@ -66,6 +68,44 @@ def muon_telescope_layout():
     save(fig, "exp14-muon-telescope-schematic")
 
 
+def time_dilation_figure():
+    """Two views of the same physics: (left) in the lab frame, time
+    dilation stretches the muon's decay length far past the non-relativistic
+    value; (right) in the muon's own frame, length contraction shrinks the
+    atmosphere down to a thickness it can cross in about one lifetime."""
+    fig, (axL, axR) = plt.subplots(1, 2, figsize=(8.4, 4.6))
+
+    atmosphere_km = 15.0
+    c_tau0_km = 0.659  # c * proper lifetime
+    gamma = 20.0
+    dilated_km = gamma * c_tau0_km  # ~13.2 km, beta ~ 1
+
+    axL.bar([0], [atmosphere_km], width=0.55, color="#dbe9f5", edgecolor=GRAY, zorder=1)
+    axL.bar([1], [c_tau0_km], width=0.55, color=RED, zorder=2)
+    axL.bar([2], [dilated_km], width=0.55, color=GREEN, zorder=2)
+    axL.set_xticks([0, 1, 2])
+    axL.set_xticklabels(["atmosphere\n(15 km)", "decay length\nwithout dilation\n(0.66 km)",
+                          "decay length\nwith dilation\n(13.2 km)"], fontsize=7.6)
+    axL.set_ylabel("distance in the lab frame (km)")
+    axL.set_ylim(0, atmosphere_km * 1.15)
+    axL.set_title("Lab frame: time dilation\nstretches the decay length", fontsize=9.5)
+
+    contracted_km = atmosphere_km / gamma
+    axR.bar([0], [contracted_km], width=0.55, color="#dbe9f5", edgecolor=GRAY, zorder=1)
+    axR.bar([1], [c_tau0_km], width=0.55, color=PURPLE, zorder=2)
+    axR.set_xticks([0, 1])
+    axR.set_xticklabels(["atmosphere,\ncontracted\n(0.75 km)", "proper decay\nlength\n(0.66 km)"],
+                         fontsize=7.6)
+    axR.set_ylabel("distance in the muon's frame (km)")
+    axR.set_ylim(0, 1.05)
+    axR.set_title("Muon's frame: length contraction\nshrinks the atmosphere", fontsize=9.5)
+
+    fig.suptitle("Same physics, two frames", fontsize=11, y=1.02)
+    fig.tight_layout()
+    save(fig, "exp14-time-dilation-concept")
+
+
 if __name__ == "__main__":
     use_style()
     muon_telescope_layout()
+    time_dilation_figure()

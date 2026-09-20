@@ -61,6 +61,13 @@ visibly asymmetric, and for small $\mu$ the difference matters: at $N = 0$ the
 estimator $\sqrt{N} = 0$ is plainly wrong, and one must use a proper
 confidence interval instead. You will observe both regimes today.
 
+```{figure} ../images/exp13-poisson-gaussian-concept.svg
+:label: fig:exp13-poisson-gaussian
+:alt: Two bar charts of the Poisson distribution, one for mu equals 3 showing a visibly skewed shape that departs from the overlaid Gaussian curve, and one for mu equals 30 where the Poisson bars and the Gaussian curve are nearly indistinguishable.
+
+The same law, two regimes. At $\mu=3$ the Poisson distribution is visibly skewed and the Gaussian approximation is poor near $N=0$; at $\mu=30$ the two are nearly indistinguishable, which is why $\sqrt{N}$ works so well once the counts are large.
+```
+
 ### Decay law
 
 $$

@@ -1,8 +1,9 @@
-"""Apparatus schematic for Experiment 9, eigenmodes and nodal patterns."""
+"""Figures for Experiment 9, eigenmodes and nodal patterns: the apparatus
+schematic, and a concept figure for mode counting / density of states."""
 
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib.patches import Circle, Rectangle
+from matplotlib.patches import Circle, Rectangle, Wedge
 
 from labstyle import (
     BLUE, GRAY, ORANGE, PURPLE, RED, DARK,
@@ -79,6 +80,44 @@ def cavity_and_chladni_panels():
     save(fig, "exp09-eigenmodes-schematic")
 
 
+def mode_counting_figure():
+    """Mode counting as lattice points inside a quarter circle: the 2D
+    analogue of the octant-of-an-ellipsoid argument behind eq-dos."""
+    fig, ax = plt.subplots(figsize=(5.6, 5.6))
+    ax.set_aspect("equal")
+
+    R = 8.6
+    nmax = 12
+    nx, ny = np.meshgrid(np.arange(1, nmax + 1), np.arange(1, nmax + 1))
+    nx, ny = nx.ravel(), ny.ravel()
+    r = np.sqrt(nx**2 + ny**2)
+    inside = r <= R
+
+    ax.add_patch(Wedge((0, 0), R, 0, 90, facecolor="#dbe9f5", edgecolor="none", zorder=0))
+    ax.plot(nx[~inside], ny[~inside], "o", color="#c9d6e0", ms=5, zorder=2)
+    ax.plot(nx[inside], ny[inside], "o", color=BLUE, ms=5, zorder=3)
+
+    arc = np.linspace(0, np.pi / 2, 100)
+    ax.plot(R * np.cos(arc), R * np.sin(arc), color=PURPLE, lw=1.8, zorder=1)
+    label(ax, (R * np.cos(np.pi / 4) + 0.6, R * np.sin(np.pi / 4) + 0.6),
+          r"$n_x^2+n_y^2 = (2Lf/v)^2$", color=PURPLE, fontsize=8.5, ha="left")
+
+    n_inside = int(inside.sum())
+
+    ax.set_xlabel(r"$n_x$")
+    ax.set_ylabel(r"$n_y$")
+    ax.set_xlim(0, nmax + 0.5)
+    ax.set_ylim(0, nmax + 0.5)
+    ax.set_title("Counting modes below a frequency $f$", fontsize=10)
+
+    fig.tight_layout()
+    fig.text(0.5, -0.02,
+              f"{n_inside} lattice points inside the quarter circle — " r"$N(f) \approx \frac{\pi}{4}R^2$ (2D analogue of the octant-of-an-ellipsoid count in the text)",
+              fontsize=8.3, color=DARK, ha="center")
+    save(fig, "exp09-mode-counting-concept")
+
+
 if __name__ == "__main__":
     use_style()
     cavity_and_chladni_panels()
+    mode_counting_figure()

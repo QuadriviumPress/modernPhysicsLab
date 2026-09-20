@@ -1,7 +1,9 @@
-"""Apparatus schematic for Experiment 8, tunneling by frustrated total internal reflection."""
+"""Figures for Experiment 8, tunneling by frustrated total internal
+reflection: the apparatus schematic, and the quantum-barrier concept figure."""
 
+import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib.patches import Arc, Polygon
+from matplotlib.patches import Arc, Polygon, Rectangle
 
 from labstyle import (
     BLUE, GRAY, ORANGE, PURPLE, RED, DARK,
@@ -61,6 +63,52 @@ def ftir_layout():
     save(fig, "exp08-ftir-schematic")
 
 
+def quantum_barrier_figure():
+    """A rectangular potential barrier with E < V0: an oscillating
+    wavefunction outside, decaying (not oscillating) inside, and a reduced
+    oscillating transmitted wave beyond -- the quantum-side correspondence
+    to the optical evanescent wave shown in the apparatus schematic above."""
+    fig, ax = plt.subplots(figsize=(7.0, 4.2))
+
+    V0, E, L = 5.0, 1.0, 1.4
+    k = 6.0
+    T_amp = 0.25
+    kappa = -np.log(T_amp) / L
+    amp = 0.8
+
+    ax.add_patch(Rectangle((0, 0), L, V0, facecolor="#dbe9f5", edgecolor="none", zorder=0))
+
+    # V(x): a step up to V0 across the barrier, zero outside.
+    ax.plot([-1.6, 0, 0, L, L, 1.8 + L], [0, 0, V0, V0, 0, 0], color=DARK, lw=2.0, zorder=2)
+    ax.axhline(E, color=GRAY, lw=1.1, ls="--", zorder=1)
+    label(ax, (-1.75, E), "$E$", color=GRAY, fontsize=9.5, ha="right")
+    label(ax, (L / 2, V0 + 0.35), "$V_0$", color=DARK, fontsize=9.5)
+
+    x1 = np.linspace(-1.6, 0, 250)
+    x2 = np.linspace(0, L, 150)
+    x3 = np.linspace(L, L + 1.8, 250)
+    ax.plot(x1, E + amp * np.cos(k * x1), color=RED, lw=1.6, zorder=3)
+    ax.plot(x2, E + amp * np.exp(-kappa * x2), color=RED, lw=1.6, zorder=3)
+    ax.plot(x3, E + amp * T_amp * np.cos(k * (x3 - L)), color=RED, lw=1.6, zorder=3)
+
+    label(ax, (-1.1, V0 - 0.15), "incident +\nreflected", fontsize=8.2, color=DARK, ha="center")
+    label(ax, (L / 2, -0.55), "barrier:\n$\\psi \\propto e^{-\\kappa_q x}$", fontsize=8.2, color=DARK, ha="center")
+    label(ax, (L + 1.1, V0 - 0.15), "transmitted\n(reduced amplitude)", fontsize=8.2, color=DARK, ha="center")
+
+    ax.set_xlabel("$x$")
+    ax.set_ylabel("energy  /  $\\psi(x)$ (offset by $E$)")
+    ax.set_xlim(-1.6, L + 1.8)
+    ax.set_ylim(-1.0, V0 + 0.9)
+    ax.set_xticks([])
+    ax.set_yticks([])
+    for spine in ("top", "right", "left"):
+        ax.spines[spine].set_visible(False)
+
+    fig.tight_layout()
+    save(fig, "exp08-quantum-barrier-concept")
+
+
 if __name__ == "__main__":
     use_style()
     ftir_layout()
+    quantum_barrier_figure()
