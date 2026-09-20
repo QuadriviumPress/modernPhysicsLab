@@ -1,0 +1,19 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  actions: read
+
+jobs:
+  deploy:
+    uses: QuadriviumPress/bindery/.github/workflows/deploy.yml@main
+    with:
+      build-command: myst build --html --check-links
+      output-dir: _build/html

@@ -1,0 +1,78 @@
+version: 1
+project:
+  id: modern-physics-lab-manual
+  title: Modern Physics Laboratory
+  subtitle: Fourteen Weekly Experiments
+  short_title: Lab Manual
+  description: >-
+    A one-experiment-per-week laboratory manual for a calculus-based modern
+    physics course, written to accompany the Modern Physics textbook. Every
+    experiment is built from low-cost apparatus, microcontrollers, and
+    Python/Jupyter analysis.
+  keywords:
+    - modern physics
+    - laboratory
+    - undergraduate
+    - Python
+    - uncertainty analysis
+  subject: Physics
+  authors:
+    - name: Martin Veillette
+      corresponding: true
+      email: martin.veillette@gmail.com
+  license: CC-BY-NC-SA-4.0
+  open_access: true
+  github: QuadriviumPress/modernPhysicsLab
+
+  # Expanded on first use; render as hover tooltips on the website.
+  abbreviations:
+    GM: Geiger-Müller
+    ADC: analog-to-digital converter
+    PWM: pulse-width modulation
+    FTIR: frustrated total internal reflection
+    FFT: fast Fourier transform
+    SNR: signal-to-noise ratio
+    OD: optical density
+    CW: continuous wave
+    LED: light-emitting diode
+    RMS: root mean square
+    TTL: transistor-transistor logic
+    NIST: National Institute of Standards and Technology
+
+  toc:
+    - file: index.md
+    - title: Before You Start
+      children:
+        - file: front-matter/01-how-to-use-this-manual.md
+        - file: front-matter/02-laboratory-safety.md
+        - file: front-matter/03-the-laboratory-notebook.md
+        - file: front-matter/04-uncertainty-and-curve-fitting.md
+        - file: front-matter/05-python-toolkit.md
+        - file: front-matter/06-grading-rubric.md
+    - title: Experiments
+      children:
+        - file: experiments/exp-01-michelson-interferometer.md
+        - file: experiments/exp-02-speed-of-light.md
+        - file: experiments/exp-03-relativistic-beta-electrons.md
+        - file: experiments/exp-04-interference-of-light.md
+        - file: experiments/exp-05-diffraction-and-resolution.md
+        - file: experiments/exp-06-plancks-constant-from-leds.md
+        - file: experiments/exp-07-quantum-eraser.md
+        - file: experiments/exp-08-tunneling-by-ftir.md
+        - file: experiments/exp-09-eigenmodes-in-two-dimensions.md
+        - file: experiments/exp-10-balmer-series-and-rydberg.md
+        - file: experiments/exp-11-alkali-spectra-quantum-defect.md
+        - file: experiments/exp-12-molecular-fluorescence.md
+        - file: experiments/exp-13-counting-statistics-and-half-life.md
+        - file: experiments/exp-14-cosmic-ray-muon-telescope.md
+
+  # Instructor material is deliberately outside the `toc` so that a student
+  # build never renders it. Build it separately with:
+  #   myst build instructor/*.md
+  exclude:
+    - instructor/**
+
+site:
+  template: book-theme
+  options:
+    hide_outline: false

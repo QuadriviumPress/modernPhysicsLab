@@ -1,0 +1,20 @@
+{
+  "name": "modern-physics-lab",
+  "private": true,
+  "description": "Laboratory manual accompanying the Modern Physics textbook",
+  "license": "CC-BY-NC-SA-4.0",
+  "engines": {
+    "node": ">=22",
+    "npm": ">=10 <11"
+  },
+  "scripts": {
+    "start": "myst start",
+    "build": "myst build --html",
+    "verify": "node scripts/verify-book.mjs",
+    "check": "npm run verify && myst build --html --strict --check-links"
+  },
+  "devDependencies": {
+    "mystmd": "1.10.1",
+    "yaml": "2.9.1"
+  }
+}
