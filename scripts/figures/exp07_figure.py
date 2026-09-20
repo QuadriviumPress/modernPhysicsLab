@@ -1,5 +1,8 @@
-"""Apparatus schematic for Experiment 7, the quantum eraser and complementarity."""
+"""Figures for Experiment 7, the quantum eraser and complementarity: the
+apparatus schematic, and a concept figure for the V-D complementarity relation."""
 
+import matplotlib.pyplot as plt
+import numpy as np
 from matplotlib.patches import Rectangle
 
 from labstyle import (
@@ -64,6 +67,48 @@ def eraser_layout():
     save(fig, "exp07-quantum-eraser-schematic")
 
 
+def complementarity_figure():
+    """V and D as functions of analyzer angle, and the V-D trade-off
+    tracing the unit circle V^2 + D^2 = 1."""
+    fig, (axL, axR) = plt.subplots(1, 2, figsize=(8.6, 3.9))
+
+    theta = np.linspace(0, 90, 400)
+    V = np.abs(np.sin(np.radians(2 * theta)))
+    D = np.abs(np.cos(np.radians(2 * theta)))
+
+    axL.plot(theta, V, color=RED, lw=1.9, label=r"$V = |\sin 2\theta|$")
+    axL.plot(theta, D, color=BLUE, lw=1.9, label=r"$D = |\cos 2\theta|$")
+    axL.set_xlabel(r"analyzer angle $\theta$ (degrees)")
+    axL.set_ylabel("value")
+    axL.set_xlim(0, 90)
+    axL.set_ylim(0, 1.05)
+    axL.set_xticks([0, 15, 30, 45, 60, 75, 90])
+    axL.legend(loc="center right", fontsize=9, frameon=False)
+    axL.set_title("Visibility and distinguishability\nversus analyzer angle", fontsize=9.5)
+
+    # theta in [0, 45] traces the full quarter circle once; theta in [45, 90]
+    # retraces the same arc back to (D, V) = (1, 0), so only the first quarter
+    # is shown, with its two distinct endpoints marked.
+    axR.set_aspect("equal")
+    phi = np.linspace(0, np.pi / 2, 200)
+    axR.plot(np.cos(phi), np.sin(phi), color=GRAY, lw=1.0, ls=":", zorder=1)
+    quarter = theta <= 45
+    axR.plot(D[quarter], V[quarter], color=PURPLE, lw=2.2, zorder=2)
+    axR.plot(1, 0, "o", color=DARK, ms=6, zorder=3)
+    axR.plot(0, 1, "o", color=ORANGE, ms=6, zorder=3)
+    label(axR, (0.78, 0.16), r"$\theta=0°$" + "\n(no fringes)", fontsize=8, color=DARK, ha="right")
+    label(axR, (0.16, 1.09), r"$\theta=45°$" + "\n(full fringes)", fontsize=8, color=ORANGE)
+    axR.set_xlabel(r"$D$ (distinguishability)")
+    axR.set_ylabel(r"$V$ (visibility)")
+    axR.set_xlim(-0.05, 1.2)
+    axR.set_ylim(-0.05, 1.2)
+    axR.set_title(r"$V^2 + D^2 = 1$", fontsize=9.5)
+
+    fig.tight_layout()
+    save(fig, "exp07-complementarity-concept")
+
+
 if __name__ == "__main__":
     use_style()
     eraser_layout()
+    complementarity_figure()

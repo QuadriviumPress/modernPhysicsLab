@@ -81,6 +81,13 @@ unit mass is nearly the same in all light materials — so a range quoted in
 $\text{mg/cm}^2$ is roughly transferable between absorber materials, which
 physical millimetres are not.
 
+```{figure} ../images/exp03-absorption-curve-concept.svg
+:label: fig:exp03-absorption-curve
+:alt: A semilog plot of count rate against absorber mass thickness: a straight quasi-exponential fall bends over into a shallow bremsstrahlung tail and flattens onto a background floor; extrapolating the steep straight-line region down to the background locates the maximum range R_m.
+
+The shape of an absorption curve, on a log rate axis. The early, steep region is nearly a straight line — extrapolate it down to where it meets the background floor to read off $R_m$, rather than trying to find where the real (curved) data disappear into the noise.
+```
+
 ### From range to energy
 
 Two standard empirical relations connect the maximum range in aluminium to the

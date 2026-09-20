@@ -88,6 +88,13 @@ super-resolution microscopy. But it is the right order of magnitude, and it
 tells you that resolution is set by the *aperture*, which is why telescopes
 are large and why electron microscopes exist.
 
+```{figure} ../images/exp05-rayleigh-criterion-concept.svg
+:label: fig:exp05-rayleigh
+:alt: Two diffraction point-spread functions separated by the Rayleigh criterion overlap so that the first zero of one falls on the central peak of the other, leaving a shallow but visible dip between two peaks in their sum.
+
+Just resolved. Each source alone (dashed) produces its own diffraction pattern; separated by $\theta_{\min}$, their sum (solid) still shows a dip of about 19% between the two peaks — faint, but real.
+```
+
 ### The grating
 
 $N$ equally spaced slits of pitch $d$ give maxima at

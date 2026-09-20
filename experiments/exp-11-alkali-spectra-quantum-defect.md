@@ -73,6 +73,13 @@ defect, so a change of $0.02$ in $\delta_s$ moves the predicted D-line
 wavelength by tens of nanometres. Quantum defects have to be known well to be
 useful, and your measurement has to be correspondingly good.
 
+```{figure} ../images/exp11-quantum-defect-concept.svg
+:label: fig:exp11-quantum-defect
+:alt: For n=3 and n=4, the hydrogenic energy is shown as a dashed horizontal line, and the actual s, p, d, f sodium levels are marked below it; the s and p levels sit well below the hydrogenic line while d and f sit almost on it.
+
+Quantum defects, for $n=3$ and $n=4$. If sodium's valence electron were hydrogenic, every $\ell$ would sit on the dashed line for its $n$. Instead $s$ and $p$ are pulled well below it — pulled hardest for $s$, which penetrates the core most — while $d$ and $f$ are nearly hydrogenic.
+```
+
 The physical reading: a low-$\ell$ orbital has appreciable probability density
 near the nucleus, where it sees the *unscreened* nuclear charge $Z$ rather
 than the screened $Z_{\text{eff}} \approx 1$. It is therefore bound more

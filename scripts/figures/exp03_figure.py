@@ -1,5 +1,8 @@
-"""Apparatus schematic for Experiment 3, relativistic electrons from beta decay."""
+"""Figures for Experiment 3, relativistic electrons from beta decay: the
+apparatus schematic, and a concept figure for the absorption-curve shape."""
 
+import matplotlib.pyplot as plt
+import numpy as np
 from matplotlib.patches import Circle, Rectangle
 
 from labstyle import (
@@ -52,6 +55,51 @@ def beta_shelf_layout():
     save(fig, "exp03-beta-shelf-schematic")
 
 
+def absorption_curve_figure():
+    """The shape of a beta absorption curve: a quasi-exponential fall,
+    bending over into a bremsstrahlung tail and a background floor, with
+    the maximum range found by extrapolating the steep part to the floor."""
+    fig, ax = plt.subplots(figsize=(6.4, 4.4))
+
+    mu = 6.5e-3  # 1/(mg/cm^2), the beta absorption coefficient
+    R0 = 8000.0  # counts/s at x = 0
+    bg = 4.0  # counts/s, background + residual bremsstrahlung floor
+    tail0 = 45.0
+    mu_tail = 1.6e-3
+
+    x = np.linspace(0, 1200, 800)
+    R = R0 * np.exp(-mu * x) + tail0 * np.exp(-mu_tail * x) + bg
+
+    ax.semilogy(x, R, color=RED, lw=2.0, zorder=3)
+    ax.axhline(bg, color=GRAY, lw=1.1, ls=":", zorder=1)
+    label(ax, (1020, bg * 1.35), "background", fontsize=8.5, color=GRAY, ha="left")
+
+    # Extrapolate the steep early region as a straight line on this semilog plot.
+    x1, x2 = 60.0, 320.0
+    y1, y2 = np.log(R0 * np.exp(-mu * x1) + bg), np.log(R0 * np.exp(-mu * x2) + bg)
+    slope = (y2 - y1) / (x2 - x1)
+    x_Rm = x1 + (np.log(bg) - y1) / slope
+    xline = np.linspace(0, x_Rm, 100)
+    ax.semilogy(xline, np.exp(y1 + slope * (xline - x1)), color=DARK, lw=1.2, ls="--", zorder=2)
+
+    ax.plot([x_Rm], [bg], marker="o", color=PURPLE, ms=6, zorder=4)
+    ax.annotate(r"$R_m$ (extrapolated range)", xy=(x_Rm, bg),
+                xytext=(x_Rm + 40, bg * 9), fontsize=8.5, color=PURPLE, ha="left",
+                arrowprops=dict(arrowstyle="-", color=PURPLE, lw=0.9))
+
+    label(ax, (140, 900), "beta absorption\n(quasi-exponential)", fontsize=8.5, color=DARK, ha="left")
+    label(ax, (430, 90), "bremsstrahlung tail", fontsize=8.5, color=GRAY, ha="left")
+
+    ax.set_xlabel(r"absorber mass thickness $x$ (mg/cm$^2$)")
+    ax.set_ylabel(r"count rate $R$ (s$^{-1}$, log scale)")
+    ax.set_xlim(0, 1200)
+    ax.set_ylim(2, 1.5e4)
+
+    fig.tight_layout()
+    save(fig, "exp03-absorption-curve-concept")
+
+
 if __name__ == "__main__":
     use_style()
     beta_shelf_layout()
+    absorption_curve_figure()

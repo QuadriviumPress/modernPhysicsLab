@@ -1,4 +1,8 @@
-"""Apparatus schematic for Experiment 2, the time-of-flight speed of light."""
+"""Figures for Experiment 2, the time-of-flight speed of light: the
+apparatus schematic, and a concept figure for the slope-fit technique."""
+
+import matplotlib.pyplot as plt
+import numpy as np
 
 from labstyle import (
     BLUE, GRAY, ORANGE, PURPLE, RED, DARK,
@@ -55,6 +59,45 @@ def time_of_flight_layout():
     save(fig, "exp02-time-of-flight-schematic")
 
 
+def slope_fit_figure():
+    """The general trick: an unknown offset tau cancels when you fit a slope
+    to delay against path length, rather than trusting a single reading."""
+    fig, ax = plt.subplots(figsize=(6.0, 4.2))
+
+    c = 2.998e8  # m/s
+    tau = 24.0  # ns, a stand-in fixed instrumental delay
+    rng = np.random.default_rng(2)
+    L = np.array([2.0, 4.0, 6.0, 8.0, 10.0, 12.0])
+    dt_true = L / c * 1e9 + tau
+    dt = dt_true + rng.normal(0, 0.35, size=L.size)
+
+    Lfit = np.linspace(0, 13, 200)
+    ax.plot(Lfit, Lfit / c * 1e9 + tau, color=RED, lw=1.8, zorder=2)
+    ax.plot([0, L[0]], [tau, dt_true[0]], color=RED, lw=1.3, ls="--", alpha=0.6, zorder=1)
+    ax.errorbar(L, dt, yerr=0.35, fmt="o", color=BLUE, ms=5.5, capsize=3, zorder=3)
+
+    ax.plot([0], [tau], marker="o", mfc="white", mec=PURPLE, mew=1.6, ms=7, zorder=4)
+    ax.annotate(r"intercept $\tau$" + "\n(instrumental delay)",
+                xy=(0, tau), xytext=(1.6, tau - 3.2),
+                fontsize=8.5, color=PURPLE,
+                arrowprops=dict(arrowstyle="-", color=PURPLE, lw=0.9))
+
+    xm, ym = 7.0, 7.0 / c * 1e9 + tau
+    ax.annotate(r"slope $= 1/c$", xy=(xm, ym), xytext=(xm - 3.6, ym + 2.6),
+                fontsize=9.5, color=DARK,
+                arrowprops=dict(arrowstyle="-", color=DARK, lw=0.9))
+
+    ax.set_xlabel(r"path length $L$ (m)")
+    ax.set_ylabel(r"delay $\Delta t$ (ns)")
+    ax.set_xlim(-0.5, 13)
+    ax.set_ylim(tau - 4, dt_true[-1] + 4)
+    ax.set_title("Vary $L$, fit the slope — the offset $\\tau$ drops out", fontsize=10)
+
+    fig.tight_layout()
+    save(fig, "exp02-slope-fit-concept")
+
+
 if __name__ == "__main__":
     use_style()
     time_of_flight_layout()
+    slope_fit_figure()

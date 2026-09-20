@@ -102,6 +102,13 @@ Compare [](#eq-ftir-kappa) with [](#eq-ftir-kappa-q) and
 term-by-term: the gap is the barrier, $\kappa$ is $\kappa_q$, and the
 exponential is the same exponential.
 
+```{figure} ../images/exp08-quantum-barrier-concept.svg
+:label: fig:exp08-quantum-barrier
+:alt: A wavefunction oscillates in the region before a rectangular potential barrier, decays exponentially without oscillating inside the barrier where E is less than V0, and emerges beyond the barrier as an oscillation of reduced amplitude.
+
+The quantum-mechanical side of the correspondence. Outside the barrier $E > 0$ and the wavefunction oscillates; inside, $E < V_0$ makes $\kappa_q$ real, so the wavefunction decays rather than oscillates — the same mathematics as the evanescent wave in the optics experiment above.
+```
+
 ### The Newton's-rings trick
 
 Controlling a sub-micrometre gap mechanically is difficult. Instead, use

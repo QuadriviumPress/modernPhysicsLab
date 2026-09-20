@@ -120,6 +120,13 @@ $3\ \text{kHz}$ the two terms are roughly $25$ and $19$. Expect your measured
 count to sit well above the leading term alone, and use the comparison to show
 that the correction is needed.
 
+```{figure} ../images/exp09-mode-counting-concept.svg
+:label: fig:exp09-mode-counting
+:alt: A grid of lattice points in the positive n_x, n_y quadrant, with a quarter-circle arc marking a constant-frequency contour; the points inside the arc are the modes below that frequency, and their count is approximately the area of the quarter disk.
+
+Mode counting, shown in two dimensions for legibility: each lattice point $(n_x,n_y)$ is one mode, and the number below a given frequency is (to leading order) the area of the quarter disk of radius $R \propto f$ that contains it — the 2D analogue of the octant-of-an-ellipsoid argument behind [](#eq-dos).
+```
+
 Differentiating, the density of states grows as $f^2$. That $f^2$ is precisely
 the mode counting that, multiplied by $k_BT$ per mode, produced the
 Rayleigh–Jeans law and the ultraviolet catastrophe of Chapter 6. You are about

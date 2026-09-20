@@ -1,5 +1,7 @@
-"""Apparatus schematic for Experiment 5, diffraction and the resolution limit."""
+"""Figures for Experiment 5, diffraction and the resolution limit: the
+apparatus schematic, and a concept figure for the Rayleigh criterion."""
 
+import matplotlib.pyplot as plt
 import numpy as np
 
 from labstyle import (
@@ -50,6 +52,44 @@ def diffraction_bench_layout():
     save(fig, "exp05-diffraction-bench-schematic")
 
 
+def rayleigh_criterion_figure():
+    """Two point-spread functions separated by exactly the Rayleigh
+    criterion: the first zero of one lands on the central peak of the other."""
+    fig, ax = plt.subplots(figsize=(6.4, 4.2))
+
+    x = np.linspace(-2.6, 2.6, 1600)
+    c1, c2 = -0.5, 0.5  # centres, one first-zero-width apart
+    p1 = np.sinc(x - c1) ** 2
+    p2 = np.sinc(x - c2) ** 2
+    total = p1 + p2
+
+    ax.plot(x, p1, color=BLUE, lw=1.3, ls="--", zorder=2)
+    ax.plot(x, p2, color=RED, lw=1.3, ls="--", zorder=2)
+    ax.plot(x, total, color=DARK, lw=2.0, zorder=3, label="sum (what you observe)")
+
+    for c, col in ((c1, BLUE), (c2, RED)):
+        ax.plot([c, c], [0, 1.0], color=col, lw=0.8, ls=":", zorder=1)
+    ax.annotate("", xy=(c1, 1.12), xytext=(c2, 1.12),
+                arrowprops=dict(arrowstyle="<->", color=PURPLE, lw=1.2))
+    label(ax, (0, 1.22), r"$\theta_{\min} = 1.22\,\lambda/D$", color=PURPLE, fontsize=9.5)
+
+    dip = total[np.argmin(np.abs(x - 0))]
+    ax.annotate("central dip\n(barely resolved)", xy=(0, dip), xytext=(1.15, 0.55),
+                fontsize=8.2, color=DARK, ha="left",
+                arrowprops=dict(arrowstyle="->", color=DARK, lw=0.9))
+
+    ax.set_xlabel("position on screen (units of the first-zero radius)")
+    ax.set_ylabel(r"intensity $I/I_0$")
+    ax.set_xlim(-2.6, 2.6)
+    ax.set_ylim(0, 1.35)
+    ax.legend(loc="upper left", fontsize=8.5, frameon=False)
+    ax.set_title("The Rayleigh criterion: just resolved", fontsize=10)
+
+    fig.tight_layout()
+    save(fig, "exp05-rayleigh-criterion-concept")
+
+
 if __name__ == "__main__":
     use_style()
     diffraction_bench_layout()
+    rayleigh_criterion_figure()
