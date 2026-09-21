@@ -170,6 +170,25 @@ Two geometries, one cuvette. (a) Excitation at 90 degrees to detection, with a l
 
 ## Procedure
 
+### Before you prepare the dilution series
+
+- Use the two panels of [](#fig:exp12-fluorescence) as separate layouts:
+  in-line lamp–cuvette–spectrometer for absorption, and 90-degree
+  LED–cuvette–filter–spectrometer for emission. Do not use an absorption
+  reference spectrum to correct the emission geometry.
+- Label every cuvette and dilution before pipetting. Prepare a dilution table
+  with stock concentration, transfer volume, final volume, concentration, and
+  propagated uncertainty; calculate it before making the solutions.
+- Fix cuvette orientation with a small mark on a frosted face. Rinse with the
+  next solution, fill to the same height, remove bubbles, and wipe the clear
+  faces with lint-free tissue before every reading.
+- Warm up the light sources and spectrometer, then record integration time,
+  gain, fibre position, filter, and file name. Clamp the fibres so geometry
+  cannot drift across the concentration series.
+- Define a saturation threshold and a minimum useful signal before collecting
+  the series. Retake dark, blank, and reference data whenever integration time,
+  gain, filter, source, or geometry changes.
+
 ### Part A — Spectrometer setup
 
 1. Record a **dark spectrum** (source blocked) and a **reference spectrum**

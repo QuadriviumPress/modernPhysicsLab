@@ -203,6 +203,23 @@ Two independent routes to $h$. (a) The LED turn-on voltage, read from a simple c
 
 ## Procedure
 
+### Before you power a device
+
+- Identify the LED circuit and lamp-spectrometer path in
+  [](#fig:exp06-planck). Panel (a) is an electrical connection diagram;
+  panel (b) is a separate optical measurement, not an additional branch of the
+  same circuit.
+- Sort the LEDs by package label and assign each a permanent ID. Never rely on
+  emitted colour alone, and do not mix devices after their spectra are taken.
+- With the supply off, verify resistor value and LED polarity with a meter.
+  Set a supply current limit of $15\ \text{mA}$ before connecting an LED.
+- Prepare linked tables for LED ID, spectrum file, peak wavelength, FWHM, and
+  every $(V,I)$ sweep. Record meter ranges and the resistor's measured value
+  with uncertainty.
+- Warm up the spectrometer and tungsten lamp as directed by the manufacturer.
+  Save dark spectra at every integration time and label all files as you take
+  them; do not try to reconstruct LED identities afterward.
+
 ### Part A — Emission spectra
 
 1. Drive each LED at a modest current ($\sim5\ \text{mA}$) and record its

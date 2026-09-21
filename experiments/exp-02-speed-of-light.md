@@ -176,6 +176,24 @@ The time-of-flight bench. A fast pulse is split into a short reference path and 
 
 ## Procedure
 
+### Before you route the beam
+
+- Trace the short reference path and folded signal path in
+  [](#fig:exp02-tof), then sketch the actual room layout with a label for every
+  straight segment. Your measured $L$ will be the sum of those segments, not
+  the source-to-detector displacement.
+- Place the beam below eye level, mark the occupied floor area, and install a
+  block immediately behind the signal detector. Switch the source off while a
+  mirror or detector is being moved.
+- Measure and label the two BNC cables before connecting them. Record detector
+  model, amplifier gain, bandwidth limit, probe attenuation, and scope sample
+  rate; a saved waveform without these settings is not reproducible.
+- Prepare a table with path length, uncertainty, delay, delay scatter, signal
+  amplitude, averaging count, and file name. Reserve rows for at least eight
+  lengths plus the cable-swap control.
+- Save one unaveraged waveform and one averaged waveform at the shortest path.
+  These establish the raw noise level and show exactly what the averaging did.
+
 ### Part A — Setting up the two channels
 
 1. Mount the source. Split a small fraction of its output onto the

@@ -199,6 +199,24 @@ The same spectrometer at its highest resolving power. The sodium D lines sit clo
 
 ## Procedure
 
+### Before you search for weak lines
+
+- Use [](#fig:exp11-spectrometer) to identify the same calibrated spectrometer
+  geometry used in Experiment 10. The labelled D rays show why resolution is
+  needed; their separation in the drawing is deliberately exaggerated.
+- Warm the alkali lamp until its intensity is stable. Keep the lamp supply
+  covered, switch it off before exchanging lamps, and avoid touching a hot
+  envelope.
+- Record grating, slit width, detector integration time, gain, and spectral
+  order. Save a dark spectrum at every integration time used for the faint
+  lines.
+- Prepare a search list from the supplied reference table, with predicted
+  wavelength, transition, observed wavelength, trial count, signal-to-noise
+  ratio, and assignment confidence. Also keep an “unassigned” list.
+- Take an overview spectrum before narrowing the slit. Use that spectrum to
+  navigate, but use unsaturated high-resolution scans for line centres; do not
+  extract the D splitting from a clipped overview.
+
 ### Part A — Calibration, again
 
 1. Calibrate exactly as in [](#exp-balmer), using mercury, and check against

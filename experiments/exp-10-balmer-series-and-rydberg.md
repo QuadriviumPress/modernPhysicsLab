@@ -187,6 +187,23 @@ The grating spectrometer. Collimated light from the entrance slit meets the grat
 
 ## Procedure
 
+### Before you calibrate
+
+- Identify the entrance slit, collimator, grating, telescope or detector, and
+  angular zero in [](#fig:exp10-spectrometer). Record the actual grating label and
+  order used; the rays in the drawing only indicate their relative dispersion.
+- Allow each discharge lamp and the detector to warm up for the manufacturer's
+  recommended time. Keep high-voltage lamp leads covered and switch the supply
+  off before changing tubes.
+- Focus the entrance slit first, then the collimator, and finally the detector
+  or telescope. Record slit width and never change focus or fibre placement
+  between calibration and hydrogen measurements.
+- Prepare a calibration table containing lamp, accepted wavelength, measured
+  angle or pixel, approach direction, trial, residual, and uncertainty. Keep a
+  separate table for unassigned features so they are not silently discarded.
+- Choose a consistent line-centre rule—centroid, fitted peak, or midpoint of a
+  symmetric visual line—and use it for both calibration and Balmer lines.
+
 ### Part A — Calibration
 
 1. Set up the spectrometer and focus it on the entrance slit. Narrow the slit

@@ -180,6 +180,23 @@ The interference bench. Laser, slide, and camera share a common rail so the slit
 
 ## Procedure
 
+### Before you record a pattern
+
+- Arrange the laser, slit plane, and detector in the order shown in
+  [](#fig:exp04-bench). Measure $L$ from the slit plate to the screen or sensor,
+  not from the laser or the front of the rail.
+- Inventory the slit plate and copy the labelled $a$ and $d$ values into the
+  notebook. Record which face points toward the laser so an unknown slit can
+  be restored to the same orientation.
+- Level the beam through the centre of the slit mount and mark the undeflected
+  beam position on the screen. Install a beam block before removing the
+  screen for a camera or photodiode scan.
+- Make a data table with slit ID, $a$, $d$, $L$, exposure or detector gain,
+  fringe positions, profile file name, and notes. Lock exposure, focus, white
+  balance, and gain before comparing profiles.
+- Take a dark image and a ruler image in the detector plane. The ruler image
+  provides the pixel-to-length calibration; retake it if the camera moves.
+
 ### Part A — Verifying the fringe-spacing law
 
 1. Mount the laser, slit holder, and screen on the rail. Set $L \approx 2\ \text{m}$.

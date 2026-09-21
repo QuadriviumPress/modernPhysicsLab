@@ -209,6 +209,25 @@ Two ways to see standing-wave eigenmodes. (a) A swept sine drives the rectangula
 
 ## Procedure
 
+### Before you sweep
+
+- Use [](#fig:exp09-eigenmodes) to distinguish the rectangular acoustic cavity
+  from the circular Chladni plate; they are two analog systems measured with
+  different drivers and should have separate notebook tables.
+- Measure internal cavity dimensions at three locations along each axis and
+  record the mean and spread. Photograph or sketch the speaker and microphone
+  locations, since coupling can hide modes even when their frequencies are
+  unchanged.
+- Check the microphone response with the cavity open, then close and seal every
+  removable panel. Record sample rate, sweep rate, drive amplitude, microphone
+  gain, and room temperature.
+- Predict and tabulate the first ten cavity frequencies before sweeping. Add
+  columns for observed peak, linewidth, amplitude, proposed $(n_x,n_y,n_z)$,
+  residual, and confidence in the assignment.
+- For the Chladni plate, start with a very thin, even sand layer and low drive
+  amplitude. Increase amplitude only enough to move the grains; excessive
+  drive mixes modes and throws sand from the plate.
+
 ### Part A — The mode spectrum
 
 1. Measure $L_x$, $L_y$, $L_z$ to the inside faces, with uncertainties.

@@ -183,6 +183,25 @@ Two fixed geometries. (a) The short-lived $^{137m}$Ba planchet counted at close,
 
 ## Procedure
 
+### Before you start the timed runs
+
+- Identify the two independent geometries in [](#fig:exp13-counting): the
+  generator eluate directly beneath the GM tube for half-life and the sealed
+  source–absorber–tube line for attenuation. Record dimensions for each and do
+  not transfer distances from the schematic.
+- Verify the counter clock and repeat mode with ten short test intervals. Make
+  sure it stores each interval separately and records live time rather than
+  only the total or wall-clock time.
+- Prepare three machine-readable tables: repeated counts, decay time series,
+  and attenuation. Include raw counts, start time, live time, source,
+  absorber, geometry, high voltage, and run ID in every applicable row.
+- Measure background in the geometry used for each part. Record raw background
+  counts and duration; do not enter a pre-subtracted rate into the primary
+  data file.
+- Plan source handling before elution, including who starts the counter and who
+  records the elution time. Rehearse once without activity so the first decay
+  point is not lost to confusion.
+
 ### Part A — The statistics of counting
 
 1. Set the operating voltage from the plateau, as in [](#exp-beta-electrons).

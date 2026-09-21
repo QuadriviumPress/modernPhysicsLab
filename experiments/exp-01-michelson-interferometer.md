@@ -179,6 +179,21 @@ The Michelson interferometer. The beamsplitter sends light down two perpendicula
 
 ## Procedure
 
+### Before you align
+
+- Use [](#fig:exp01-michelson) to identify the two arms, the fixed-mirror
+  adjustment, and the micrometer drive. The drawing is a beam-path guide, not
+  a scale drawing; measure both arm lengths on your own instrument.
+- Draw a top view of your actual setup in the notebook. Mark the beam height,
+  every beam block, which mirror moves, and the positive micrometer direction.
+- Make a table with columns for run, direction of travel, initial and final
+  micrometer readings, fringe count, and comments. Leave room for five runs.
+- Check that every mount is clamped, the beamsplitter is seated, and the laser
+  terminates on a screen or block. Remove reflective jewellery before the
+  laser is switched on.
+- Decide who will turn the micrometer and who will count. Do not exchange jobs
+  during a run; stop and restart a run if either person loses the count.
+
 ### Part A — Alignment
 
 1. With the beam-expanding lens **removed**, send the raw laser beam into the

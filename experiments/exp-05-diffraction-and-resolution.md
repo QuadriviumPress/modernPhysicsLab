@@ -190,6 +190,25 @@ The diffraction bench. The same rail carries every sample in this experiment —
 
 ## Procedure
 
+### Before you take diffraction data
+
+- Use [](#fig:exp05-bench) to plan the common incident beam and the two detector
+  options. The sample shown on a rotation stage represents several different
+  objects; record which slit, aperture, grating, or disc is installed for every
+  file and measurement.
+- Align the rail with no sample present and mark the zero-order beam position.
+  Recheck that mark after every sample change; a shifted zero biases all
+  measured angles and radii.
+- Copy the nominal slit widths, aperture diameters, and grating line density
+  into a table, but keep them labelled “nominal” until compared with your
+  measured values.
+- Record a dark frame and a spatial calibration at the screen plane. For
+  profiles, lock the camera settings or record the photodiode gain and step
+  size so intensities can be compared.
+- For every pattern, save one overview image and one quantitative data set.
+  Note which diffraction orders or minima are visible before changing the
+  apparatus.
+
 ### Part A — Single slit
 
 1. Set $L \approx 2\ \text{m}$ and illuminate a slit of known width.

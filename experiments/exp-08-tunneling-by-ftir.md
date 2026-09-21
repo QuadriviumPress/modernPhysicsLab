@@ -201,6 +201,24 @@ Frustrated total internal reflection. Away from the contact point the reflected 
 
 ## Procedure
 
+### Before you make optical contact
+
+- Identify the incident, reflected, and tunneled ports in
+  [](#fig:exp08-ftir). Place a labelled detector or beam block at every
+  port before switching on the laser.
+- Clean the prism hypotenuse and lens with approved lens tissue. Inspect both
+  under room light; dust creates bright transmission spots that can look like
+  tunneling and can scratch the surfaces when pressure is applied.
+- Mount the lens so it approaches normal to the hypotenuse and cannot slide.
+  Mark the clamp position or record the force setting so contact pressure can
+  be reproduced; never tighten beyond the apparatus limit.
+- Lock camera focus, aperture, and gain. Prepare an exposure log with pressure
+  setting, exposure time, dark-frame name, image name, and saturation note.
+- Record $I_0$ at the transmitted-port detector position with the prism path
+  configured as specified by the apparatus, then record the no-contact stray
+  level without moving that detector. These establish the normalization and
+  usable dynamic range.
+
 ### Part A — Establishing total internal reflection
 
 1. Send the expanded beam into the prism so that it strikes the hypotenuse at

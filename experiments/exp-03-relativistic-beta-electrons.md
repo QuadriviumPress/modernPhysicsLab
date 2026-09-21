@@ -189,6 +189,23 @@ The fixed source-absorber-tube geometry. Swapping absorber thicknesses and readi
 
 ## Procedure
 
+### Before you count
+
+- Match the source, absorber shelf, and GM-tube order to
+  [](#fig:exp03-beta-shelf). Record the shelf number and source-to-window
+  distance; the sketch does not specify those dimensions for your apparatus.
+- Inspect the thin detector window without touching it. Confirm that the source
+  holder, absorber tray, and detector cannot shift when foils are exchanged.
+- List every absorber in increasing areal density and record its labelled
+  value before starting. Keep the foils in that order so that a thickness is
+  never inferred from appearance.
+- Prepare separate tables for the plateau, background, and absorption scan.
+  Every counting row must contain raw counts, live time, high voltage,
+  absorber identity, and geometry notes—not only a displayed count rate.
+- Estimate counting times in advance: choose them so useful absorption points
+  have roughly similar fractional Poisson uncertainty. Ask the instructor to
+  handle or relocate any source not explicitly assigned to students.
+
 ### Part A — The plateau and the operating voltage
 
 1. With the source on the second shelf, ramp the GM high voltage upward in

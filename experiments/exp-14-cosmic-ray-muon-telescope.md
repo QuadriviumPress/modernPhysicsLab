@@ -209,6 +209,26 @@ The two-tube coincidence telescope. Only muons crossing both tubes' overlap volu
 
 ## Procedure
 
+### Before you build the telescope
+
+- Match the stacked-tube geometry, angle definition, adjustable separation,
+  and coincidence electronics to [](#fig:exp14-telescope). Measure active
+  dimensions and centre-to-centre separation on the real instrument; the
+  drawing is intentionally not to scale.
+- Label the tubes and electronic channels permanently. Record plateau voltage,
+  threshold, pulse polarity, pulse width, cable length, and firmware version
+  for each channel before combining them.
+- Synchronize the acquisition computer clock and choose a run-naming scheme
+  containing angle, separation, coincidence window, and start time. Write a
+  metadata line even for control runs.
+- Level the rotation axis, define $0°$ with a plumb line or inclinometer, and
+  mark the tube centres. At each angle confirm that the two active areas remain
+  aligned rather than merely reading the scale.
+- Make a run plan before collecting data: singles, side-by-side control,
+  coincidence-window scan, source control, every angle, and a final return to
+  $0°$. Estimate durations from a short rate test so low-angle and high-angle
+  points reach useful statistical precision.
+
 ### Part A — Build and validate the coincidence unit
 
 1. Set both tubes to their plateau operating voltages, individually, as in

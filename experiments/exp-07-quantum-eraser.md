@@ -188,6 +188,24 @@ The quantum-eraser bench. The EDU-QE1 supplies the laser and optical hardware; a
 
 ## Procedure
 
+### Before you add the polarizers
+
+- Follow the component order in [](#fig:exp07-eraser): expanded beam,
+  double slit with its two path markers, analyzer, then detector. Record the
+  transmission-axis direction of each polarizer; the dashed axes in the figure
+  are orientation cues, not factory calibration marks.
+- Centre the expanded beam on both slits and mark the detector position. Once
+  the baseline is satisfactory, tape or clamp every component except the
+  analyzer rotation mount.
+- Lock camera exposure, gain, focus, and region of interest. Take a dark frame
+  and a flat background, and keep those settings unchanged through Parts A–D.
+- Create a file-naming scheme containing analyzer angle and trial number.
+  Prepare a table for angle, $I_{\max}$, $I_{\min}$, visibility, distinguishability,
+  exposure, and file name.
+- Define $0°$ using extinction through one slit before collecting profiles.
+  Approach each requested angle from the same rotation direction to limit
+  mount backlash.
+
 ### Part A — The baseline pattern
 
 1. Assemble the kit per its manual: laser, beam expander, double slit,
