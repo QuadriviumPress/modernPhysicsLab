@@ -87,7 +87,7 @@ rather than averaging four separate estimates.
 
 ```{figure} ../images/exp10-energy-levels-concept.svg
 :label: fig:exp10-energy-levels
-:alt: Hydrogen energy levels from n=1 to the continuum, with the four Balmer transitions from n=3,4,5,6 down to n=2 marked in color, and one representative Lyman and Paschen transition shown in gray for context.
+:alt: Hydrogen energy levels from n=1 to the continuum, with the four Balmer transitions from n=3,4,5,6 down to n=2 marked in colour, and one representative Lyman and Paschen transition shown in grey for context.
 
 The Balmer series is one column in a larger structure: every visible line you measure is a transition landing on $n=2$; Lyman lines land on $n=1$ (in the UV) and Paschen lines on $n=3$ (in the IR) — neither visible to the eye, which is why Balmer's formula came first.
 ```

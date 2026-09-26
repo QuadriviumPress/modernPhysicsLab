@@ -165,8 +165,8 @@ All PASCO prices are before PASCO's current 5% tariff surcharge.
 
 | Item | Supplier | Part # | Approx. price | Notes |
 |---|---|---|---|---|
-| Spectrometer kit, fiber input | Thorlabs | EDU-SPEB2 + EDU-SPEBCT1 or calibrated USB spectrometer | **$2,246.39 + $1,816.83** | Quantitative detector and fiber/cuvette coupling required |
-| Cuvette holder, SMA905 fiber adapter | Thorlabs | CVH100/M | **$490** (confirmed) | Add CVH100-COL SMA-to-SM1 adapter ($88) if a different collimating lens is needed |
+| Spectrometer kit, fibre input | Thorlabs | EDU-SPEB2 + EDU-SPEBCT1 or calibrated USB spectrometer | **$2,246.39 + $1,816.83** | Quantitative detector and fibre/cuvette coupling required |
+| Cuvette holder, SMA905 fibre adapter | Thorlabs | CVH100/M | **$490** (confirmed) | Add CVH100-COL SMA-to-SM1 adapter ($88) if a different collimating lens is needed |
 | Broadband white LED or tungsten source | Thorlabs | SLS201L/M stabilized tungsten-halogen | **$1,283.79** | Or a Digi-Key white LED for a cheaper start |
 | Excitation LEDs: 405, 470 nm, 365 nm UV | Thorlabs (405 nm: M405L4) or Digi-Key | M405L4 | **$274.16** (M405L4) / ~$2 each (Digi-Key THT) | 365 nm UV needed specifically for quinine sulfate; M405L4 needs a current driver (LEDD1B class) |
 | Long-pass filter | Thorlabs | FEL0450 or similar colored-glass longpass | ~$115 | 450 nm cut-on |

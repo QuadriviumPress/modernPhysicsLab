@@ -24,7 +24,7 @@ adequate protection.
    teaching laboratory happens when someone bends down to look along the beam.
    Work standing, or raise the bench, but keep your head above the beam plane.
 2. **Remove watches, rings, and badges** before reaching over the table.
-   Specular reflection from jewelry is the second most common mechanism.
+   Specular reflection from jewellery is the second most common mechanism.
 3. **Terminate the beam.** Every beam path ends on a beam block or a diffusing
    card, not on a wall, a window, or a neighbouring group's bench.
 4. **Beam off while you reconfigure.** Block or switch off the source before

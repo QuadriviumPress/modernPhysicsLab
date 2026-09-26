@@ -12,7 +12,7 @@ numbering:
 :class: seealso
 
 **Accompanies** Chapter 12, *Molecular Structure*
-**Apparatus** Quantitative spectrometer with fiber/cuvette coupling, UV/blue LEDs, cuvettes, fluorescein or quinine solutions
+**Apparatus** Quantitative spectrometer with fibre/cuvette coupling, UV/blue LEDs, cuvettes, fluorescein or quinine solutions
 **You will measure** absorption and emission spectra, a molar absorptivity, and a Stokes shift
 **Report** Short
 :::
