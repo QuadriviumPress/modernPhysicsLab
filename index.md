@@ -29,7 +29,7 @@ and to be analyzed in Python rather than in a proprietary application.
 * - 2
   - [The Speed of Light](#exp-speed-of-light)
   - 2
-  - $c$ by time of flight over a few metres
+  - $c$ by time of flight over a few meters
 * - 3
   - [Relativistic Electrons from Beta Decay](#exp-beta-electrons)
   - 3

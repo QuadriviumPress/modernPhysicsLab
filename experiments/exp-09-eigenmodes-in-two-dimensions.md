@@ -36,7 +36,7 @@ Read §9.1–9.4. The particle in a three-dimensional box is the first genuinely
 three-dimensional quantum problem in the book, and everything interesting
 about it — separation of variables, three quantum numbers, degeneracy from
 symmetry, and the lifting of that degeneracy when the symmetry is broken — has
-an exact acoustic analogue you can hear and measure this afternoon.
+an exact acoustic analog you can hear and measure this afternoon.
 
 The Helmholtz equation for a sound wave in a rigid cavity,
 
@@ -124,7 +124,7 @@ that the correction is needed.
 :label: fig:exp09-mode-counting
 :alt: A grid of lattice points in the positive n_x, n_y quadrant, with a quarter-circle arc marking a constant-frequency contour; the points inside the arc are the modes below that frequency, and their count is approximately the area of the quarter disk.
 
-Mode counting, shown in two dimensions for legibility: each lattice point $(n_x,n_y)$ is one mode, and the number below a given frequency is (to leading order) the area of the quarter disk of radius $R \propto f$ that contains it — the 2D analogue of the octant-of-an-ellipsoid argument behind [](#eq-dos).
+Mode counting, shown in two dimensions for legibility: each lattice point $(n_x,n_y)$ is one mode, and the number below a given frequency is (to leading order) the area of the quarter disk of radius $R \propto f$ that contains it — the 2D analog of the octant-of-an-ellipsoid argument behind [](#eq-dos).
 ```
 
 Differentiating, the density of states grows as $f^2$. That $f^2$ is precisely
@@ -185,7 +185,7 @@ resolvable? This tells you where to stop taking data.
   $30 \times 20 \times 15\ \text{cm}$, with a small speaker sealed into one
   corner and a microphone port in the opposite corner. **Corners are
   essential** — every mode has an antinode at a corner, so a corner-mounted
-  driver and receiver couple to all of them. A driver at the centre of a face
+  driver and receiver couple to all of them. A driver at the center of a face
   is deaf to half the spectrum.
 - A close-fitting insert or movable partition, to change one dimension
 - Small full-range speaker and amplifier
@@ -340,7 +340,7 @@ the acoustic data, and why?
 
 Report the measured degeneracy splitting as a function of detuning. Explain
 the analogy with the Zeeman effect: what plays the role of the magnetic field,
-what plays the role of $m_\ell$, and what is the analogue of the $g$-factor?
+what plays the role of $m_\ell$, and what is the analog of the $g$-factor?
 :::
 
 :::{exercise}

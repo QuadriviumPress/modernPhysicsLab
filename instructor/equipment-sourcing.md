@@ -67,7 +67,7 @@ All PASCO prices are before PASCO's current 5% tariff surcharge.
 |---|---|---|---|---|
 | GM counter with counter/timer | PASCO | PS-3238 Wireless Geiger Counter | $265 | Replaces discontinued SN-7927A; needs SPARKvue/Capstone — fine here, unlike Exp 14 |
 | Sealed ⁹⁰Sr/⁹⁰Y source, ~1 µCi | PASCO | SN-9796 | $68 | US NRC license-exempt sealed disk; confirm local rules outside the US |
-| Aluminium absorber set | PASCO | SN-8111 (Qty. 20) | **$339** | 4 lead / 2 plastic / 10 Al / 2 polyethylene / 2 Al-foil, 5–7200 mg/cm² |
+| Aluminum absorber set | PASCO | SN-8111 (Qty. 20) | **$339** | 4 lead / 2 plastic / 10 Al / 2 polyethylene / 2 Al-foil, 5–7200 mg/cm² |
 | Source tongs | PASCO or Spectrum Techniques | — | ~$20–40 | |
 | Micrometer + balance | Generic lab supply | — | ~$30–80 (micrometer) if buying new | Likely already on hand |
 
@@ -165,8 +165,8 @@ All PASCO prices are before PASCO's current 5% tariff surcharge.
 
 | Item | Supplier | Part # | Approx. price | Notes |
 |---|---|---|---|---|
-| Spectrometer kit, fibre input | Thorlabs | EDU-SPEB2 + EDU-SPEBCT1 or calibrated USB spectrometer | **$2,246.39 + $1,816.83** | Quantitative detector and fibre/cuvette coupling required |
-| Cuvette holder, SMA905 fibre adapter | Thorlabs | CVH100/M | **$490** (confirmed) | Add CVH100-COL SMA-to-SM1 adapter ($88) if a different collimating lens is needed |
+| Spectrometer kit, fiber input | Thorlabs | EDU-SPEB2 + EDU-SPEBCT1 or calibrated USB spectrometer | **$2,246.39 + $1,816.83** | Quantitative detector and fiber/cuvette coupling required |
+| Cuvette holder, SMA905 fiber adapter | Thorlabs | CVH100/M | **$490** (confirmed) | Add CVH100-COL SMA-to-SM1 adapter ($88) if a different collimating lens is needed |
 | Broadband white LED or tungsten source | Thorlabs | SLS201L/M stabilized tungsten-halogen | **$1,283.79** | Or a Digi-Key white LED for a cheaper start |
 | Excitation LEDs: 405, 470 nm, 365 nm UV | Thorlabs (405 nm: M405L4) or Digi-Key | M405L4 | **$274.16** (M405L4) / ~$2 each (Digi-Key THT) | 365 nm UV needed specifically for quinine sulfate; M405L4 needs a current driver (LEDD1B class) |
 | Long-pass filter | Thorlabs | FEL0450 or similar colored-glass longpass | ~$115 | 450 nm cut-on |
@@ -181,7 +181,7 @@ All PASCO prices are before PASCO's current 5% tariff surcharge.
 | Cs-137/Ba-137m isotope generator kit | PASCO | SN-7995 | **$339** (confirmed) | Includes generator, eluting solution, syringe, 5 planchets |
 | Extra eluting solution / planchets | United Nuclear or Spectrum Techniques (PASCO spares by quote) | — | ~$29 (250 mL eluting) / ~$69 (100 planchets) | Consumable — reorder yearly |
 | Long-lived check source, Cs-137, 5 µCi | PASCO | SN-9795 | $125 | US license-exempt sealed disk |
-| Lead sheets / aluminium absorbers | PASCO | SN-8111 | **$339** | Shared with Exp 3; aluminium thickness is not enough for four 662-keV half-value layers, so Exp 13 uses the available range |
+| Lead sheets / aluminum absorbers | PASCO | SN-8111 | **$339** | Shared with Exp 3; aluminum thickness is not enough for four 662-keV half-value layers, so Exp 13 uses the available range |
 | Collimator | Fabricated (lead pipe or brass stock) | — | ~$15–40 materials | Improves the narrow-beam approximation substantially |
 
 ## Experiment 14 — A Cosmic-Ray Muon Telescope
@@ -192,7 +192,7 @@ All PASCO prices are before PASCO's current 5% tariff surcharge.
 | Matched two-channel high-voltage supply and enclosure | Specialist radiation-electronics supplier | — | ~$200–500 | Required for the bare-tube route; include current limiting, shielding, interlocks, and documented pulse output |
 | Microcontroller | Adafruit or SparkFun | Arduino Uno R4, or Raspberry Pi Pico | ~$20–28 | |
 | Per-tube pulse-shaping components (limiting resistor, clamp diode pair, comparator) | Digi-Key or Mouser | e.g. LM339 comparator, 1N4148 diodes | <$5 per channel | |
-| Lead absorber sheets | PASCO | SN-8111 | Shared with Exp 3/13 ($339) | Adequate for the lead range study; aluminium thickness is limited, so Exp 13 must state that limitation |
+| Lead absorber sheets | PASCO | SN-8111 | Shared with Exp 3/13 ($339) | Adequate for the lead range study; aluminum thickness is limited, so Exp 13 must state that limitation |
 | Rotating mount / rigid frame at measured zenith angles | Fabricated locally | — | ~$30–80 materials | Long unattended counting periods — see `instructor/README.md`'s "Long-running experiments" note |
 
 ## Shared across multiple experiments
@@ -208,4 +208,4 @@ Buying one of each of these covers several weeks and avoids duplicate orders:
 | Neutral-density filter kit | Exp 7, 8, 11 | Thorlabs | NDC-25C-4 | **$402.93** |
 | Laser safety eyewear | Exp 1, 2, 4, 5, 7, 8 | Thorlabs | LG9 / LG10 | **$244.33** each |
 | Spectrometer kit | Exp 6, 10, 11, 12 | Thorlabs | EDU-SPEB2 | **$2,246.39** |
-| Lead / aluminium absorber set | Exp 3, 13, 14 | PASCO | SN-8111 | **$339** |
+| Lead / aluminum absorber set | Exp 3, 13, 14 | PASCO | SN-8111 | **$339** |

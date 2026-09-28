@@ -12,7 +12,7 @@ numbering:
 :class: seealso
 
 **Accompanies** Chapter 13, *Nuclear Physics*
-**Apparatus** Geiger–Müller counter, $^{137}$Cs/$^{137m}$Ba isotope generator, lead and aluminium absorbers
+**Apparatus** Geiger–Müller counter, $^{137}$Cs/$^{137m}$Ba isotope generator, lead and aluminum absorbers
 **You will measure** the Poisson character of radioactive decay, the half-life of $^{137m}$Ba, and a gamma attenuation coefficient
 **Report** Short
 :::
@@ -107,7 +107,7 @@ scattering**, which scales roughly with electron density and therefore with
 $Z/A$ — nearly constant across the periodic table. In lead, the higher-$Z$
 photoelectric contribution is also significant. The NIST mass attenuation
 coefficients at $662\ \text{keV}$ are about $0.111\ \text{cm}^2/\text{g}$ for
-lead and $0.0745\ \text{cm}^2/\text{g}$ for aluminium, giving narrow-beam
+lead and $0.0745\ \text{cm}^2/\text{g}$ for aluminum, giving narrow-beam
 half-value layers of roughly $5.5\ \text{mm}$ and $34\ \text{mm}$
 respectively. Look these up yourself in XCOM rather than taking them from
 here.
@@ -163,7 +163,7 @@ and what does that imply for the early part of your decay curve?
   gloves, tray
 - Long-lived check source ($^{137}$Cs or $^{60}$Co sealed button) for the
   attenuation measurement
-- Lead sheets ($1$–$10\ \text{mm}$) and the available aluminium absorber set
+- Lead sheets ($1$–$10\ \text{mm}$) and the available aluminum absorber set
 - Collimator, if available
 - Stopwatch; the source log
 
@@ -244,8 +244,8 @@ counts and confirm they are near 3 and 30 before committing to the full runs.
     spanning zero to about four half-value layers. Increase the counting time
     as the rate falls, aiming for a comparable relative uncertainty at every
     point.
-12. Repeat with aluminium over the full thickness supplied. This set does not
-    provide four aluminium half-value layers at 662 keV, so report the
+12. Repeat with aluminum over the full thickness supplied. This set does not
+    provide four aluminum half-value layers at 662 keV, so report the
     measured range and fit a mass attenuation coefficient only over that
     range; do not claim a four-HVL comparison.
 13. Measure the background with the source removed and the absorbers in place.
@@ -320,7 +320,7 @@ wrong.
 
 Fit $R(x) = R_0e^{-\mu x} + R_{\text{bg}}$ for each material, and convert to a
 half-value layer and to a mass attenuation coefficient $\mu/\rho$. Compare
-$\mu/\rho$ for lead and aluminium: if Compton scattering dominates, the two
+$\mu/\rho$ for lead and aluminum: if Compton scattering dominates, the two
 mass attenuation coefficients should be much closer to each other than the two
 linear coefficients are.
 
@@ -353,7 +353,7 @@ mid-interval correction, and whether each mattered.
 :::{exercise}
 :label: q-count-08
 
-Report $\mu$ and $\mu/\rho$ for lead and aluminium. Compare the two $\mu/\rho$
+Report $\mu$ and $\mu/\rho$ for lead and aluminum. Compare the two $\mu/\rho$
 values and use the comparison to argue which interaction mechanism dominates
 at $662\ \text{keV}$. Look up the NIST XCOM values and compare.
 :::
@@ -384,7 +384,7 @@ actually setting that uncertainty, and what would and would not reduce it.
 - **Two-source dead-time measurement.** Count source A, source B, and both
   together. Because $R_{A+B} < R_A + R_B$ when counts are lost, the deficit
   gives $\tau_d$ without any assumption about the counter's electronics.
-- **Gamma spectroscopy.** A scintillator and a multichannel analyser resolve
+- **Gamma spectroscopy.** A scintillator and a multichannel analyzer resolve
   the $662\ \text{keV}$ photopeak from the Compton continuum and edge, letting
   you verify the Compton formula from Chapter 6 with the same source. Compute
   the expected Compton edge at $478\ \text{keV}$ and look for it.

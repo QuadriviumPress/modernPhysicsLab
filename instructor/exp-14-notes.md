@@ -90,7 +90,7 @@ Full-report criteria, plus:
   agree numerically. This is question 8 and it is the course's closing idea.
 - Reward the Monte Carlo acceptance heavily; it is how real detector
   acceptances are computed and few undergraduates ever do one.
-- Question 9 (why a muon traverses kilometres of atmosphere and an electron
+- Question 9 (why a muon traverses kilometers of atmosphere and an electron
   cannot): the answer is that the muon is $207$ times heavier, so
   bremsstrahlung — which scales as $1/m^2$ — is suppressed by a factor of
   $\sim4\times10^{4}$, leaving ionization as its only significant loss. It

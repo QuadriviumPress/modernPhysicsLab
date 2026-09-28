@@ -170,7 +170,7 @@ comment.
   transmission grating; a reflective grating requires a different geometry)
 - CD, DVD, and if available a Blu-ray disc, with the reflective layer exposed
   or used in reflection
-- Rotation stage or a large protractor and a metre stick, for large angles
+- Rotation stage or a large protractor and a meter stick, for large angles
 - Camera or scanning photodiode; screen
 - Two pinholes on a card with a lamp behind, for the resolution test; a
   calibrated variable iris or aperture set
@@ -200,7 +200,7 @@ The diffraction bench. The same rail carries every sample in this experiment —
   Recheck that mark after every sample change; a shifted zero biases all
   measured angles and radii.
 - Copy the nominal slit widths, aperture diameters, and grating line density
-  into a table, but keep them labelled “nominal” until compared with your
+  into a table, but keep them labeled “nominal” until compared with your
   measured values.
 - Record a dark frame and a spatial calibration at the screen plane. For
   profiles, lock the camera settings or record the photodiode gain and step
@@ -213,7 +213,7 @@ The diffraction bench. The same rail carries every sample in this experiment —
 
 1. Set $L \approx 2\ \text{m}$ and illuminate a slit of known width.
 2. Record the positions of as many minima as you can see on both sides of the
-   centre — at least $m = \pm1$ through $\pm4$. Measuring $m = +4$ to $m = -4$
+   center — at least $m = \pm1$ through $\pm4$. Measuring $m = +4$ to $m = -4$
    and halving is far better than measuring $m = \pm1$ alone.
 3. Take a quantitative profile with the camera or the scanning photodiode, as
    in [](#exp-interference). Watch for saturation.
@@ -228,10 +228,10 @@ the beam profile, not diffraction.
 
 5. Replace the slit with a circular aperture. Photograph the Airy pattern with
    a long enough exposure to see the first ring, and a short enough one to
-   keep the centre unsaturated — take both and combine.
+   keep the center unsaturated — take both and combine.
 6. Measure the radius of the first dark ring, and extract $D$ from
    [](#eq-diff-airy). Compare with a direct measurement of the aperture under
-   a travelling microscope if one is available.
+   a traveling microscope if one is available.
 
 ### Part C — The grating
 
@@ -257,7 +257,7 @@ the beam profile, not diffraction.
 
 ### Part E — Resolution
 
-13. Set up two closely spaced pinholes, back-illuminated, several metres away.
+13. Set up two closely spaced pinholes, back-illuminated, several meters away.
 14. View them through a variable iris. Close the iris until the two merge into
     one, and record the iris diameter at that point.
 15. Repeat three times, and have your partner do it independently — this is a
@@ -282,7 +282,7 @@ import numpy as np
 from scipy.optimize import curve_fit
 
 m  = np.array([-4, -3, -2, -1, 1, 2, 3, 4])
-y  = np.array([...])            # minima positions relative to centre, metres
+y  = np.array([...])            # minima positions relative to center, meters
 sy = np.array([...])
 sin_th  = y / np.sqrt(y**2 + L**2)
 ssin_th = sy * L**2 / (y**2 + L**2)**1.5      # propagate through the geometry
@@ -360,15 +360,15 @@ $0.32\ \mu\text{m}$. If you *did* find one, explain what you actually saw.
 ## Going further
 
 - **Babinet's principle.** Replace the slit with a wire of the same width. The
-  diffraction patterns are identical away from the centre — a result that
+  diffraction patterns are identical away from the center — a result that
   surprises everyone the first time and follows in one line from linearity of
   the wave equation. Measuring a wire diameter this way is a genuinely useful
   technique.
-- **Measure a hair, a spider silk, or a fibre.** Same principle, and it
+- **Measure a hair, a spider silk, or a fiber.** Same principle, and it
   connects directly to the air-wedge measurement of Week 4. Two independent
   measurements of the same hair make a nice paragraph in a report.
 - **Poisson's bright spot.** Put an opaque circular obstacle in an expanded
-  clean beam and look at the centre of its shadow. The bright spot there was
+  clean beam and look at the center of its shadow. The bright spot there was
   advanced in 1818 as a *reductio ad absurdum* against Fresnel's wave theory,
   and then observed. It requires a clean beam and a good circular edge, and it
   is worth the trouble.

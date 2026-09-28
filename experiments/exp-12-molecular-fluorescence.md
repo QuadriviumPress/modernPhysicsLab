@@ -12,7 +12,7 @@ numbering:
 :class: seealso
 
 **Accompanies** Chapter 12, *Molecular Structure*
-**Apparatus** Quantitative spectrometer with fibre/cuvette coupling, UV/blue LEDs, cuvettes, fluorescein or quinine solutions
+**Apparatus** Quantitative spectrometer with fiber/cuvette coupling, UV/blue LEDs, cuvettes, fluorescein or quinine solutions
 **You will measure** absorption and emission spectra, a molar absorptivity, and a Stokes shift
 **Report** Short
 :::
@@ -140,7 +140,7 @@ the vibrational relaxation, the emission transition, and the Stokes shift.
 ## Apparatus
 
 - EDU-SPEB2 with the EDU-SPEBCT1 scanning detector extension, or a calibrated
-  USB spectrometer with fibre input and a cuvette holder; the EDU-SPEB2 viewing
+  USB spectrometer with fiber input and a cuvette holder; the EDU-SPEB2 viewing
   screen alone cannot record absorbance or emission spectra
 - Broadband white LED or tungsten lamp, for the absorption measurement
 - Excitation LEDs: $405\ \text{nm}$ and $470\ \text{nm}$, and a $365\ \text{nm}$
@@ -183,7 +183,7 @@ Two geometries, one cuvette. (a) Excitation at 90 degrees to detection, with a l
   next solution, fill to the same height, remove bubbles, and wipe the clear
   faces with lint-free tissue before every reading.
 - Warm up the light sources and spectrometer, then record integration time,
-  gain, fibre position, filter, and file name. Clamp the fibres so geometry
+  gain, fiber position, filter, and file name. Clamp the fibers so geometry
   cannot drift across the concentration series.
 - Define a saturation threshold and a minimum useful signal before collecting
   the series. Retake dark, blank, and reference data whenever integration time,
@@ -220,12 +220,12 @@ feature later.
 
 7. Choose a dilute sample, $A \lesssim 0.1$ at the excitation wavelength. This
    matters: at higher absorbance the excitation is absorbed in the first
-   millimetre of the cuvette and the emitted light is re-absorbed on its way
+   millimeter of the cuvette and the emitted light is re-absorbed on its way
    out — the **inner filter effect** — which distorts the emission spectrum
    toward longer wavelengths and will fake a larger Stokes shift.
 8. Illuminate from the side, at $90°$ to the collection axis, so that
    unabsorbed excitation light does not enter the spectrometer.
-9. Add the long-pass filter in front of the collection fibre.
+9. Add the long-pass filter in front of the collection fiber.
 10. Record the emission spectrum. Record also a blank (solvent only, same
     excitation) and subtract it — it removes Raman scattering from the solvent
     and any filter fluorescence.
@@ -361,7 +361,7 @@ not violate energy conservation.
   $0.1\ \text{M}$ H$_2$SO$_4$) gives the fraction of absorbed photons that are
   re-emitted. It is a genuinely useful measurement and requires careful
   attention to the absorbance matching between sample and standard.
-- **Iodine vapour.** A sealed I$_2$ cell in a white beam shows hundreds of
+- **Iodine vapor.** A sealed I$_2$ cell in a white beam shows hundreds of
   resolved vibronic lines in absorption. Fitting the band-head spacings to a
   Morse potential gives the vibrational constant $\omega_e$, the anharmonicity
   $\omega_e x_e$, and — by Birge–Sponer extrapolation — the dissociation

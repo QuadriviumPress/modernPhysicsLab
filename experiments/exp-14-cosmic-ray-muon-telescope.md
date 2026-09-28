@@ -61,7 +61,7 @@ $\gamma \approx 20$ are abundant.
 
 ### Why they should not get here
 
-The muon's proper lifetime is $\tau_0 = 2.197\ \mu\text{s}$. Travelling at
+The muon's proper lifetime is $\tau_0 = 2.197\ \mu\text{s}$. Traveling at
 essentially $c$, a muon covers
 
 $$
@@ -76,7 +76,7 @@ $$
 e^{-22.8} \approx 1.2\times10^{-10} .
 $$
 
-Essentially none should arrive. In fact roughly one muon per square centimetre
+Essentially none should arrive. In fact roughly one muon per square centimeter
 per minute arrives at sea level.
 
 ### Why they do
@@ -213,7 +213,7 @@ The two-tube coincidence telescope. Only muons crossing both tubes' overlap volu
 
 - Match the stacked-tube geometry, angle definition, adjustable separation,
   and coincidence electronics to [](#fig:exp14-telescope). Measure active
-  dimensions and centre-to-centre separation on the real instrument; the
+  dimensions and center-to-center separation on the real instrument; the
   drawing is intentionally not to scale.
 - Label the tubes and electronic channels permanently. Record plateau voltage,
   threshold, pulse polarity, pulse width, cable length, and firmware version
@@ -222,7 +222,7 @@ The two-tube coincidence telescope. Only muons crossing both tubes' overlap volu
   containing angle, separation, coincidence window, and start time. Write a
   metadata line even for control runs.
 - Level the rotation axis, define $0°$ with a plumb line or inclinometer, and
-  mark the tube centres. At each angle confirm that the two active areas remain
+  mark the tube centers. At each angle confirm that the two active areas remain
   aligned rather than merely reading the scale.
 - Make a run plan before collecting data: singles, side-by-side control,
   coincidence-window scan, source control, every angle, and a final return to
@@ -403,7 +403,7 @@ that they give the same numerical answer.
 
 The muon is a lepton of the second generation. Using the Standard Model table
 in Chapter 14, state which interactions it participates in and which it does
-not, and explain how that accounts for its ability to traverse kilometres of
+not, and explain how that accounts for its ability to traverse kilometers of
 atmosphere while an electron of the same energy could not.
 :::
 

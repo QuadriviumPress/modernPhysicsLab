@@ -59,11 +59,11 @@ outscores one with a 1% discrepancy and no error analysis.
     apparatus are named. No unnecessary reproduction of the textbook.
 * - **Apparatus and method**
   - 10
-  - A labelled diagram or annotated photograph. Model numbers, controlled
+  - A labeled diagram or annotated photograph. Model numbers, controlled
     quantities, and ranges. A competent reader could repeat the measurement.
 * - **Data and figures**
   - 15
-  - Every figure has labelled axes with units, a caption stating what to
+  - Every figure has labeled axes with units, a caption stating what to
     notice, data as points *with error bars*, and fits as smooth curves.
     Tables carry units and uncertainties. Nothing is plotted outside the
     data's range.
@@ -95,7 +95,7 @@ outscores one with a 1% discrepancy and no error analysis.
 These are applied on top of the criteria above, because they are habits worth
 breaking early:
 
-- **−5** per figure with an unlabelled axis or a missing unit.
+- **−5** per figure with an unlabeled axis or a missing unit.
 - **−5** per result quoted without an uncertainty.
 - **−5** for uncertainties quoted to more than two significant figures, or
   values carried to more digits than the uncertainty supports.
@@ -123,7 +123,7 @@ Graded four times a semester, 25 points each.
     mistakes struck through and left legible rather than erased or recopied.
 * - **Completeness**
   - 6
-  - Date, partner, apparatus identity, a labelled sketch with dimensions,
+  - Date, partner, apparatus identity, a labeled sketch with dimensions,
     raw readings in the instrument's own units, and settings.
 * - **Uncertainty at the point of measurement**
   - 5

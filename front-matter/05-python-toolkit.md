@@ -167,7 +167,7 @@ import numpy as np, imageio.v3 as iio
 
 img = iio.imread("fringes.png").astype(float)
 if img.ndim == 3:
-    img = img[..., :3].mean(axis=2)          # to greyscale; see the caution below
+    img = img[..., :3].mean(axis=2)          # to grayscale; see the caution below
 row  = slice(540, 560)                        # a band through the pattern
 prof = img[row, :].mean(axis=0)               # averaging the band kills noise
 x_px = np.arange(prof.size)

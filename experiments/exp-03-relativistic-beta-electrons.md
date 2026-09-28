@@ -12,7 +12,7 @@ numbering:
 :class: seealso
 
 **Accompanies** Chapter 3, *Relativistic Dynamics*
-**Apparatus** Geiger–Müller counter, $^{90}$Sr/$^{90}$Y beta source, aluminium absorber set
+**Apparatus** Geiger–Müller counter, $^{90}$Sr/$^{90}$Y beta source, aluminum absorber set
 **You will measure** the beta endpoint energy from an absorption curve, and the speed it implies
 **Report** Short
 :::
@@ -22,7 +22,7 @@ numbering:
 By the end of this experiment you should be able to:
 
 - Measure an absorption curve and extract a maximum range by extrapolation.
-- Convert a range in aluminium into a maximum kinetic energy using an
+- Convert a range in aluminum into a maximum kinetic energy using an
   empirical range–energy relation.
 - Compute $v/c$ for that energy both relativistically and classically, and
   explain why the classical answer is not merely inaccurate but impossible.
@@ -79,7 +79,7 @@ the mass thickness at which the beta contribution disappears into that floor.
 Mass thickness is used rather than physical thickness because energy loss per
 unit mass is nearly the same in all light materials — so a range quoted in
 $\text{mg/cm}^2$ is roughly transferable between absorber materials, which
-physical millimetres are not.
+physical millimeters are not.
 
 ```{figure} ../images/exp03-absorption-curve-concept.svg
 :label: fig:exp03-absorption-curve
@@ -90,7 +90,7 @@ The shape of an absorption curve, on a log rate axis. The early, steep region is
 
 ### From range to energy
 
-Two standard empirical relations connect the maximum range in aluminium to the
+Two standard empirical relations connect the maximum range in aluminum to the
 endpoint energy. **Feather's rule**, valid for $T_{\max} > 0.8\ \text{MeV}$:
 
 $$
@@ -142,8 +142,8 @@ momentum $pc$ in MeV, and the classical $v/c$. Comment on the last one.
 :label: q-beta-02
 
 Use [](#eq-feather) to predict the maximum range of $^{90}$Y betas in
-aluminium, in $\text{g/cm}^2$, and convert it to a physical thickness in
-millimetres ($\rho_{\text{Al}} = 2.70\ \text{g/cm}^3$). Does the absorber set
+aluminum, in $\text{g/cm}^2$, and convert it to a physical thickness in
+millimeters ($\rho_{\text{Al}} = 2.70\ \text{g/cm}^3$). Does the absorber set
 on the bench go thick enough?
 :::
 
@@ -170,8 +170,8 @@ $x$ and mark where the endpoint information lives.
 - GM tube with a thin end window ($\lesssim 2\ \text{mg/cm}^2$ mica) on a
   shelf stand, with counter/timer and high-voltage supply
 - Sealed $^{90}$Sr/$^{90}$Y source, $\sim1\ \mu\text{Ci}$
-- Aluminium absorber set, roughly $5$ to $1200\ \text{mg/cm}^2$
-- Micrometer and balance, to verify the labelled mass thicknesses
+- Aluminum absorber set, roughly $5$ to $1200\ \text{mg/cm}^2$
+- Micrometer and balance, to verify the labeled mass thicknesses
 - Source tongs; the source log sheet
 
 :::{danger}
@@ -182,9 +182,9 @@ Read [](#lab-safety).
 
 ```{figure} ../images/exp03-beta-shelf-schematic.svg
 :label: fig:exp03-beta-shelf
-:alt: A sealed beta source sits on the lowest shelf of a stand, emitting electrons through an interchangeable aluminium absorber stack toward a Geiger–Müller tube connected to a counter and timer.
+:alt: A sealed beta source sits on the lowest shelf of a stand, emitting electrons through an interchangeable aluminum absorber stack toward a Geiger–Müller tube connected to a counter and timer.
 
-The fixed source-absorber-tube geometry. Swapping absorber thicknesses and reading the transmitted count rate through each maps the range of the beta electrons in aluminium.
+The fixed source-absorber-tube geometry. Swapping absorber thicknesses and reading the transmitted count rate through each maps the range of the beta electrons in aluminum.
 ```
 
 ## Procedure
@@ -196,7 +196,7 @@ The fixed source-absorber-tube geometry. Swapping absorber thicknesses and readi
   distance; the sketch does not specify those dimensions for your apparatus.
 - Inspect the thin detector window without touching it. Confirm that the source
   holder, absorber tray, and detector cannot shift when foils are exchanged.
-- List every absorber in increasing areal density and record its labelled
+- List every absorber in increasing areal density and record its labeled
   value before starting. Keep the foils in that order so that a thickness is
   never inferred from appearance.
 - Prepare separate tables for the plateau, background, and absorption scan.
@@ -251,7 +251,7 @@ the count rate starts climbing steeply with voltage, come back down at once.
 9. Continue past the point where the rate stops falling, and take at least
    four points on the flat tail. That tail is what defines the background-plus-
    bremsstrahlung floor, and the extrapolation to it is your measurement.
-10. Verify two or three of the absorbers' labelled mass thicknesses by
+10. Verify two or three of the absorbers' labeled mass thicknesses by
     weighing them and measuring their area. Foil labels are sometimes optimistic.
 
 ## Analysis
@@ -309,7 +309,7 @@ uncertainty badly wrong. See [](#uncertainty).
 :::{important} Do not forget the absorbers you did not add
 The total mass thickness between source and detector includes the GM tube's
 mica window ($\sim2\ \text{mg/cm}^2$, from the tube's data sheet), the air gap
-($1.2\ \text{mg/cm}^2$ per centimetre at room conditions), and any source
+($1.2\ \text{mg/cm}^2$ per centimeter at room conditions), and any source
 cover. For a $3\ \text{cm}$ gap that is another $\sim6\ \text{mg/cm}^2$. It is
 a small correction to $R_m$ but it is a *known* one, so make it and say so.
 :::
@@ -399,7 +399,7 @@ range method does not? Under what circumstances would it be the better choice?
   curves is the justification for using mass thickness at all — and the
   deviation for copper is a direct look at the $Z^2$ dependence of
   bremsstrahlung.
-- **The Kurie plot.** With a scintillator and a multichannel analyser instead
+- **The Kurie plot.** With a scintillator and a multichannel analyzer instead
   of a GM tube, the full beta spectrum can be recorded and linearized into a
   Kurie plot, whose intercept gives the endpoint directly and whose shape near
   the endpoint is sensitive to the neutrino mass. This is how the endpoint is

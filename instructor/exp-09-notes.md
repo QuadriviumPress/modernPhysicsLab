@@ -14,7 +14,7 @@ label: inst-exp-09
   assignment step frustrating.
 - **Mount the driver and the microphone in opposite corners.** Every mode has
   a pressure antinode at a corner, so a corner-to-corner geometry couples to
-  all of them. A face-centre driver is blind to every mode with an odd index
+  all of them. A face-center driver is blind to every mode with an odd index
   in that direction, and students will spend the period wondering why half the
   predicted modes are missing.
 - Make a snug insert that shortens $L_x$ by a measured $5$–$10\%$ for Part B.

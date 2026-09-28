@@ -53,7 +53,7 @@ Chladni plates.
 
 **Sources.** $^{90}$Sr/$^{90}$Y ($\sim1\ \mu$Ci), $^{137}$Cs sealed button,
 $^{204}$Tl if the range–energy extension in Exp 3 is used, and the
-$^{137}$Cs/$^{137m}$Ba isotope generator. Check the licence conditions and the
+$^{137}$Cs/$^{137m}$Ba isotope generator. Check the license conditions and the
 inventory log before Week 3.
 
 **Pacing.** Weeks 4, 10, and 14 are the full-report weeks and are the three

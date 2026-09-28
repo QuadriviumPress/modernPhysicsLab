@@ -48,7 +48,7 @@ width over which you could not tell the fringe had moved? You know this at the
 bench and you will be guessing at your desk.
 
 **Tables drawn before they are filled.** A table with a header row and
-labelled units, drawn empty, is a plan. A column of numbers written down the
+labeled units, drawn empty, is a plan. A column of numbers written down the
 margin is a puzzle.
 
 **What went wrong, and what you did.** "First run: photodiode saturated above
@@ -94,7 +94,7 @@ something the reader already accepts. Include the equation you actually use,
 numbered, with every symbol defined. Do not reproduce the whole chapter.
 
 **Apparatus and method.** Enough that a competent reader could repeat it.
-A labelled figure — your sketch, redrawn, or a photograph with annotations —
+A labeled figure — your sketch, redrawn, or a photograph with annotations —
 does most of this work. Give model numbers and the quantities you controlled.
 
 **Results.** The data, reduced. A figure showing the data *with error bars*
@@ -132,7 +132,7 @@ a success" — the reader will decide that.
 ### On figures
 
 A figure that is not referred to in the text should be deleted. Axes are
-labelled with quantity and unit. Data are points with error bars; fits are
+labeled with quantity and unit. Data are points with error bars; fits are
 lines without markers. Do not use a spreadsheet's default styling, do not
 connect data points with straight segments, and do not plot a fit outside the
 range of the data.

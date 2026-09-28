@@ -194,7 +194,7 @@ The quantum-eraser bench. The EDU-QE1 supplies the laser and optical hardware; a
   double slit with its two path markers, analyzer, then detector. Record the
   transmission-axis direction of each polarizer; the dashed axes in the figure
   are orientation cues, not factory calibration marks.
-- Centre the expanded beam on both slits and mark the detector position. Once
+- Center the expanded beam on both slits and mark the detector position. Once
   the baseline is satisfactory, tape or clamp every component except the
   analyzer rotation mount.
 - Lock camera exposure, gain, focus, and region of interest. Take a dark frame
@@ -371,7 +371,7 @@ diffraction had to wait until 1999.
   decision to erase is made after the light has passed the slits. Nothing
   changes — which is the point, and is the experimental content of Wheeler's
   delayed-choice argument.
-- **Quantum key distribution.** The EDU-QCRY1 kit implements a BB84 analogue
+- **Quantum key distribution.** The EDU-QCRY1 kit implements a BB84 analog
   with polarization states. It uses the same physics you have just measured —
   that measuring in the wrong basis destroys information — turned into a
   protocol whose security rests on it.

@@ -61,7 +61,7 @@ For the Balmer series $n_f = 2$, and the visible lines are
 * - Line
   - Transition
   - Accepted $\lambda$ (air, nm)
-  - Colour
+  - Color
 * - H$\alpha$
   - $3 \to 2$
   - 656.279
@@ -87,7 +87,7 @@ rather than averaging four separate estimates.
 
 ```{figure} ../images/exp10-energy-levels-concept.svg
 :label: fig:exp10-energy-levels
-:alt: Hydrogen energy levels from n=1 to the continuum, with the four Balmer transitions from n=3,4,5,6 down to n=2 marked in colour, and one representative Lyman and Paschen transition shown in grey for context.
+:alt: Hydrogen energy levels from n=1 to the continuum, with the four Balmer transitions from n=3,4,5,6 down to n=2 marked in color, and one representative Lyman and Paschen transition shown in gray for context.
 
 The Balmer series is one column in a larger structure: every visible line you measure is a transition landing on $n=2$; Lyman lines land on $n=1$ (in the UV) and Paschen lines on $n=3$ (in the IR) — neither visible to the eye, which is why Balmer's formula came first.
 ```
@@ -165,7 +165,7 @@ uncertainty is that? Compare with the resolving power you computed in
 - Mercury and helium discharge tubes, for calibration
 - Either: a constant-deviation or grating spectrometer with a vernier
   circle, or the Thorlabs EDU-SPEB2 spectrometer kit, or a compact USB
-  spectrometer with a fibre input. For quantitative detector scans, use the
+  spectrometer with a fiber input. For quantitative detector scans, use the
   EDU-SPEBCT1 extension or the USB spectrometer.
 - Entrance slit of adjustable width
 - Thermometer and barometer, if you intend to make the air-index correction
@@ -196,12 +196,12 @@ The grating spectrometer. Collimated light from the entrance slit meets the grat
   recommended time. Keep high-voltage lamp leads covered and switch the supply
   off before changing tubes.
 - Focus the entrance slit first, then the collimator, and finally the detector
-  or telescope. Record slit width and never change focus or fibre placement
+  or telescope. Record slit width and never change focus or fiber placement
   between calibration and hydrogen measurements.
 - Prepare a calibration table containing lamp, accepted wavelength, measured
   angle or pixel, approach direction, trial, residual, and uncertainty. Keep a
   separate table for unassigned features so they are not silently discarded.
-- Choose a consistent line-centre rule—centroid, fitted peak, or midpoint of a
+- Choose a consistent line-center rule—centroid, fitted peak, or midpoint of a
   symmetric visual line—and use it for both calibration and Balmer lines.
 
 ### Part A — Calibration
@@ -230,12 +230,12 @@ repaired at the analysis stage.
 
 6. Replace the calibration lamp with the hydrogen tube, *without disturbing
    the spectrometer in any way*. Any adjustment to the slit position, the
-   grating angle, or the fibre invalidates the calibration.
+   grating angle, or the fiber invalidates the calibration.
 7. Measure each of the four Balmer lines. Measure each **at least five times**,
    approaching from alternating directions to expose backlash in the vernier.
 8. H$\delta$ is faint. Widen the slit for it if necessary, but then re-measure
    H$\alpha$ at the same slit width, so you can check whether the slit width
-   shifts the apparent line centre.
+   shifts the apparent line center.
 9. Watch for the strong molecular hydrogen bands — the tube emits from H$_2$
    as well as H, giving a rich fine structure that is *not* the Balmer series.
    The Balmer lines are sharp and bright; the molecular bands are broad and
@@ -262,7 +262,7 @@ import numpy as np
 from scipy.optimize import curve_fit
 
 ni  = np.array([3, 4, 5, 6])
-lam = np.array([...])                 # measured, metres, VACUUM
+lam = np.array([...])                 # measured, meters, VACUUM
 slam= np.array([...])
 
 x   = 0.25 - 1.0 / ni**2

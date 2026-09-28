@@ -8,7 +8,7 @@ label: inst-exp-07
 
 ## The point to defend
 
-Every year some students will write that they observed quantum behaviour or
+Every year some students will write that they observed quantum behavior or
 single-photon interference. They did not: a milliwatt-class laser is a
 classical field, and every result in this experiment follows from classical
 electromagnetism with polarized waves. The handout says so in an

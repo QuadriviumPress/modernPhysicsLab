@@ -34,9 +34,9 @@ By the end of this experiment you should be able to:
 ## Textbook connection
 
 Read §2.1–2.3. Einstein's second postulate makes $c$ the same in every
-inertial frame; since 1983 the metre has been *defined* so that
+inertial frame; since 1983 the meter has been *defined* so that
 $c = 299\,792\,458\ \text{m/s}$ exactly. You are therefore not measuring a
-constant of nature this afternoon — you are calibrating your metre stick
+constant of nature this afternoon — you are calibrating your meter stick
 against your oscilloscope. That is a slightly deflating way to put it, and it
 is worth being clear-eyed about, because it is exactly the kind of
 definitional shift that Chapter 2 argues relativity forced on physics.
@@ -45,7 +45,7 @@ definitional shift that Chapter 2 argues relativity forced on physics.
 
 ### Time of flight
 
-Light emitted at time $t_0$ and detected after travelling a distance $L$
+Light emitted at time $t_0$ and detected after traveling a distance $L$
 arrives at
 
 $$
@@ -85,15 +85,15 @@ The slope-fit trick. $\tau$ shifts every point up by the same fixed amount, so i
 
 ### What limits you
 
-An oscilloscope of analogue bandwidth $B$ has a 10–90% rise time of about
+An oscilloscope of analog bandwidth $B$ has a 10–90% rise time of about
 
 $$
 t_r \approx \frac{0.35}{B},
 $$ (eq-sol-risetime)
 
 so a $100\ \text{MHz}$ instrument smears every edge over roughly
-$3.5\ \text{ns}$ — about a metre of light travel. This does *not* mean you
-cannot do better than a metre. A smeared edge can still be *located* to a
+$3.5\ \text{ns}$ — about a meter of light travel. This does *not* mean you
+cannot do better than a meter. A smeared edge can still be *located* to a
 fraction of its rise time, because averaging many acquisitions beats down the
 noise on the edge and the scope interpolates between samples. In practice,
 with 128-fold averaging and a stable trigger, locating an edge to $\sim0.2$–$0.5\ \text{ns}$
@@ -155,7 +155,7 @@ determining, and why the experiment is still worth doing.
   gate-driver. A microcontroller GPIO pin alone is too slow; use the driver.
 - Function generator or microcontroller producing the drive pulse
 - Two photodiodes with fast amplifiers (target bandwidth at least 200 MHz;
-  a 12 MHz PDA36A2 is too slow for the 3.3 ns-per-metre delay used here)
+  a 12 MHz PDA36A2 is too slow for the 3.3 ns-per-meter delay used here)
 - Oscilloscope, $\ge 100\ \text{MHz}$, with averaging
 - Two front-surface mirrors on adjustable mounts, to fold the path
 - Tape measure ($\pm 2\ \text{mm}$) and a target card
@@ -197,7 +197,7 @@ The time-of-flight bench. A fast pulse is split into a short reference path and 
 ### Part A — Setting up the two channels
 
 1. Mount the source. Split a small fraction of its output onto the
-   **reference** photodiode a few centimetres away — a glass slide at $45°$ is
+   **reference** photodiode a few centimeters away — a glass slide at $45°$ is
    enough. This channel defines $t_0$ and removes any drift in the source's
    turn-on time.
 2. Send the main beam across the room, fold it with the two mirrors, and bring
@@ -210,7 +210,7 @@ The time-of-flight bench. A fast pulse is split into a short reference path and 
 
 **[ ] Checkpoint 1.** Show the instructor two clean,
 averaged edges with a stable trigger. If the signal edge is noisy, the beam is
-not centred on the detector — walk the mirrors, do not turn up the gain.
+not centered on the detector — walk the mirrors, do not turn up the gain.
 
 ### Part B — The delay measurement
 
@@ -229,7 +229,7 @@ not centred on the detector — walk the mirrors, do not turn up the gain.
    large a range as the room allows.**
 
 :::{warning}
-Every time you move a mirror you must re-centre the beam on the detector. A
+Every time you move a mirror you must re-center the beam on the detector. A
 beam that lands on the edge of the photodiode produces a smaller, slower pulse
 whose 50% crossing is *later* — a systematic error that grows with path
 length, which is exactly where it does the most damage. Re-peak the signal
@@ -256,8 +256,8 @@ Fit $\Delta t = L/c + \tau$ with both parameters free.
 import numpy as np
 from scipy.optimize import curve_fit
 
-L   = np.array([...])          # total optical path, metres
-sL  = np.array([...])          # uncertainty, metres
+L   = np.array([...])          # total optical path, meters
+sL  = np.array([...])          # uncertainty, meters
 dt  = np.array([...])          # measured delay, seconds
 sdt = np.array([...])          # uncertainty, seconds
 
@@ -286,7 +286,7 @@ uncertainty — so position error is negligible here, and you should say so
 rather than silently ignoring it.
 
 Plot the residuals. A *curved* residual pattern means something depends on
-path length that should not — almost always the beam-centring problem in the
+path length that should not — almost always the beam-centering problem in the
 warning above.
 
 ## Post-lab questions
@@ -338,7 +338,7 @@ source you would need.
 ## Going further
 
 - **Propagation speed in coaxial cable.** Send the same pulse down a long
-  spool of RG-58 and measure the delay per metre. You should get
+  spool of RG-58 and measure the delay per meter. You should get
   $v \approx 0.66c$, and $v = c/\sqrt{\varepsilon_r}$ then gives you the
   dielectric constant of polyethylene. Same apparatus, one extra cable, ten
   minutes.

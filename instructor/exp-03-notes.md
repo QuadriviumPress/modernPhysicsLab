@@ -9,7 +9,7 @@ label: inst-exp-03
 ## Prep (30 min, plus source paperwork)
 
 - Sign out the $^{90}$Sr/$^{90}$Y source and confirm the inventory log.
-- Check the aluminium absorber set is complete and that the labelled mass
+- Check the aluminum absorber set is complete and that the labeled mass
   thicknesses are right. Weigh a few; foils get swapped between kits.
 - Confirm the GM tubes' plateaus and note the correct operating voltages on
   each counter. A tube driven above plateau is destroyed in minutes.
@@ -32,7 +32,7 @@ label: inst-exp-03
   1103\ \text{mg/cm}^2$ for $T_{\max} = 2.28\ \text{MeV}$; Katz–Penfold gives
   $1095\ \text{mg/cm}^2$. Agreement here is better than usual — do not let
   students conclude the two relations always agree.
-- $4.1\ \text{mm}$ of aluminium. Confirm the absorber set actually reaches
+- $4.1\ \text{mm}$ of aluminum. Confirm the absorber set actually reaches
   this; if it stops at $800\ \text{mg/cm}^2$ the extrapolation is a long way
   and the uncertainty balloons. Stacking is fine.
 - Typical student result: $T_{\max} = 2.1$–$2.5\ \text{MeV}$. Accepted

@@ -182,7 +182,7 @@ parameter that sets $\kappa$.
 :::{warning}
 Clean both surfaces immediately before contact and work in as dust-free a spot
 as you can. A single dust particle holds the surfaces apart over its whole
-neighbourhood, and the contact point then sits at an unknown nonzero gap — the
+neighborhood, and the contact point then sits at an unknown nonzero gap — the
 most common failure of this experiment. If your fitted intensity does not
 saturate at small $r$, suspect exactly this.
 :::
@@ -204,7 +204,7 @@ Frustrated total internal reflection. Away from the contact point the reflected 
 ### Before you make optical contact
 
 - Identify the incident, reflected, and tunneled ports in
-  [](#fig:exp08-ftir). Place a labelled detector or beam block at every
+  [](#fig:exp08-ftir). Place a labeled detector or beam block at every
   port before switching on the laser.
 - Clean the prism hypotenuse and lens with approved lens tissue. Inspect both
   under room light; dust creates bright transmission spots that can look like
@@ -239,7 +239,7 @@ You want at least three decades.
    photograph the ring pattern.
 4. Measure the ring radii $r_m$. Dark rings satisfy $r_m^2 = m\lambda R$, so a
    fit of $r_m^2$ against $m$ has slope $\lambda R$ and gives $R$ directly.
-   Use *your* $R$ in the analysis, not the catalogue value.
+   Use *your* $R$ in the analysis, not the catalog value.
 
 ### Part C — The transmission curve
 
@@ -248,7 +248,7 @@ You want at least three decades.
    central spot fading rapidly outward — this is tunneling made visible, and
    its radius is set by $1/\kappa$, not by any aperture.
 7. Take a series of exposures spanning the dynamic range: short exposures for
-   the bright centre, long ones for the tail, with the exposure times recorded
+   the bright center, long ones for the tail, with the exposure times recorded
    so that you can splice them onto a common scale. Take a dark frame for each
    exposure time.
 8. Repeat the whole set at a second, higher clamping pressure. The contact
@@ -275,7 +275,7 @@ $r$ to $d$ with [](#eq-ftir-gap), and fit.
 import numpy as np
 from scipy.optimize import curve_fit
 
-d  = r**2 / (2 * R)                         # metres
+d  = r**2 / (2 * R)                         # meters
 model = lambda d, I0, kappa, floor: I0 * np.exp(-2 * kappa * d) + floor
 
 # Fit in log space only with correct weights; better, fit directly:
@@ -368,13 +368,13 @@ energies range over only a factor of about two. Explain qualitatively how
 
 The optical and quantum problems have the same equation but different boundary
 conditions and different conserved quantities. Name one physical feature of
-the quantum problem that has *no* analogue in the optical experiment.
+the quantum problem that has *no* analog in the optical experiment.
 :::
 
 ## Going further
 
 - **Microwave version.** Two paraffin-wax or acrylic prisms and a $3\ \text{cm}$
-  microwave source make the same measurement at a gap scale of centimetres,
+  microwave source make the same measurement at a gap scale of centimeters,
   where the gap can be set with a ruler. It is far easier to do quantitatively
   and much less visually striking. If a microwave kit is available, doing both
   and comparing the extracted $\kappa$ values in units of $\lambda$ is an

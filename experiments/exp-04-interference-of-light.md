@@ -33,7 +33,7 @@ By the end of this experiment you should be able to:
 
 Read §4.2–4.6. Chapter 4 develops the wave picture of light in the form that
 Chapters 6 and 7 will then have to be reconciled with. Everything you see this
-afternoon is unambiguously wave behaviour, and it will be worth remembering
+afternoon is unambiguously wave behavior, and it will be worth remembering
 in Week 7 that the *same* apparatus, run one photon at a time, produces the
 *same* pattern.
 
@@ -141,7 +141,7 @@ are missing? Sketch the expected pattern.
 
 Using [](#eq-wedge-thickness), how many dark fringes would you expect across
 an air wedge made with a $70\ \mu\text{m}$ hair at $\lambda = 650\ \text{nm}$?
-If the wedge is $4\ \text{cm}$ long, what is the fringe spacing in millimetres?
+If the wedge is $4\ \text{cm}$ long, what is the fringe spacing in millimeters?
 Can you count them by eye, and if not, what would you do?
 :::
 
@@ -158,11 +158,11 @@ have to be true of the two lasers for fringes to appear.
 - Diode laser module, $\lambda \approx 650\ \text{nm}$ (use the value you
   measured in [](#exp-michelson) if the same source, with its uncertainty)
 - Slit set with several $(a, d)$ combinations, and at least one "unknown"
-- Optical rail or metre stick, screen, and a mount for the camera
+- Optical rail or meter stick, screen, and a mount for the camera
 - Camera: a machine-vision USB camera with the lens removed, or a phone with
   manual exposure. A photodiode on a translation stage also works and is
   better calibrated.
-- Two microscope slides, binder clips, a human hair, aluminium foil
+- Two microscope slides, binder clips, a human hair, aluminum foil
 - Diffusing screen; tape measure
 
 :::{danger}
@@ -185,10 +185,10 @@ The interference bench. Laser, slide, and camera share a common rail so the slit
 - Arrange the laser, slit plane, and detector in the order shown in
   [](#fig:exp04-bench). Measure $L$ from the slit plate to the screen or sensor,
   not from the laser or the front of the rail.
-- Inventory the slit plate and copy the labelled $a$ and $d$ values into the
+- Inventory the slit plate and copy the labeled $a$ and $d$ values into the
   notebook. Record which face points toward the laser so an unknown slit can
   be restored to the same orientation.
-- Level the beam through the centre of the slit mount and mark the undeflected
+- Level the beam through the center of the slit mount and mark the undeflected
   beam position on the screen. Install a beam block before removing the
   screen for a camera or photodiode scan.
 - Make a data table with slit ID, $a$, $d$, $L$, exposure or detector gain,
@@ -250,7 +250,7 @@ If it does not, the usual causes are a mis-measured $L$ (measure from the
 ### Part E — Coherence
 
 13. Replace the laser with a white LED behind a narrow single slit
-    (a spatial filter). Fringes should reappear, coloured. Now widen that
+    (a spatial filter). Fringes should reappear, colored. Now widen that
     slit progressively and watch the visibility collapse.
 14. Record the slit width at which fringes become undetectable. This is a
     direct measurement of the spatial coherence condition.
@@ -267,15 +267,15 @@ informative.
 ### The full profile
 
 Convert pixel index to angle using the pixel pitch and $L$, subtract the dark
-frame, and fit [](#eq-int-full) with $a$, $d$, $I_0$, and a centre offset free.
+frame, and fit [](#eq-int-full) with $a$, $d$, $I_0$, and a center offset free.
 
 ```python
 import numpy as np
 from scipy.optimize import curve_fit
 
 def two_slit(y, I0, a, d, y0, bg):
-    """y in metres on the screen; small-angle sin(theta) ~ (y - y0)/L."""
-    s     = (y - y0) / L                       # L defined outside, in metres
+    """y in meters on the screen; small-angle sin(theta) ~ (y - y0)/L."""
+    s     = (y - y0) / L                       # L defined outside, in meters
     alpha = np.pi * a * s / lam
     delta = np.pi * d * s / lam
     env   = np.sinc(alpha / np.pi) ** 2        # np.sinc(x) = sin(pi x)/(pi x)

@@ -24,7 +24,7 @@ By the end of this experiment you should be able to:
 - Measure an LED's turn-on voltage by extrapolating its $I$–$V$ curve, and
   explain why extrapolation is necessary.
 - Measure an LED's emission spectrum and use its peak rather than its nominal
-  colour.
+  color.
 - Extract Planck's constant from the slope of turn-on voltage against inverse
   wavelength, and identify honestly the systematic that limits the result.
 - Determine the exponent in the Stefan–Boltzmann law from a tungsten lamp
@@ -58,7 +58,7 @@ $$ (eq-led-basic)
 
 Below a threshold voltage $V_{\text{on}} \approx E_g/e$ the diode carries
 almost no current and emits no light; above it, current rises very steeply.
-Measuring $V_{\text{on}}$ for LEDs of several colours and plotting against
+Measuring $V_{\text{on}}$ for LEDs of several colors and plotting against
 $1/\lambda$ should give a straight line of slope $hc/e$:
 
 $$
@@ -67,7 +67,7 @@ $$ (eq-led-fit)
 
 ```{figure} ../images/exp06-led-fit-concept.svg
 :label: fig:exp06-led-fit
-:alt: A scatter of turn-on voltage against inverse wavelength for several LED colours falls on a straight line whose slope is hc/e and whose intercept is a small negative voltage offset.
+:alt: A scatter of turn-on voltage against inverse wavelength for several LED colors falls on a straight line whose slope is hc/e and whose intercept is a small negative voltage offset.
 
 The working plot for this experiment. Six LEDs, six points; the slope recovers $h$, and the small negative intercept is the systematic discussed below.
 ```
@@ -210,7 +210,7 @@ Two independent routes to $h$. (a) The LED turn-on voltage, read from a simple c
   panel (b) is a separate optical measurement, not an additional branch of the
   same circuit.
 - Sort the LEDs by package label and assign each a permanent ID. Never rely on
-  emitted colour alone, and do not mix devices after their spectra are taken.
+  emitted color alone, and do not mix devices after their spectra are taken.
 - With the supply off, verify resistor value and LED polarity with a meter.
   Set a supply current limit of $15\ \text{mA}$ before connecting an LED.
 - Prepare linked tables for LED ID, spectrum file, peak wavelength, FWHM, and
@@ -228,7 +228,7 @@ Two independent routes to $h$. (a) The LED turn-on voltage, read from a simple c
 2. For each LED, find the peak wavelength $\lambda_p$ and the full width at
    half maximum. Record both — the FWHM is a direct measurement of the thermal
    energy spread and you will use it in the discussion.
-3. Compare $\lambda_p$ with the nominal colour printed on the bag. They can
+3. Compare $\lambda_p$ with the nominal color printed on the bag. They can
    differ by $10$–$20\ \text{nm}$, which is a 2–4% systematic on $h$ if you
    use the nominal value. **Use your measured peak.**
 

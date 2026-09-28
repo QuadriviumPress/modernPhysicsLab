@@ -17,7 +17,7 @@ label: inst-exp-13
   one-second runs by stopwatch is not feasible; if the counters cannot repeat,
   use a microcontroller with a pulse input instead.
 - Look up and post the GM tube's dead time from its data sheet.
-- Verify the lead and aluminium absorber sets and their thicknesses.
+- Verify the lead and aluminum absorber sets and their thicknesses.
 
 ## Bill of materials
 
@@ -58,7 +58,7 @@ mid-interval correction come in about $3\%$ high on $\lambda$.
 
 **Part C.** NIST mass attenuation at $662\ \text{keV}$: lead
 $\approx0.111\ \text{cm}^2/\text{g}$ ($\rho = 11.35$, HVL $5.5\ \text{mm}$);
-aluminium $\approx0.0745\ \text{cm}^2/\text{g}$ ($\rho = 2.70$, HVL
+aluminum $\approx0.0745\ \text{cm}^2/\text{g}$ ($\rho = 2.70$, HVL
 $34\ \text{mm}$). The *linear* coefficients differ by a factor of $6.3$; the
 *mass* coefficients by only $1.5$ — that near-equality is the Compton
 signature and is question 8's target.

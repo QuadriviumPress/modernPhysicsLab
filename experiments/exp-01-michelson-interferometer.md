@@ -73,10 +73,10 @@ With a slightly diverging beam and mirrors that are accurately perpendicular,
 rays leaving the source at angle $\theta$ to the axis acquire path difference
 $\Delta = 2d\cos\theta$, so the interference condition depends only on
 $\theta$: the pattern is a set of concentric circles, and translating the
-mirror makes them swallow into, or boil out of, the centre. If the mirrors are
+mirror makes them swallow into, or boil out of, the center. If the mirrors are
 *not* quite perpendicular, the fringes become straight and parallel — still
 usable, and in fact easier to count. Either pattern obeys
-[](#eq-mich-lambda) at the centre of the field.
+[](#eq-mich-lambda) at the center of the field.
 
 ```{figure} ../images/exp01-fringe-geometry.svg
 :label: fig:exp01-fringe-geometry
@@ -98,7 +98,7 @@ $$ (eq-mich-shift)
 
 where $L$ is the arm length (taken equal for both arms). The quadratic
 dependence on $v/c$ is what makes the experiment hard: for the Earth's orbital
-speed $v = 30\ \text{km/s}$, $(v/c)^2 = 10^{-8}$, so even a metre of arm
+speed $v = 30\ \text{km/s}$, $(v/c)^2 = 10^{-8}$, so even a meter of arm
 length buys only a few hundredths of a fringe.
 
 Michelson and Morley beat this by folding the beam through multiple
@@ -189,7 +189,7 @@ The Michelson interferometer. The beamsplitter sends light down two perpendicula
 - Make a table with columns for run, direction of travel, initial and final
   micrometer readings, fringe count, and comments. Leave room for five runs.
 - Check that every mount is clamped, the beamsplitter is seated, and the laser
-  terminates on a screen or block. Remove reflective jewellery before the
+  terminates on a screen or block. Remove reflective jewelry before the
   laser is switched on.
 - Decide who will turn the micrometer and who will count. Do not exchange jobs
   during a run; stop and restart a run if either person loses the count.
@@ -203,11 +203,11 @@ The Michelson interferometer. The beamsplitter sends light down two perpendicula
 3. When the spots overlap, faint interference fringes should flicker into
    existence. If they do not, the two path lengths differ by more than the
    coherence length of the source — for a diode laser this can be under a
-   millimetre, so equalize the arms with a ruler first.
+   millimeter, so equalize the arms with a ruler first.
 4. Insert the diverging lens between the laser and the beamsplitter. The
    fringes should expand into a circular bullseye filling the screen.
-5. Fine-tune the fixed-mirror tilt until the bullseye is centred and its
-   centre is as large and slow-moving as you can make it.
+5. Fine-tune the fixed-mirror tilt until the bullseye is centered and its
+   center is as large and slow-moving as you can make it.
 
 **[ ] Checkpoint 1.** Show the instructor a stable
 circular fringe pattern. Do not proceed with a pattern that drifts on its own
@@ -221,7 +221,7 @@ mount) and fix it.
    approach from the same direction*: reversing direction introduces backlash
    of several micrometres, and this is the largest systematic error in the
    experiment.
-7. Choose a reference feature at the centre of the pattern. Translate the
+7. Choose a reference feature at the center of the pattern. Translate the
    mirror slowly and steadily, counting fringe transitions with the tally
    counter. Have your partner call out at every $50$ counts so you can catch a
    miscount.
@@ -277,8 +277,8 @@ import numpy as np
 from scipy.optimize import curve_fit
 
 N  = np.array([200, 200, 200, 400, 400])          # fringe counts
-d  = np.array([...])                              # displacements, metres
-sd = np.array([...])                              # uncertainty on each d, metres
+d  = np.array([...])                              # displacements, meters
+sd = np.array([...])                              # uncertainty on each d, meters
 
 line = lambda n, half_lambda: half_lambda * n     # forced through the origin
 popt, pcov = curve_fit(line, N, d, sigma=sd, absolute_sigma=True)
@@ -341,7 +341,7 @@ would your apparatus need to reach their sensitivity?
 
 A fringe drifts past when someone walks near the table. Estimate the change in
 optical path length that corresponds to one fringe. Compare it with the
-thermal expansion of a $30\ \text{cm}$ aluminium arm for a $0.1\ \text{K}$
+thermal expansion of a $30\ \text{cm}$ aluminum arm for a $0.1\ \text{K}$
 temperature change ($\alpha_{\text{Al}} = 23\times10^{-6}\ \text{K}^{-1}$).
 What does this tell you about the real difficulty of the 1887 experiment?
 :::
@@ -358,7 +358,7 @@ did physicists nonetheless find it unsatisfactory, and what did Einstein's
 
 ## Going further
 
-- **Automate the count.** Put a photodiode at the centre of the pattern, feed
+- **Automate the count.** Put a photodiode at the center of the pattern, feed
   it to an oscilloscope or a microcontroller ADC, and drive the mirror with a
   stepper. Counting zero crossings in software removes the human miscount
   entirely and lets you translate ten times as far. This is the same technique

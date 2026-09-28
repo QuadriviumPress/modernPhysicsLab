@@ -48,7 +48,7 @@ label: inst-exp-01
 ## Where groups get stuck
 
 1. **Cannot find fringes with a diode laser.** Coherence length. Equalize the
-   arms with a ruler to within a few millimetres first.
+   arms with a ruler to within a few millimeters first.
 2. **Fringes drift on their own.** Someone leaning on the table, an unlocked
    mount, or an air current. Check the mounts before blaming the building.
 3. **Factor of two.** The single most common error, and it produces

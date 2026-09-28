@@ -202,7 +202,7 @@ The same spectrometer at its highest resolving power. The sodium D lines sit clo
 ### Before you search for weak lines
 
 - Use [](#fig:exp11-spectrometer) to identify the same calibrated spectrometer
-  geometry used in Experiment 10. The labelled D rays show why resolution is
+  geometry used in Experiment 10. The labeled D rays show why resolution is
   needed; their separation in the drawing is deliberately exaggerated.
 - Warm the alkali lamp until its intensity is stable. Keep the lamp supply
   covered, switch it off before exchanging lamps, and avoid touching a hot
@@ -214,7 +214,7 @@ The same spectrometer at its highest resolving power. The sodium D lines sit clo
   wavelength, transition, observed wavelength, trial count, signal-to-noise
   ratio, and assignment confidence. Also keep an “unassigned” list.
 - Take an overview spectrum before narrowing the slit. Use that spectrum to
-  navigate, but use unsaturated high-resolution scans for line centres; do not
+  navigate, but use unsaturated high-resolution scans for line centers; do not
   extract the D splitting from a clipped overview.
 
 ### Part A — Calibration, again
@@ -392,9 +392,9 @@ about 10).
   magnetic field. The $D_1$ line splits into four components and $D_2$ into
   six — the *anomalous* Zeeman effect, which was inexplicable before electron
   spin and which is the most direct optical evidence for it.
-- **Absorption instead of emission.** A sodium vapour cell heated in the path
+- **Absorption instead of emission.** A sodium vapor cell heated in the path
   of a white-light source gives the D lines in absorption — the same
-  Fraunhofer D lines catalogued in the solar spectrum in 1814, a decade before
+  Fraunhofer D lines cataloged in the solar spectrum in 1814, a decade before
   anyone knew what sodium was doing in the Sun.
 - **Rydberg states.** With a good spectrometer the sharp series can be
   followed to high $n$, where the levels crowd toward the series limit. Fitting

@@ -28,7 +28,7 @@ more data.
 calibration of the instrument, the resolution of the scale, a temperature
 coefficient, a geometric offset. They do *not* fall with $N$, which is why an
 experiment eventually stops improving no matter how long you run it. Deciding
-when you have hit that floor is a large part of experimental judgement.
+when you have hit that floor is a large part of experimental judgment.
 
 ### Estimating a Type A uncertainty
 
@@ -61,7 +61,7 @@ Common cases:
   - Standard uncertainty
 * - Digital display, last digit $d$
   - $d/\sqrt{12} \approx 0.29\,d$ (uniform over the last digit)
-* - Analogue scale, division $D$
+* - Analog scale, division $D$
   - $\approx D/4$ if you can interpolate to a quarter division
 * - Manufacturer's spec "$\pm a$" with no distribution stated
   - $a/\sqrt{3}$ (uniform over $\pm a$)

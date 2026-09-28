@@ -43,7 +43,7 @@ label: inst-exp-02
 
 ## Where groups get stuck
 
-1. **Beam not centred on the detector after moving a mirror.** Produces a
+1. **Beam not centered on the detector after moving a mirror.** Produces a
    curved residual and a systematically wrong $c$. This is the failure mode to
    watch for; the warning in the handout is there because it happens every
    year.

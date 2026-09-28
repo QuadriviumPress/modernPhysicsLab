@@ -42,7 +42,7 @@ with any change to the scripts, so the site and the source stay in step.
 | `labstyle.py` | Shared rcParams, palette, `save()`, and reusable apparatus glyphs (mirrors, beamsplitters, lenses, prisms, GM tubes, absorber stacks, rotation stages, …) | — |
 | `exp01_figure.py` | Michelson interferometer: beamsplitter, fixed and movable mirrors, circular-fringe screen | Unfolded-mirror ray geometry ($\Delta = 2d\cos\theta$) and fringe order vs. angle |
 | `exp02_figure.py` | Pulsed source split into a short reference path and a folded long path via two mirrors, into a fast oscilloscope | Delay vs. path-length slope fit: slope $=1/c$, intercept $=\tau$ |
-| `exp03_figure.py` | Sealed beta source on a shelf stand, removable aluminium absorber stack, end-window GM tube | Absorption-curve shape: exponential region, bremsstrahlung tail, extrapolated range $R_m$ |
+| `exp03_figure.py` | Sealed beta source on a shelf stand, removable aluminum absorber stack, end-window GM tube | Absorption-curve shape: exponential region, bremsstrahlung tail, extrapolated range $R_m$ |
 | `exp04_figure.py` | Laser, slit set, and camera on a common optical rail | Two-slit fringes modulated by the single-slit envelope, with a missing order |
 | `exp05_figure.py` | Laser, sample on a rotation mount, diffracted orders to a screen or rotating detector | Rayleigh criterion: two point-spread functions just resolved |
 | `exp06_figure.py` | (a) LED forward-bias I-V circuit; (b) tungsten lamp through a slit/grating spectrometer | $V_{\rm on}$ vs. $1/\lambda$ fit: slope $=hc/e$, nonzero intercept |

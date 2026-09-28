@@ -20,7 +20,7 @@ substantially easier and arguably better physics teaching. Consider it.
 
 - Select a plano-convex lens with the longest available $R$ ($1000\ \text{mm}$
   or more). Short-$R$ lenses compress the whole interesting region into a
-  quarter of a millimetre.
+  quarter of a millimeter.
 - Clean prism and lens with lens tissue and isopropanol immediately before the
   period, and again between groups. **Dust is the dominant failure mode.**
 - Build a gentle, reproducible clamp — a spring-loaded mount is far better
@@ -65,19 +65,19 @@ substantially easier and arguably better physics teaching. Consider it.
 1. **Dust at the contact point.** Symptom: the transmission does not saturate
    at small $r$. Clean and re-contact; do not let them fit around it.
 2. **Overtightening.** Flattens the contact and invalidates
-   $d = r^2/2R$ near the centre. The two-pressure comparison in step 8 is
+   $d = r^2/2R$ near the center. The two-pressure comparison in step 8 is
    there to expose this — make sure they do it.
 3. **Uncalibrated magnification.** They trust the microscope's label. Insist
    on the stage micrometer.
 4. **Fitting in log space unweighted.** Standard error; see the front matter.
 5. **Running out of period.** Prioritize Parts A, C, D; Part B (Newton's
-   rings for $R$) can use the catalogue value if time is short, with the
+   rings for $R$) can use the catalog value if time is short, with the
    uncertainty inflated accordingly.
 
 ## Grading notes
 
 - The correspondence table (question 4) should be exact and term-by-term.
-- Question 9 — a feature of the quantum problem with no optical analogue — is
+- Question 9 — a feature of the quantum problem with no optical analog — is
   the discriminating question. Good answers: probability interpretation and
   normalization of $\psi$; particle number conservation versus energy flux;
   the fact that a single quantum either tunnels or does not, whereas the
