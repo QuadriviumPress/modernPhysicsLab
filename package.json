@@ -1,8 +1,10 @@
 {
   "name": "modern-physics-lab",
+  "version": "1.0.0",
   "private": true,
   "description": "Laboratory manual accompanying the Modern Physics textbook",
   "license": "CC-BY-NC-SA-4.0",
+  "packageManager": "npm@10.9.8",
   "engines": {
     "node": ">=22",
     "npm": ">=10 <11"
