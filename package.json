@@ -11,12 +11,13 @@
   },
   "scripts": {
     "start": "myst start",
-    "build": "myst build --html",
+    "build": "myst build --html && node scripts/setup-pwa.mjs",
     "verify": "node scripts/verify-book.mjs",
     "check": "npm run verify && myst build --html --strict --check-links"
   },
   "devDependencies": {
     "mystmd": "1.11.0",
+    "sharp": "0.35.4",
     "yaml": "2.9.1"
   }
 }

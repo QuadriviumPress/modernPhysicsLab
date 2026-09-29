@@ -10,10 +10,11 @@ repository — it is not built or deployed as part of the textbook.
 ```
 myst.yml                    project metadata and table of contents
 index.md                    schedule table and manual conventions
-front-matter/                safety, notebook, uncertainty, Python, rubric
-experiments/                 exp-01 … exp-14, the student handouts
-instructor/                  expected values, prep notes, bill of materials
-                              (excluded from the student build)
+front-matter/               safety, notebook, uncertainty, Python, rubric
+experiments/                exp-01 … exp-14, the student handouts
+instructor/                 expected values, prep notes, bill of materials
+                            (excluded from the student build)
+css/ images/ pwa/           site mark, stylesheet, and offline shell
 ```
 
 ## Build
@@ -23,7 +24,7 @@ Use Node 22 (`nvm use` if you have nvm).
 ```bash
 npm install
 npm run start          # live preview at localhost:3000
-npm run build          # static site in _build/html/
+npm run build          # static site in _build/html/, including the offline shell
 npm run verify          # metadata and structure checks
 npm run check           # metadata checks plus a strict HTML build
 ```

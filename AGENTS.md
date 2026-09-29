@@ -17,9 +17,9 @@ npm run check
 
 ## Intentional differences
 
-- `build` is `myst build --html` only. This lab manual has no PWA step and no `sharp` dependency.
 - `verify` runs `node scripts/verify-book.mjs`.
-- Experiments live under `experiments/`, not `chapters/ch-NN-slug.md`.
+- Experiments live under `experiments/`, not `chapters/ch-NN-slug.md`. Instructor notes stay in `instructor/` and are excluded from the student build.
+- No media plugins. The handouts do not embed simulations, animations, video, or H5P activities.
 
 ## Presentation gap
 
