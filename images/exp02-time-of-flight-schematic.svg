@@ -1071,7 +1071,7 @@ z
      <use xlink:href="#DejaVuSans-56" transform="translate(987.140625 0)"/>
     </g>
    </g>
-   <g id="text_8">
+   <g id="text_8" opacity="0">
     <!-- Split pulse $\to$ short reference path and folded long path $\to$ measure the time -->
     <g style="fill: #333333" transform="translate(88.766769 23.828728) scale(0.08 -0.08)">
      <defs>
@@ -1354,6 +1354,10 @@ z
      <use xlink:href="#DejaVuSans-329" transform="translate(2791.943359 0.015625)"/>
      <use xlink:href="#DejaVuSans-Oblique-57" transform="translate(2860.351562 0.015625)"/>
     </g>
+   </g>
+   <g id="corrected-caption" fill="#333333" font-family="DejaVu Sans, sans-serif" font-size="8" text-anchor="middle">
+    <text x="204" y="23.8">Split pulse: short reference and folded signal paths</text>
+    <text x="204" y="33.4">Measure delay at several path lengths; speed = 1/slope</text>
    </g>
    <g id="line2d_9">
     <path d="M 128.902154 118.667077 

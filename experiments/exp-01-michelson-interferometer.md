@@ -13,7 +13,7 @@ numbering:
 
 **Accompanies** Chapter 1, *The Need for Relativity*
 **Apparatus** Michelson interferometer (bench instrument or Thorlabs EDU-MINT1), HeNe or 632 nm diode laser
-**You will measure** the laser wavelength to $\sim0.1\%$, and set an upper bound on the ether drift speed
+**You will measure** the laser wavelength at approximately percent-level precision and estimate this apparatus's sensitivity to a hypothetical ether drift
 **Report** Short
 :::
 
@@ -25,9 +25,10 @@ By the end of this experiment you should be able to:
 - Relate a counted number of fringe transitions to a mirror displacement, and
   use the relation to measure an optical wavelength.
 - Estimate the smallest fringe shift your apparatus can detect, and convert
-  that limit into an upper bound on a hypothetical ether drift speed.
-- Explain why the null result of the Michelson–Morley experiment could not be
-  explained away by any of the obvious loopholes.
+  that threshold into the smallest hypothetical ether drift it could detect
+  under the simple stationary-ether model.
+- Explain how the Michelson–Morley null result constrained that model and why
+  simple complete-drag proposals faced other observations.
 
 ## Textbook connection
 
@@ -61,8 +62,8 @@ N = \frac{2d}{\lambda}
 $$ (eq-mich-lambda)
 
 This is the entire measurement. Its beauty is that it converts a wavelength —
-a sub-micrometre quantity you cannot rule off — into a *count*, which has no
-calibration uncertainty at all, and a *mirror displacement*, which you can
+a sub-micrometre quantity you cannot rule off — into a *count*, which needs
+careful tracking but no length calibration, and a *mirror displacement*, which you can
 measure with a micrometer. The factor of two is the most commonly dropped
 quantity in this experiment; it is there because light traverses the arm both
 ways.
@@ -104,8 +105,10 @@ length buys only a few hundredths of a fringe.
 Michelson and Morley beat this by folding the beam through multiple
 reflections to reach an effective $L = 11\ \text{m}$, and by floating the whole
 apparatus on mercury so it could be rotated continuously while being watched.
-They expected a shift of about $0.4$ fringes and saw, at most, about
-one-fortieth of that. You will not repeat their sensitivity. You will
+They expected a shift of about $0.4$ fringes and reported less than about
+$0.01$ fringe, under the assumptions of that model; see their
+[1887 paper](https://ajsonline.org/article/62505-on-the-relative-motion-of-the-earth-and-the-luminiferous-ether).
+You will not repeat their sensitivity. You will
 *quantify* how far short of it you fall, which is the honest version of the
 experiment and teaches more than a rigged one would.
 
@@ -125,12 +128,12 @@ manage in about two minutes at roughly two fringes per second?
 :::{exercise}
 :label: q-mich-02
 
-The micrometer on the interferometer reads to $10\ \mu\text{m}$ with a
-vernier or fine scale you can interpolate to about $1\ \mu\text{m}$. Using
-[](#eq-mich-lambda), find the relative uncertainty in $\lambda$ contributed by
-the displacement reading for $d = 0.1\ \text{mm}$ and for $d = 1.0\ \text{mm}$.
-Which term dominates your final result, and what does that tell you about how
-far to translate the mirror?
+Suppose each endpoint reading on the micrometer has an independent standard
+uncertainty of $1\ \mu\text{m}$. Using [](#eq-mich-lambda), find the relative
+uncertainty in $\lambda$ contributed by the *difference* between endpoint
+readings for $d = 0.1\ \text{mm}$ and $d = 1.0\ \text{mm}$. Compare it with
+the effect of a one-fringe count error. What does this tell you about how far
+to translate the mirror?
 :::
 
 :::{exercise}
@@ -156,12 +159,13 @@ laboratory. Name one astronomical observation that this hypothesis contradicts.
 
 - Michelson interferometer with micrometer-driven movable mirror — a bench
   instrument, or the Thorlabs EDU-MINT1 kit built on a breadboard
-- HeNe laser ($632.816\ \text{nm}$ in air) or a $\sim650\ \text{nm}$ diode
+- red HeNe laser (approximately $632.8\ \text{nm}$ in air) or a $\sim650\ \text{nm}$ diode
   laser module
 - Short-focal-length diverging lens ($f \approx -25\ \text{mm}$) to expand the beam
 - Viewing screen or white card; optional photodiode + oscilloscope for
   automated counting
-- Beam blocks; laser safety eyewear if the source exceeds Class 2
+- Beam stops; wavelength-rated laser eyewear when required by the site's
+  laser safety assessment
 - Tally counter (or the counter app on a phone)
 
 :::{danger}
@@ -200,10 +204,9 @@ The Michelson interferometer. The beamsplitter sends light down two perpendicula
    beamsplitter. You should see two spots on the screen: one from each arm.
 2. Adjust the tilt screws on the fixed mirror until the two spots coincide.
    Work on the *dimmer* of the two spots so you can tell which is which.
-3. When the spots overlap, faint interference fringes should flicker into
-   existence. If they do not, the two path lengths differ by more than the
-   coherence length of the source — for a diode laser this can be under a
-   millimeter, so equalize the arms with a ruler first.
+3. When the spots overlap, faint interference fringes may appear. If they do
+   not, check overlap, polarization, and arm-length matching. A diode laser
+   can have a short coherence length; equalize the arms before fine tuning.
 4. Insert the diverging lens between the laser and the beamsplitter. The
    fringes should expand into a circular bullseye filling the screen.
 5. Fine-tune the fixed-mirror tilt until the bullseye is centered and its
@@ -217,25 +220,29 @@ mount) and fix it.
 
 ### Part B — Measuring the wavelength
 
-6. Record the micrometer reading. Establish which way you must turn to *always
-   approach from the same direction*: reversing direction introduces backlash
-   of several micrometres, and this is the largest systematic error in the
-   experiment.
+6. Record the micrometer reading. For the primary runs, approach both endpoints
+   from the same direction after taking up any backlash. Reversing direction
+   without doing this may make the micrometer reading differ from the mirror's
+   actual motion. Estimate that effect on your instrument rather than assuming
+   a fixed size.
 7. Choose a reference feature at the center of the pattern. Translate the
    mirror slowly and steadily, counting fringe transitions with the tally
    counter. Have your partner call out at every $50$ counts so you can catch a
    miscount.
 8. Stop at $N = 200$ (or the count you chose in [](#q-mich-01)) and record the
    final micrometer reading.
-9. **Repeat this five times.** Two of the five runs should be taken in the
-   opposite direction of travel, so that you can see the backlash directly.
-10. Estimate, and write in your notebook *now*, the uncertainty you assign to
-    a single micrometer reading and to a single fringe count.
-
 **[ ] Checkpoint 2.** Compute $\lambda$ from your first
 run before you take the other four. If it is not within about 10% of
 $633\ \text{nm}$, you have a factor-of-two problem or a micrometer scale
 problem, and it is much cheaper to find it now.
+
+9. Take four more runs at a few different fringe counts. Repeat at least one
+   count in both directions for a like-for-like backlash check; first take up
+   backlash after each reversal. Keep direction in the data table. Do not pool
+   direction-dependent results until you have checked and accounted for the
+   difference.
+10. Record the uncertainty you assign to each micrometer reading and fringe
+    count while you are still at the bench.
 
 ### Part C — Bounding the ether drift
 
@@ -250,8 +257,8 @@ problem, and it is much cheaper to find it now.
 13. If the instrument can be rotated on the bench (the EDU-MINT1 breadboard
     can be turned; a heavy bench interferometer usually cannot), rotate it
     through $90°$ and watch the pattern. Record any shift you see, and its
-    uncertainty. Expect this to be dominated by mechanical flexure, not by
-    physics — say so in the report.
+    uncertainty. Check for mechanical flexure with repeated rotations. A
+    shift that follows a loose optic is not evidence for the modeled drift.
 
 ## Analysis
 
@@ -265,56 +272,68 @@ $$
 \left(\frac{\sigma_d}{d}\right)^2 + \left(\frac{\sigma_N}{N}\right)^2 .
 $$
 
-Take the weighted mean of the five runs, and compare its scatter with the
-uncertainty you propagated. If the scatter is much larger, the backlash or a
-systematic miscount is the reason.
+Compare the five runs by direction before combining them. Take a weighted
+mean only of runs whose differences are consistent with their uncertainties
+and whose shared calibration effects have been included. Excess scatter
+could come from backlash, drift, miscounts, or underestimated reading errors;
+investigate it rather than assigning one cause automatically. For $N=200$
+and $\lambda\approx633\ \text{nm}$, the mirror moves only about
+$63\ \mu\text{m}$. A $1\ \mu\text{m}$ uncertainty on *each* endpoint already
+contributes about 2.2% to one displacement, before counting errors.
 
-A better estimator uses all your data at once: plot $d$ against $N$ for all
-runs and fit a straight line through the origin, whose slope is $\lambda/2$.
+An alternative uses all compatible runs at once: plot $d$ against $N$ and fit
+a straight line. First allow an intercept and inspect it; only constrain the
+intercept to zero if the data and measurement method justify it. The slope is
+$\lambda/2$.
 
 ```python
 import numpy as np
 from scipy.optimize import curve_fit
 
-N  = np.array([200, 200, 200, 400, 400])          # fringe counts
+N  = np.array([100, 200, 200, 400, 400])          # fringe counts
 d  = np.array([...])                              # displacements, meters
 sd = np.array([...])                              # uncertainty on each d, meters
 
-line = lambda n, half_lambda: half_lambda * n     # forced through the origin
+line = lambda n, half_lambda, offset: half_lambda * n + offset
 popt, pcov = curve_fit(line, N, d, sigma=sd, absolute_sigma=True)
 
 lam, slam = 2 * popt[0], 2 * np.sqrt(pcov[0, 0])
+print(f"offset = {popt[1]*1e6:.1f} +/- {np.sqrt(pcov[1,1])*1e6:.1f} um")
 print(f"lambda = {lam*1e9:.1f} +/- {slam*1e9:.1f} nm")
 ```
 
-:::{tip} Why force the fit through the origin?
-Zero fringes counted must mean zero displacement. Letting the intercept float
-lets it absorb a real systematic — the backlash — instead of exposing it. Fit
-both ways: a nonzero intercept that is several $\sigma$ from zero is a
-*measurement of your backlash*, and belongs in the discussion.
+:::{tip} What does the intercept tell you?
+For an ideal displacement measurement, zero counted fringes means zero mirror
+motion. A fitted nonzero intercept can flag backlash, a count offset, or
+another setup problem; it does not identify which. Inspect the direction
+groups and fix or model the cause before using a zero-intercept fit.
 :::
 
-### The ether bound
+### Sensitivity to the modeled ether drift
 
 Rearrange [](#eq-mich-shift) for the speed corresponding to your detection
 threshold $\Delta N_{\min}$:
 
 $$
-v_{\max} = c\,\sqrt{\frac{\lambda\,\Delta N_{\min}}{2L}} .
+v_{\mathrm{sens}} = c\,\sqrt{\frac{\lambda\,\Delta N_{\min}}{2L}} .
 $$
 
-Quote it in km/s and as a fraction of $c$, with an uncertainty propagated from
-$\Delta N_{\min}$ and $L$. Compare it with the Earth's orbital speed of
-$29.8\ \text{km/s}$ and with Michelson and Morley's own bound.
+This is the *minimum detectable speed* under the simplified model, not an
+upper bound measured by a stationary instrument. Quote it in km/s and as a
+fraction of $c$, and give a plausible range based on the uncertainty in your
+threshold and arm length. Compare it with the Earth's orbital speed of
+$29.8\ \text{km/s}$ and the historical experiment's sensitivity. Only a
+controlled rotation with a null result could support an experimental upper
+bound under the model, and mechanical shifts must be excluded first.
 
 ## Post-lab questions
 
 :::{exercise}
 :label: q-mich-05
 
-Compare your $\lambda$ with the accepted value ($632.816\ \text{nm}$ in air
-for a HeNe; use the manufacturer's specification for a diode laser, which is
-typically only guaranteed to a few nanometres). Quote the discrepancy in units
+Compare your $\lambda$ with a reference value (approximately $632.8\ \text{nm}$ in air
+for a red HeNe; for a diode laser, use its stated center wavelength and
+tolerance at the operating conditions). Quote the discrepancy in units
 of the combined uncertainty. Is it consistent?
 :::
 
@@ -329,11 +348,12 @@ by roughly what factor?
 :::{exercise}
 :label: q-mich-07
 
-Your upper bound on $v$ is almost certainly larger than the Earth's orbital
-speed, which means this apparatus *cannot* rule out the ether. Explain
-precisely what Michelson and Morley did differently, and by what factor each
-change improved the sensitivity. Given [](#eq-mich-shift), what arm length
-would your apparatus need to reach their sensitivity?
+Your minimum detectable $v$ is almost certainly larger than the Earth's orbital
+speed, so this apparatus cannot test that simple ether model at the
+orbital-speed scale. Explain how Michelson and Morley increased the predicted
+shift and controlled drift. Given [](#eq-mich-shift), what effective arm length
+would make the orbital-speed shift equal your own detection threshold? Why
+would that length alone not reproduce their ability to resolve a small shift?
 :::
 
 :::{exercise}
@@ -360,15 +380,16 @@ did physicists nonetheless find it unsatisfactory, and what did Einstein's
 
 - **Automate the count.** Put a photodiode at the center of the pattern, feed
   it to an oscilloscope or a microcontroller ADC, and drive the mirror with a
-  stepper. Counting zero crossings in software removes the human miscount
-  entirely and lets you translate ten times as far. This is the same technique
+  stepper. Counting transitions in software can reduce human miscounts, but
+  check for false triggers and missed fringes. This is the same technique
   that turns an interferometer into a displacement metrology instrument good
   to nanometres.
 - **Measure the refractive index of air.** Put an evacuable cell of length
   $\ell$ in one arm and count fringes as it is pumped down:
   $n - 1 = N\lambda/(2\ell)$. Expect $n - 1 \approx 2.7\times10^{-4}$ at
-  laboratory pressure — a tiny number measured to three digits with a bicycle
-  pump and a fringe count.
+  laboratory pressure. Use an appropriately rated vacuum pump and cell, and
+  measure the pressure; the fringe count alone does not establish three-digit
+  accuracy.
 - **Measure the sodium doublet.** With a sodium lamp instead of a laser, the
   fringe visibility collapses and revives as the two D lines drift in and out
   of phase. The mirror displacement between successive collapses gives the

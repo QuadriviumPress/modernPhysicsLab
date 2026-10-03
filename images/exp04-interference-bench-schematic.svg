@@ -611,7 +611,7 @@ L 347.9328 81.8208
 L 347.9328 70.133449 
 " clip-path="url(#p01f2ceffa2)" style="fill: none; stroke: #333333; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
-   <g id="text_3">
+   <g id="text_3" opacity="0">
     <!-- camera / scanning -->
     <g style="fill: #333333" transform="translate(308.405788 41.149564) scale(0.075 -0.075)">
      <defs>
@@ -802,7 +802,7 @@ z
      <use xlink:href="#DejaVuSans-c" transform="translate(651.953125 0.015625)"/>
     </g>
    </g>
-   <g id="text_5">
+   <g id="text_5" opacity="0">
     <!-- unpolarized -->
     <g style="fill: #555555" transform="translate(24.822486 35.993634) scale(0.068 -0.068)">
      <defs>
@@ -911,6 +911,10 @@ z
      <use xlink:href="#m7bcbe3f297" x="88.4736" y="100.340757" style="fill: #b33a3a; stroke: #7a4a00; stroke-width: 0.4; stroke-linejoin: bevel"/>
     </g>
    </g>
+  </g>
+  <g id="corrected-source-and-detector-labels" font-family="DejaVu Sans, sans-serif">
+   <text x="24.8" y="40" font-size="7" fill="#555555">laser beam</text>
+   <text x="316" y="45" font-size="7.5" fill="#333333">screen / detector</text>
   </g>
  </g>
  <defs>

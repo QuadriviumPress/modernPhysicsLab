@@ -107,8 +107,10 @@ should notice. Every number has a unit and an uncertainty.
 - Is the discrepancy from the accepted value consistent with the uncertainty?
   Quote the discrepancy in units of the combined uncertainty,
   $t = |x_{\text{meas}} - x_{\text{acc}}| / \sqrt{\sigma_{\text{meas}}^2 + \sigma_{\text{acc}}^2}$.
-  A $t$ of $0.4$ means agreement; a $t$ of $6$ means something is wrong and you
-  should say what you think it is.
+  A $t$ of $0.4$ suggests no notable discrepancy under the stated uncertainty
+  model; a $t$ of $6$ calls for investigating the model, the measurement, and
+  the uncertainty budget. This interpretation assumes independent estimates
+  with comparable standard uncertainties; see [](#uncertainty).
 - Which uncertainty dominates, and what would you change to reduce it?
   "Random" and "human error" are not answers. "The dominant term is the
   $\pm 0.5\ \text{mm}$ ruler reading on $L = 2.14\ \text{m}$; a laser

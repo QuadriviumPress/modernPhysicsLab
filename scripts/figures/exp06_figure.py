@@ -5,10 +5,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.patches import Circle, Rectangle, Wedge
 
-from labstyle import (
-    BLUE, GRAY, ORANGE, PURPLE, RED, DARK,
-    beam, box, grating_lines, label, save, use_style,
-)
+from labstyle import BLUE, GRAY, ORANGE, PURPLE, RED, DARK, box, label, save, use_style
 
 
 def _led_icon(ax, xy, color=RED, size=0.22):
@@ -18,7 +15,7 @@ def _led_icon(ax, xy, color=RED, size=0.22):
 
 
 def led_and_lamp_panels():
-    fig, axes = plt.subplots(1, 2, figsize=(9.4, 3.9))
+    fig, axes = plt.subplots(1, 2, figsize=(11.5, 4.0))
 
     # --- (a) LED forward-bias I-V circuit ---------------------------------
     ax = axes[0]
@@ -35,48 +32,50 @@ def led_and_lamp_panels():
     ax.plot([-0.1, 0.45], [0.55, 0.55], color=DARK, lw=1.4)
 
     _led_icon(ax, (0.7, 0.55), color=RED)
-    label(ax, (0.7, 0.95), "LED\nunder test", fontsize=6.8)
+    label(ax, (1.45, 1.0), "LED under test", fontsize=6.8)
     ax.plot([0.95, 1.35], [0.55, 0.55], color=DARK, lw=1.4)
     ax.plot([1.35, 1.35], [0.55, -0.55], color=DARK, lw=1.4)
-    ax.plot([1.35, -1.3], [-0.55, -0.55], color=DARK, lw=1.4)
+    ax.plot([1.35, 0.32], [-0.55, -0.55], color=DARK, lw=1.4)
+    ax.plot([-0.02, -1.3], [-0.55, -0.55], color=DARK, lw=1.4)
     ax.plot([-1.3, -1.3], [-0.55, 0.55], color=DARK, lw=1.4)
 
-    ax.add_patch(Circle((0.15, -0.55), 0.16, facecolor="white", edgecolor=BLUE, lw=1.3, zorder=4))
+    ax.add_patch(Circle((0.15, -0.55), 0.16, facecolor="white", edgecolor=BLUE, lw=1.3, zorder=2))
     label(ax, (0.15, -0.55), "A", color=BLUE, fontsize=8, weight="bold")
     label(ax, (0.15, -0.85), "ammeter", color=BLUE, fontsize=6.5)
 
-    ax.add_patch(Circle((0.35, 1.0), 0.16, facecolor="white", edgecolor=PURPLE, lw=1.3, zorder=4))
-    label(ax, (0.35, 1.0), "V", color=PURPLE, fontsize=8, weight="bold")
-    ax.plot([0.35, 0.55], [0.84, 0.63], color=PURPLE, lw=1.0)
-    ax.plot([0.35, 0.85], [0.84, 0.63], color=PURPLE, lw=1.0)
-    label(ax, (0.65, 1.25), "voltmeter\nacross LED", color=PURPLE, fontsize=6.5)
+    ax.add_patch(Circle((0.7, 1.2), 0.16, facecolor="white", edgecolor=PURPLE, lw=1.3, zorder=2))
+    label(ax, (0.7, 1.2), "V", color=PURPLE, fontsize=8, weight="bold")
+    ax.plot([0.45, 0.45, 0.54], [0.55, 1.2, 1.2], color=PURPLE, lw=1.0)
+    ax.plot([0.86, 0.95, 0.95], [1.2, 1.2, 0.55], color=PURPLE, lw=1.0)
 
-    ax.set_title("(a)  LED turn-on voltage", fontsize=9.5)
+    ax.set_title("(a)  LED voltage proxy", fontsize=9.5)
     ax.set_xlim(-2.3, 2.0)
     ax.set_ylim(-1.2, 1.6)
 
-    # --- (b) tungsten lamp continuum, through the spectrometer -------------
+    # --- (b) lamp electrical power and resistance -------------------------
     ax = axes[1]
     ax.set_aspect("equal")
     ax.axis("off")
 
-    lamp = (-1.6, 0.0)
-    box(ax, lamp, 0.85, 0.5, "tungsten\nlamp", fontsize=7.2)
-    ax.add_patch(Circle((lamp[0] + 0.55, 0), 0.1, facecolor=ORANGE, edgecolor="#7a4a00", lw=0.8, zorder=4))
+    box(ax, (-1.65, 0), 0.85, 0.55, "current-limited\nlamp supply", fontsize=7.0)
+    ax.plot([-1.2, -0.5], [0.45, 0.45], color=DARK, lw=1.4)
+    ax.add_patch(Circle((-0.3, 0.45), 0.17, facecolor="white", edgecolor=BLUE, lw=1.3))
+    label(ax, (-0.3, 0.45), "A", color=BLUE, fontsize=8, weight="bold")
+    ax.plot([-0.13, 0.61], [0.45, 0.45], color=DARK, lw=1.4)
+    ax.add_patch(Circle((0.85, 0.45), 0.24, facecolor="#fff2da", edgecolor=DARK, lw=1.2))
+    ax.plot([0.74, 0.96], [0.34, 0.56], color=DARK, lw=1.2)
+    ax.plot([0.74, 0.96], [0.56, 0.34], color=DARK, lw=1.2)
+    label(ax, (0.85, 0.95), "tungsten lamp", fontsize=7.2)
+    ax.plot([1.09, 1.55, 1.55, -1.2, -1.2],
+            [0.45, 0.45, -0.85, -0.85, 0.45], color=DARK, lw=1.4)
 
-    beam(ax, (lamp[0] + 0.7, 0), (-0.35, 0), color=ORANGE, lw=1.6)
+    ax.add_patch(Circle((0.85, -0.25), 0.16, facecolor="white", edgecolor=PURPLE, lw=1.3))
+    label(ax, (0.85, -0.25), "V", color=PURPLE, fontsize=8, weight="bold")
+    ax.plot([0.61, 0.61, 0.69], [0.45, -0.25, -0.25], color=PURPLE, lw=1.0)
+    ax.plot([1.01, 1.09, 1.09], [-0.25, -0.25, 0.45], color=PURPLE, lw=1.0)
+    label(ax, (2.0, -0.2), r"$P_{\rm elec}=VI$" "\n" r"$R=V/I$", fontsize=8, ha="left")
 
-    spec = (0.6, 0.0)
-    ax.plot([0.15, 0.15], [-0.55, 0.55], color=DARK, lw=2.2, zorder=3)
-    grating_lines(ax, (0.85, 0), height=0.9, n=9)
-    for dy in (-0.55, -0.2, 0.15, 0.5):
-        beam(ax, (0.9, 0), (1.8, dy), color=ORANGE, lw=1.0, alpha=0.6)
-    label(ax, (0.5, 1.0), "spectrometer\n(slit + grating)", fontsize=7.2)
-
-    ax.add_patch(Rectangle((1.85, -0.7), 0.12, 1.4, facecolor="#eeeeee", edgecolor=DARK, lw=1.0, zorder=3))
-    label(ax, (2.35, 0), "linear\ndetector\narray", fontsize=6.8, ha="left")
-
-    ax.set_title("(b)  filament color vs. temperature", fontsize=9.5)
+    ax.set_title("(b)  lamp power and resistance", fontsize=9.5)
     ax.set_xlim(-2.4, 3.1)
     ax.set_ylim(-1.2, 1.6)
 
@@ -85,8 +84,7 @@ def led_and_lamp_panels():
 
 
 def led_fit_figure():
-    """V_on against 1/lambda: a straight line of slope hc/e, with a
-    nonzero intercept that carries the diode's own physics."""
+    """Illustrative voltage-proxy fit under a common-offset assumption."""
     fig, ax = plt.subplots(figsize=(6.2, 4.3))
 
     hc_over_e = 1.23984  # V*um, so that V = hc_over_e * (1/lambda[um]) + V_offset
@@ -103,7 +101,7 @@ def led_fit_figure():
         ax.plot(xi, Vi, "o", color=c, ms=7, zorder=3)
     ax.plot([0], [V_offset], marker="o", mfc="white", mec=PURPLE, mew=1.6, ms=7, zorder=4)
 
-    ax.annotate(r"slope $= hc/e$", xy=(1.6, hc_over_e * 1.6 + V_offset),
+    ax.annotate(r"ideal slope $= hc/e$", xy=(1.6, hc_over_e * 1.6 + V_offset),
                 xytext=(0.55, 2.5), fontsize=9.5, color=DARK,
                 arrowprops=dict(arrowstyle="-", color=DARK, lw=0.9))
     ax.annotate(r"intercept $V_{\rm offset}$", xy=(0, V_offset),
@@ -112,10 +110,10 @@ def led_fit_figure():
 
     ax.axhline(0, color=GRAY, lw=0.7, alpha=0.5)
     ax.set_xlabel(r"$1/\lambda$  ($\mu$m$^{-1}$)")
-    ax.set_ylabel(r"$V_{\rm on}$ (V)")
+    ax.set_ylabel(r"$V_{\rm proxy}$ (V)")
     ax.set_xlim(0, x.max() * 1.15)
     ax.set_ylim(V_offset - 0.7, hc_over_e * x.max() * 1.15 + V_offset + 0.3)
-    ax.set_title("Turn-on voltage versus inverse wavelength", fontsize=10)
+    ax.set_title("Illustrative LED voltage proxy versus inverse wavelength", fontsize=10)
 
     fig.tight_layout()
     save(fig, "exp06-led-fit-concept")

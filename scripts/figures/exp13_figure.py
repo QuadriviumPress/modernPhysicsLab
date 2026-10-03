@@ -51,7 +51,7 @@ def counting_panels():
 
     src = (-1.4, 0.0)
     ax.add_patch(Circle(src, 0.14, facecolor=ORANGE, edgecolor="#7a4a00", lw=1.0, zorder=4))
-    label(ax, (src[0], src[1] - 0.35), r"$^{137}$Cs / $^{60}$Co" "\ncheck source", fontsize=6.8)
+    label(ax, (src[0], src[1] - 0.35), r"$^{137}$Cs sealed" "\ncheck source", fontsize=6.8)
 
     absorber_stack(ax, (-0.3, 0.0), n=5, w=0.09, h=0.9, gap=0.06, color="#cfd8dc", edge=GRAY)
     label(ax, (-0.3, -0.75), "lead sheets\n(1-10 mm)", fontsize=6.8)

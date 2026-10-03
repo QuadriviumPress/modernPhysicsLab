@@ -6,8 +6,8 @@ import numpy as np
 from matplotlib.patches import Rectangle
 
 from labstyle import (
-    BLUE, GRAY, GREEN, ORANGE, PURPLE, RED, DARK,
-    beam, box, grating_lines, label, save, source_dot, use_style,
+    BLUE, GRAY, GREEN, ORANGE, PURPLE, DARK,
+    beam, box, label, save, source_dot, use_style,
 )
 
 
@@ -55,9 +55,9 @@ def fluorescence_panels():
     ax.axis("off")
 
     lamp = (-2.0, 0.0)
-    box(ax, lamp, 0.8, 0.45, "white LED /\ntungsten lamp", fontsize=6.8)
-    source_dot(ax, (lamp[0] + 0.48, 0), color=ORANGE, ms=7, glow=False)
-    beam(ax, (lamp[0] + 0.58, 0), (-0.18, 0), color=ORANGE, lw=1.6)
+    box(ax, lamp, 1.13, 0.45, "white LED /\ntungsten lamp", fontsize=6.5)
+    source_dot(ax, (lamp[0] + 0.64, 0), color=ORANGE, ms=7, glow=False)
+    beam(ax, (lamp[0] + 0.74, 0), (-0.18, 0), color=ORANGE, lw=1.6)
 
     _cuvette(ax, (0.0, 0.0))
     beam(ax, (0.18, 0), (1.1, 0), color=ORANGE, lw=1.6, alpha=0.85)
@@ -66,7 +66,7 @@ def fluorescence_panels():
     box(ax, spec2, 1.1, 0.5, "spectrometer\n(fiber input)", fontsize=6.8)
 
     label(ax, (0.0, -0.5), "same cuvette,\nin-line", fontsize=6.8, ha="center")
-    label(ax, (0.0, 0.9), "reference spectrum with an empty\ncuvette gives the baseline", fontsize=6.6,
+    label(ax, (0.0, 0.9), "solvent-only cuvette supplies\nthe reference spectrum", fontsize=6.6,
           color=GRAY, ha="center")
 
     ax.set_title("(b)  absorption (in-line)", fontsize=9.3)
@@ -129,7 +129,7 @@ def franck_condon_figure():
     label(ax, (4.9, E0 + 2.1),
           f"Stokes shift $= h\\nu_{{\\rm abs}} - h\\nu_{{\\rm em}}$", color=PURPLE, fontsize=8.2, ha="center")
 
-    ax.set_xlabel("nuclear coordinate (bond length)")
+    ax.set_xlabel("generalized nuclear coordinate")
     ax.set_ylabel("energy")
     ax.set_xlim(-2.0, 6.4)
     ax.set_ylim(-0.4, E0 + 2.6)

@@ -63,8 +63,9 @@ outscores one with a 1% discrepancy and no error analysis.
     quantities, and ranges. A competent reader could repeat the measurement.
 * - **Data and figures**
   - 15
-  - Every figure has labeled axes with units, a caption stating what to
-    notice, data as points *with error bars*, and fits as smooth curves.
+  - Data plots have labeled axes with units and points *with error bars*;
+    fitted models appear as smooth curves. Every figure has a caption stating
+    what to notice, including diagrams and photographs.
     Tables carry units and uncertainties. Nothing is plotted outside the
     data's range.
 * - **Analysis**

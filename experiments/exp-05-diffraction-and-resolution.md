@@ -13,7 +13,7 @@ numbering:
 
 **Accompanies** Chapter 5, *Diffraction of Light*
 **Apparatus** Diode laser, single slits and circular apertures, transmission grating, CD/DVD, camera
-**You will measure** slit widths, grating pitch, the track spacing of an optical disc, and a resolution limit
+**You will measure** slit widths, grating pitch or wavelength, optical-disc track spacing, and a visual resolution threshold
 **Report** Short
 :::
 
@@ -27,8 +27,8 @@ By the end of this experiment you should be able to:
   outperforms a double slit for this purpose.
 - Measure a sub-micrometre periodic structure — the track pitch of an optical
   disc — with a laser and a ruler.
-- State the Rayleigh criterion, test it experimentally, and explain what sets
-  the resolution of a telescope, a microscope, and your own eye.
+- State the Rayleigh criterion, compare it with a visual threshold, and
+  explain what also limits a telescope, a microscope, and your own eye.
 
 ## Textbook connection
 
@@ -69,9 +69,9 @@ $$
 \sin\theta_1 = 1.22\,\frac{\lambda}{D} .
 $$ (eq-diff-airy)
 
-The $1.22$ is the first zero of the Bessel function $J_1$ divided by $\pi$; it
-is not $1$, and the difference matters when you compare a measured Airy radius
-with a slit-based estimate.
+The $1.22$ is the first positive zero of $J_1$ divided by $\pi$, for an
+ideal, uniformly illuminated circular aperture. It differs from the
+single-slit result, so use the right aperture model when inferring $D$.
 
 ### The Rayleigh criterion
 
@@ -82,17 +82,19 @@ $$
 \theta_{\min} = 1.22\,\frac{\lambda}{D} .
 $$ (eq-diff-rayleigh)
 
-This is a convention, not a law of nature — with enough signal-to-noise and a
-known point-spread function you can do better, which is the entire basis of
-super-resolution microscopy. But it is the right order of magnitude, and it
-tells you that resolution is set by the *aperture*, which is why telescopes
-are large and why electron microscopes exist.
+This is a convention for two equally bright, incoherent point sources in an
+ideal circular-aperture image. Contrast, noise, aberrations, detector sampling,
+and the source itself affect a real threshold. A known point-spread function
+can support more precise localization under suitable conditions, but the
+Rayleigh angle remains a useful diffraction scale. Electron microscopes gain
+from much shorter electron wavelengths, while their lenses impose other
+limits.
 
 ```{figure} ../images/exp05-rayleigh-criterion-concept.svg
 :label: fig:exp05-rayleigh
-:alt: Two diffraction point-spread functions separated by the Rayleigh criterion overlap so that the first zero of one falls on the central peak of the other, leaving a shallow but visible dip between two peaks in their sum.
+:alt: Two circular-aperture Airy point-spread profiles separated by one first-zero radius overlap; their sum has a central dip about 26.5 percent below the peaks.
 
-Just resolved. Each source alone (dashed) produces its own diffraction pattern; separated by $\theta_{\min}$, their sum (solid) still shows a dip of about 19% between the two peaks — faint, but real.
+Just resolved under the Rayleigh convention. Each source alone (dashed) has an Airy profile; separated by $\theta_{\min}$, their summed intensity (solid) has a central dip about 26.5% below the peaks. The figure is a one-dimensional cross section of the circular pattern.
 ```
 
 ### The grating
@@ -108,12 +110,16 @@ angular width $\propto 1/N$. That sharpening, not the position of the maxima,
 is what makes a grating a spectroscopic instrument. Its resolving power is
 
 $$
-\frac{\lambda}{\Delta\lambda} = mN ,
+\left(\frac{\lambda}{\Delta\lambda}\right)_{\mathrm{grating}} = mN ,
 $$ (eq-diff-resolving)
 
-so a $1000\ \text{lines/mm}$ grating with a $5\ \text{mm}$ illuminated width
-resolves, in first order, $\lambda/\Delta\lambda = 5000$ — about $0.13\ \text{nm}$
-at $650\ \text{nm}$. That number is what you will be relying on in Week 10.
+so an ideal $1000\ \text{lines/mm}$ grating with a *measured* $5\ \text{mm}$
+illuminated width has $N=5000$ and a first-order grating limit of
+$\Delta\lambda\approx0.13\ \text{nm}$ at $650\ \text{nm}$. A narrow laser beam
+may illuminate fewer grooves, and a spectrometer's entrance slit, optics,
+alignment, and detector can make its actual resolution worse. See the
+[Feynman grating derivation](https://www.feynmanlectures.caltech.edu/I_30.html)
+and this [spectrograph laboratory guide](https://courses.washington.edu/phys331/concave_grating/concave_grating.pdf).
 
 ### Optical discs as gratings
 
@@ -122,8 +128,11 @@ $1.6\ \mu\text{m}$ for CD, $0.74\ \mu\text{m}$ for DVD, and $0.32\ \mu\text{m}$
 for Blu-ray. For a DVD, $\lambda/d = 650/740 = 0.88$, so first order appears
 at $62°$ — a large angle where the small-angle approximation fails completely
 and you must measure the actual angle. For Blu-ray at $650\ \text{nm}$,
-$\lambda/d > 1$ and *no* first order exists, which is itself a measurement
-worth making.
+$\lambda/d > 1$ and no first order can propagate **in air at normal
+incidence** in the simple grating model. Failure to see an order alone is not
+proof of this inequality: weak efficiency, disc cover layers, alignment, and
+limited angular coverage can also hide one. The nominal pitches are tabulated
+in this [Stony Brook optical-disc teaching project](https://www.stonybrook.edu/laser/_carolina/project/).
 
 ## Pre-lab
 
@@ -168,34 +177,34 @@ comment.
 - Single slits of several widths; circular apertures; the "unknown" slide
 - Transmission grating, $\sim300$–$1000\ \text{lines/mm}$ (use a genuine
   transmission grating; a reflective grating requires a different geometry)
-- CD, DVD, and if available a Blu-ray disc, with the reflective layer exposed
-  or used in reflection
+- CD, DVD, and optionally a Blu-ray disc, mounted for a separately aligned
+  **reflection** measurement; do not peel or cut discs
 - Rotation stage or a large protractor and a meter stick, for large angles
 - Camera or scanning photodiode; screen
-- Two pinholes on a card with a lamp behind, for the resolution test; a
-  calibrated variable iris or aperture set
+- Two small, measured pinholes on a card with a diffuse lamp behind, for the
+  visual threshold comparison; a calibrated variable iris or aperture set
 
 :::{danger}
-Class 2 laser, plus specular reflection from the discs. A CD sends beams in
-several directions at once. Establish where every order goes before powering
-up, and never work with your eye at beam height. See [](#lab-safety).
+Confirm the laser's actual class and use the institution's approved controls.
+Discs create specular reflection and several diffracted beams on the incident
+side. Put beam blocks where those paths can go before powering up; never put
+an eye in the beam plane. Do not cut or peel discs. See [](#lab-safety).
 :::
 
 ```{figure} ../images/exp05-diffraction-bench-schematic.svg
 :label: fig:exp05-bench
-:alt: A laser beam strikes an interchangeable sample on a rotation mount, and several diffracted orders fan out to a screen or camera at the far end of the rail.
+:alt: A laser beam crosses a transmission slit, aperture, or grating on a mount, and diffracted light fans out to a screen or detector on the far side.
 
-The diffraction bench. The same rail carries every sample in this experiment — single slit, aperture, grating, or disc — and for large angles the screen is replaced by a rotation stage.
+The transmission-diffraction bench for the slit, aperture, and grating. Measure large angles with a rotating detector or protractor. Optical discs require a separate reflection layout, with the diffracted orders detected on the **incident** side.
 ```
 
 ## Procedure
 
 ### Before you take diffraction data
 
-- Use [](#fig:exp05-bench) to plan the common incident beam and the two detector
-  options. The sample shown on a rotation stage represents several different
-  objects; record which slit, aperture, grating, or disc is installed for every
-  file and measurement.
+- Use [](#fig:exp05-bench) to plan the transmission measurements. Record the
+  slit, aperture, or grating installed for each file. Draw and separately
+  align the disc reflection layout before collecting disc data.
 - Align the rail with no sample present and mark the zero-order beam position.
   Recheck that mark after every sample change; a shifted zero biases all
   measured angles and radii.
@@ -205,30 +214,33 @@ The diffraction bench. The same rail carries every sample in this experiment —
 - Record a dark frame and a spatial calibration at the screen plane. For
   profiles, lock the camera settings or record the photodiode gain and step
   size so intensities can be compared.
-- For every pattern, save one overview image and one quantitative data set.
-  Note which diffraction orders or minima are visible before changing the
-  apparatus.
+- For every pattern, save the overview and the quantitative positions or
+  profile used in your analysis. Note which orders or minima are visible
+  before changing the apparatus; do not infer unseen orders from a diagram.
 
 ### Part A — Single slit
 
 1. Set $L \approx 2\ \text{m}$ and illuminate a slit of known width.
-2. Record the positions of as many minima as you can see on both sides of the
-   center — at least $m = \pm1$ through $\pm4$. Measuring $m = +4$ to $m = -4$
-   and halving is far better than measuring $m = \pm1$ alone.
+2. Record the positions of visible minima on both sides of the center, through
+   $m=\pm4$ if the field and dynamic range permit. The separation of the
+   $m=+4$ and $m=-4$ minima spans **eight orders**; divide by eight in the
+   small-angle limit, or fit the exact-angle relation below.
 3. Take a quantitative profile with the camera or the scanning photodiode, as
    in [](#exp-interference). Watch for saturation.
 4. Repeat with two more slit widths, and with the unknown.
 
 **[ ] Checkpoint 1.** Confirm with the instructor that
 your widest and narrowest slits give patterns of the expected *relative*
-widths. If narrowing the slit does not widen the pattern, you are looking at
-the beam profile, not diffraction.
+   widths. If narrowing the slit does not widen the pattern, check alignment,
+   source illumination, detector field, and whether you located the minima.
 
 ### Part B — Circular aperture and the Airy disc
 
 5. Replace the slit with a circular aperture. Photograph the Airy pattern with
-   a long enough exposure to see the first ring, and a short enough one to
-   keep the center unsaturated — take both and combine.
+   a long enough exposure to see the first dark ring and with a shorter
+   exposure to keep the center unsaturated. Use each image for the feature it
+   resolves; retain its exposure and scale rather than merging intensities
+   without a calibrated response.
 6. Measure the radius of the first dark ring, and extract $D$ from
    [](#eq-diff-airy). Compare with a direct measurement of the aperture under
    a traveling microscope if one is available.
@@ -236,33 +248,43 @@ the beam profile, not diffraction.
 ### Part C — The grating
 
 7. Mount the grating on the rotation stage with the beam at normal incidence.
-   Confirm normal incidence by checking that the $m = +1$ and $m = -1$ angles
-   are equal — if they are not, the grating is tilted and every angle is
-   biased.
+   Check the grating normal using the reflected zero order or the mount's
+   reference, then compare the $m=+1$ and $m=-1$ angles as a symmetry check.
+   A mismatch can indicate tilt or an angle-zero error.
 8. Measure $\theta_m$ for every visible order, on both sides.
-9. Using the manufacturer's line density, compute $\lambda$; or, using the
-   $\lambda$ from Experiment 1, compute the line density. Do both and see
-   whether the manufacturer is honest.
+9. Using the specified line density, compute $\lambda$; then use the
+   independently measured $\lambda$ from Experiment 1 to infer line density.
+   Compare with uncertainties, including the specification's tolerance if
+   given.
 
 ### Part D — Optical discs
 
-10. Mount the CD in reflection at normal incidence and measure the first-order
-    angle with the rotation stage or by triangulating the diffracted spot's
-    position on a wall at a measured distance.
+10. Mount the CD in reflection near normal incidence. Block the specular
+    return beam and locate first orders on the **incident** side using a
+    rotating detector or screen. Measure signed angles from the reflected
+    zero-order direction, or measure spot position and screen distance and
+    compute $\theta=\arctan(y/L)$. Check $+1/-1$ symmetry before using the
+    normal-incidence formula.
 11. Repeat for the DVD. Note that the angle is large: **do not use the
     small-angle approximation**, and measure the geometry carefully enough
     that you know $\theta$ to a degree or better.
-12. If a Blu-ray disc is available, look for a first order and record its
-    absence. Then state the bound this places on its track pitch.
+12. If a Blu-ray disc is available, scan the accessible incident-side angles
+    for a first order and record the angular coverage and detection limit.
+    An absent spot is consistent with $d<\lambda$ at normal incidence but
+    alone does not establish a pitch bound.
 
 ### Part E — Resolution
 
-13. Set up two closely spaced pinholes, back-illuminated, several meters away.
-14. View them through a variable iris. Close the iris until the two merge into
-    one, and record the iris diameter at that point.
-15. Repeat three times, and have your partner do it independently — this is a
-    perceptual threshold and it varies between observers by more than you
-    expect. That spread *is* your uncertainty.
+13. Set up two small pinholes with measured separation and diameter,
+    back-illuminated by a diffuse lamp at measured distance. Avoid a coherent
+    laser source, which would produce a different two-source pattern.
+14. View them through a calibrated variable iris near the eye. Record the
+    iris diameter at which they merge while keeping ambient light and viewing
+    distance fixed. Note the actual eye pupil and pinhole sizes as practical
+    limitations.
+15. Repeat with both observers. Report trial-to-trial and observer variation,
+    plus iris calibration and geometry uncertainty; a visual threshold is not
+    a direct measurement of the ideal Rayleigh boundary.
 
 ## Analysis
 
@@ -275,7 +297,8 @@ $$
 \sin\theta_m = \frac{y_m}{\sqrt{y_m^2 + L^2}} = \frac{m\lambda}{a}
 $$
 
-as a straight line through the origin in $m$; the slope is $\lambda/a$.
+as a straight line in signed order $m$; its slope is $\lambda/a$. Allow a
+small intercept to diagnose a mislocated pattern center.
 
 ```python
 import numpy as np
@@ -285,31 +308,45 @@ m  = np.array([-4, -3, -2, -1, 1, 2, 3, 4])
 y  = np.array([...])            # minima positions relative to center, meters
 sy = np.array([...])
 sin_th  = y / np.sqrt(y**2 + L**2)
-ssin_th = sy * L**2 / (y**2 + L**2)**1.5      # propagate through the geometry
+ssin_th = sy * L**2 / (y**2 + L**2)**1.5      # independent position errors
 
-popt, pcov = curve_fit(lambda m, s: s * m, m, sin_th,
+popt, pcov = curve_fit(lambda m, b, s: b + s*m, m, sin_th,
                        sigma=ssin_th, absolute_sigma=True)
-a  = lam / popt[0]
-sa = a * np.sqrt((np.sqrt(pcov[0,0])/popt[0])**2 + (slam/lam)**2)
+slope = popt[1]
+a  = lam / slope
+sa = a * np.sqrt((np.sqrt(pcov[1,1])/slope)**2 + (slam/lam)**2)
 ```
 
-Then fit the full profile with [](#eq-diff-single) and compare the two values
-of $a$. They should agree; if the profile fit gives a systematically smaller
-$a$, suspect saturation.
+Here `y`, `sy`, `L`, `lam`, and `slam` are your measured positions, their
+standard uncertainties, screen distance, wavelength, and wavelength
+uncertainty in SI units. Refit at plausible $L$ and center-position limits
+to include their **shared** systematic effects; do not put one common $L$
+error into every independent `sigma` entry. Inspect the intercept and
+residuals. Use `absolute_sigma=True` only for defensible absolute standard
+uncertainties. Then fit the full profile with [](#eq-diff-single) if the
+detector response is linear enough, and compare the two values of $a$ with
+their shared wavelength and distance errors. Saturation or camera processing
+can distort an intensity fit.
 
 ### Grating and discs
 
-For each order, $d = m\lambda/\sin\theta_m$. Take the weighted mean over
-orders, and check for a trend with $m$ — a drift indicates the grating was not
-at normal incidence.
+For a near-normal transmission grating, fit signed $\sin\theta_m$ against
+signed $m$ with an intercept; its slope is $\lambda/d$. A nonzero intercept
+or differing $+m/-m$ estimates may indicate angle-zero or incidence error.
+Common wavelength and angle calibrations correlate the inferred pitches, so
+do not treat all orders as independent measurements when quoting uncertainty.
+For discs, use the reflected zero-order direction and the separately drawn
+reflection geometry. The same simple $d\sin\theta=m\lambda$ form applies
+only after normal incidence and an appropriate diffraction order have been
+established.
 
 ### Resolution
 
 Compare your measured threshold iris diameter with the prediction from
 [](#eq-diff-rayleigh), using the measured pinhole separation and distance.
-Report the ratio measured/predicted, with its uncertainty, and discuss whether
-a ratio different from 1 is a failure of the criterion or a statement about
-human vision.
+Report the ratio measured/predicted with the uncertainties you can support.
+Discuss pinhole size, eye optics, pupil diameter, brightness, and observer
+judgment before interpreting disagreement with the ideal criterion.
 
 ## Post-lab questions
 
@@ -324,19 +361,21 @@ consistent? Which method would you use if you had only twenty minutes?
 :label: q-diff-06
 
 Report the CD and DVD track pitches with uncertainties and compare with the
-standards ($1.60\ \mu\text{m}$ and $0.740\ \mu\text{m}$). Given that the two
-formats use the same disc size, use your two pitches to estimate the ratio of
-their storage capacities, and compare with the actual $700\ \text{MB}$ versus
-$4.7\ \text{GB}$.
+nominal pitches ($1.60\ \mu\text{m}$ and $0.740\ \mu\text{m}$). Assuming equal
+usable area and equal bit length *along* the track, what capacity ratio
+would the measured track pitches alone predict? Compare with about
+$700\ \text{MB}$ versus $4.7\ \text{GB}$ for common single-layer formats.
+What additional design differences does the comparison reveal? See this
+[Yale teaching note](https://volga.eng.yale.edu/teaching-resources/cds-and-dvds/methods-and-materials).
 :::
 
 :::{exercise}
 :label: q-diff-07
 
-Using [](#eq-diff-resolving), compute the resolving power of your grating in
-first order for the illuminated width you actually used. Could it separate the
-sodium D lines at $589.0$ and $589.6\ \text{nm}$? This is the instrument you
-will use in Week 11 — the answer determines whether that experiment works.
+Using [](#eq-diff-resolving), compute the *grating-only* resolving-power limit
+in first order for the illuminated width you actually used. Is that limit
+sufficient to separate the sodium D lines at $589.0$ and $589.6\ \text{nm}$?
+Why could the complete Week 11 spectrometer still fail to separate them?
 :::
 
 :::{exercise}
@@ -345,16 +384,20 @@ will use in Week 11 — the answer determines whether that experiment works.
 An optical microscope using $550\ \text{nm}$ light and an oil-immersion
 objective of numerical aperture $1.4$ resolves about $\lambda/(2\,\text{NA})$.
 Compute it. Then compute the de Broglie wavelength of a $100\ \text{keV}$
-electron (you will meet this formula in Week 7) and comment on why electron
-microscopes exist.
+electron with **relativistic** momentum,
+$pc=\sqrt{T(T+2m_ec^2)}$ and $\lambda=h/p$ (you will meet this in Week 7).
+Explain why the much shorter wavelength helps electron microscopy while
+electron-lens aberrations and the specimen still limit real resolution.
 :::
 
 :::{exercise}
 :label: q-diff-09
 
-If you looked for a Blu-ray first order and did not find one, state the
-inequality this places on the track pitch, and compare with the standard's
-$0.32\ \mu\text{m}$. If you *did* find one, explain what you actually saw.
+For a normal-incidence grating in air, what inequality on track pitch would
+make a first order impossible at $650\ \text{nm}$? Compare it with the nominal
+Blu-ray pitch of $0.32\ \mu\text{m}$. If you saw no spot, explain why absence
+alone cannot establish that inequality. If you saw a spot, list other
+possible structures, reflections, or alignment effects to check.
 :::
 
 ## Going further

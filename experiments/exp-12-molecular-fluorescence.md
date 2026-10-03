@@ -24,65 +24,66 @@ By the end of this experiment you should be able to:
 - Measure an absorption spectrum and verify the Beer–Lambert law over a range
   of concentrations.
 - Measure a fluorescence emission spectrum and determine the Stokes shift.
-- Interpret the Stokes shift and the approximate mirror symmetry of the two
-  spectra in terms of the Franck–Condon principle and vibrational relaxation.
-- Estimate a vibrational energy quantum from spectroscopic data and compare it
-  with $k_BT$.
+- Interpret the Stokes shift and test whether the lowest-energy absorption
+  band and emission band are approximately mirror symmetric.
+- Estimate a vibrational energy quantum only if a resolved, assigned
+  vibronic progression is present; otherwise explain the resolution limit.
 
 ## Textbook connection
 
 Read §12.4–12.7. Chapter 12 builds molecular energy levels as a hierarchy:
 electronic states separated by a few eV, vibrational levels within them
-separated by tenths of an eV, and rotational levels by meV. Everything you
-measure this afternoon is a consequence of that hierarchy and of the fact that
-electronic transitions happen far faster than nuclei can move.
+separated by tenths of an eV, and rotational levels by meV. These energy
+scales and the fact that electronic transitions are fast relative to nuclear
+motion help explain the spectra measured here.
 
 ## Theory
 
 ### Why absorption and emission are not at the same wavelength
 
-The Franck–Condon principle: an electronic transition occurs so quickly
-compared with nuclear motion that the nuclei do not move during it. On a
-potential-energy diagram, transitions are therefore **vertical**.
+The Franck–Condon principle approximates an electronic transition as fast
+compared with nuclear motion. On a potential-energy diagram, the most
+probable transitions are therefore **vertical**.
 
-The excited electronic state generally has a different equilibrium bond length
-from the ground state. So a vertical transition upward from the ground state's
-$v=0$ level lands on a *vibrationally excited* level of the excited electronic
-state. The molecule then relaxes non-radiatively to $v'=0$ of the excited
-state, in picoseconds, dumping that vibrational energy into the solvent. Only
-then does it emit — and the vertical transition back down lands on a
-vibrationally excited level of the *ground* state, which again relaxes.
+The excited electronic state may have a different equilibrium nuclear geometry
+from the ground state. A vertical transition from a populated ground-state
+vibrational level can therefore populate several excited-state levels.
+Vibrational and solvent relaxation often precede fluorescence from the
+lowest excited singlet state. The vertical emission transition can then
+populate vibrationally excited ground-state levels, which relax afterward.
 
 ```{figure} ../images/exp12-franck-condon-concept.svg
 :label: fig:exp12-franck-condon
 :alt: Ground and excited electronic potential energy curves offset in bond length, with a vertical absorption transition, diagonal vibrational relaxation, a vertical emission transition at lower energy, and a second relaxation back to the ground vibrational level, plus a comparison of the absorption and emission photon energies showing the Stokes shift.
 
-The Franck-Condon cycle. Absorption and emission are both vertical (fast compared with nuclear motion); vibrational relaxation (dashed) happens in between, at constant electronic state, and is what makes $h\nu_{\rm em} < h\nu_{\rm abs}$.
+An idealized Franck–Condon cycle. Vertical arrows show electronic transitions;
+dashed arrows show relaxation between them. The pictured excitation and
+emission photons differ in energy. Real bands also depend on solvent
+reorganization, populated starting levels, and other decay channels.
 ```
 
-The consequence: **emission is always at lower photon energy than absorption**,
-by the sum of the two relaxation energies. That difference is the **Stokes
-shift**,
+For the usual relaxed fluorescence from these dilute dyes, the emission-band
+maximum is expected at lower photon energy than the corresponding
+absorption-band maximum. Their difference is the **Stokes shift**,
 
 $$
 \Delta\tilde\nu_{\text{Stokes}} = \tilde\nu_{\text{abs,max}} - \tilde\nu_{\text{em,max}},
 $$ (eq-stokes)
 
-conventionally quoted in $\text{cm}^{-1}$ because it is an energy difference,
-not a wavelength difference. (Quoting a Stokes shift in nanometres is common
-and nearly meaningless, since the same energy shift corresponds to very
-different wavelength shifts in different parts of the spectrum. Do it in
-wavenumbers.)
+usually reported in $\text{cm}^{-1}$ or eV so it can be compared across
+spectral regions. Also report the two peak wavelengths. Individual photons
+can overlap or even appear on the anti-Stokes side; the difference of band
+maxima is an operational measurement, not a fixed energy lost by every photon.
 
 ### The mirror-image rule
 
-If the vibrational level spacings are similar in the ground and excited
-electronic states — usually roughly true — then the *pattern* of
-Franck–Condon factors going up is the same as going down. The emission
-spectrum is therefore approximately the mirror image of the absorption
-spectrum, reflected about the $0$–$0$ transition energy. Finding that mirror
-line in your data locates the $0$–$0$ transition, which is a real
-spectroscopic quantity you cannot read directly off either spectrum.
+For comparable potential shapes and the same emitting species, the
+lowest-energy absorption band and corrected emission band may look roughly
+mirror symmetric on an energy or wavenumber axis. Strong solvent effects,
+overlapping electronic bands, reabsorption, or different chemical forms can
+spoil this approximation. Estimate a $0$–$0$ origin from mirror symmetry
+only if those conditions and the spectral overlap support it; otherwise
+report the observed peak separation without an invented origin.
 
 ### Beer–Lambert
 
@@ -96,9 +97,11 @@ A \equiv \log_{10}\frac{I_0}{I} = \varepsilon c \ell ,
 $$ (eq-beer)
 
 where $A$ is the absorbance and $\varepsilon$ the molar absorptivity, in
-$\text{M}^{-1}\text{cm}^{-1}$. The law is linear in $c$ only while the
-molecules absorb independently; at high concentration, aggregation and
-re-absorption break it. Finding where it breaks is part of the experiment.
+$\text{M}^{-1}\text{cm}^{-1}$. Linear $A$ versus $c$ requires a stable
+absorbing species, known path length, and a detector operating above its
+dark and stray-light floor. Chemical changes, aggregation, scattering,
+and instrumental stray light can produce different deviations; the
+concentration series tests the range over which the relation holds.
 
 ## Pre-lab
 
@@ -123,10 +126,11 @@ free acid).
 :::{exercise}
 :label: q-fluor-03
 
-Explain why an absorbance much above about 2 cannot be measured accurately
-with a simple spectrometer. Compute the transmitted fraction at $A = 2$ and at
-$A = 3$, and compare with the stray-light level of a typical compact
-spectrometer ($\sim0.1\%$).
+Compute the transmitted fraction at $A=2$ and $A=3$. As an *illustration*,
+suppose stray light adds 0.1% of the blank signal at the detector. What
+apparent absorbance would each sample give? Explain why the useful upper
+absorbance depends on the measured instrument floor rather than a
+universal cutoff.
 :::
 
 :::{exercise}
@@ -139,31 +143,36 @@ the vibrational relaxation, the emission transition, and the Stokes shift.
 
 ## Apparatus
 
-- EDU-SPEB2 with the EDU-SPEBCT1 scanning detector extension, or a calibrated
-  USB spectrometer with fiber input and a cuvette holder; the EDU-SPEB2 viewing
-  screen alone cannot record absorbance or emission spectra
+- Calibrated spectrometer with detector, cuvette mount, and suitable visible
+  response: a USB fiber spectrometer or a detector-equipped EDU-SPEB2 setup
+  with suitable coupling. The EDU-SPEB2 viewing screen alone cannot record
+  quantitative absorbance or emission spectra.
 - Broadband white LED or tungsten lamp, for the absorption measurement
-- Excitation LEDs: $405\ \text{nm}$ and $470\ \text{nm}$, and a $365\ \text{nm}$
-  UV LED if quinine is used
-- Long-pass filter to block scattered excitation light from the emission
-  measurement
-- $1\ \text{cm}$ cuvettes; volumetric glassware; micropipettes
-- Fluorophores: fluorescein in dilute NaOH, or quinine sulfate in
-  $0.1\ \text{M}$ H$_2$SO$_4$, or tonic water; optionally rhodamine 6G in
-  ethanol, and a chlorophyll extract from spinach in acetone
+- Excitation LED matched to the dye: for example, a blue LED near 470 nm for
+  fluorescein, or a UV LED near 365 nm for quinine if the optics and cuvette
+  transmit there. A second excitation source is optional.
+- Long-pass filter chosen to reject the selected excitation wavelength while
+  passing the emission band; record its transmission range
+- $1\ \text{cm}$ cuvettes with suitable UV transmission if needed;
+  volumetric glassware; micropipettes
+- A dye with known concentration and fixed solvent/pH across dilutions:
+  fluorescein in dilute base or quinine sulfate in dilute sulfuric acid.
+  Tonic water can be used for a qualitative spectrum, but its unknown quinine
+  concentration cannot yield a molar absorptivity. Rhodamine 6G in ethanol
+  or chlorophyll extract in acetone are optional prepared samples.
 - Cuvette rack, lint-free wipes
 
 :::{danger}
-The $365\ \text{nm}$ and $405\ \text{nm}$ LEDs are bright and in or near the
-ultraviolet, where there is no blink reflex and no visual warning of
-overexposure. Never look at them directly, and shield the excitation path.
-Ethanol and acetone are flammable; keep them away from the lamp. Gloves for
-the dyes. See [](#lab-safety).
+Shield any UV or violet excitation beam and avoid direct viewing; a 365 nm
+source is ultraviolet and can expose eyes and skin without a reliable visual
+warning. Use the source-specific controls in [](#lab-safety). Follow the
+chemical handling procedure for the dilute base or acid and the dye in use.
+Keep ethanol and acetone away from heat and ignition sources.
 :::
 
 ```{figure} ../images/exp12-fluorescence-schematic.svg
 :label: fig:exp12-fluorescence
-:alt: Panel (a), an excitation LED illuminates a cuvette from the side, and a long-pass filter blocks the excitation light before the emitted fluorescence reaches the spectrometer at 90 degrees. Panel (b), a white lamp shines through the same cuvette in-line to the spectrometer for the absorption measurement.
+:alt: Panel (a), a shielded excitation LED illuminates a sample cuvette from the side; fluorescence travels at right angles through a matched long-pass filter to a detector spectrometer. Panel (b), a white lamp sends light through a sample cuvette to the spectrometer; a solvent-only cuvette supplies the reference spectrum.
 
 Two geometries, one cuvette. (a) Excitation at 90 degrees to detection, with a long-pass filter, keeps the weak fluorescence from being swamped by scattered excitation light. (b) In-line transmission gives the absorption spectrum.
 ```
@@ -176,9 +185,9 @@ Two geometries, one cuvette. (a) Excitation at 90 degrees to detection, with a l
   in-line lamp–cuvette–spectrometer for absorption, and 90-degree
   LED–cuvette–filter–spectrometer for emission. Do not use an absorption
   reference spectrum to correct the emission geometry.
-- Label every cuvette and dilution before pipetting. Prepare a dilution table
-  with stock concentration, transfer volume, final volume, concentration, and
-  propagated uncertainty; calculate it before making the solutions.
+- Label every cuvette and dilution before pipetting. Keep solvent and pH
+  constant, and prepare a dilution table with stock concentration, transfer
+  volume, final volume, concentration, and propagated uncertainty.
 - Fix cuvette orientation with a small mark on a frosted face. Rinse with the
   next solution, fill to the same height, remove bubbles, and wipe the clear
   faces with lint-free tissue before every reading.
@@ -186,18 +195,21 @@ Two geometries, one cuvette. (a) Excitation at 90 degrees to detection, with a l
   gain, fiber position, filter, and file name. Clamp the fibers so geometry
   cannot drift across the concentration series.
 - Define a saturation threshold and a minimum useful signal before collecting
-  the series. Retake dark, blank, and reference data whenever integration time,
-  gain, filter, source, or geometry changes.
+  the series. Retake dark and solvent reference data whenever integration time,
+  gain, source, or transmission geometry changes; collect a matching
+  solvent-only fluorescence blank whenever excitation, filter, or collection
+  geometry changes.
 
 ### Part A — Spectrometer setup
 
 1. Record a **dark spectrum** (source blocked) and a **reference spectrum**
    (solvent-only cuvette in the beam). Every absorbance is computed from these
    two, so retake them whenever the geometry or integration time changes.
-2. Verify the wavelength calibration against a mercury or a known LED line;
-   the kit calibration can drift.
-3. Confirm you are not saturating: the reference spectrum's peak should sit at
-   roughly 70% of full scale.
+2. Verify wavelength calibration against a suitable known narrow line;
+   an uncalibrated LED peak is not a wavelength standard.
+3. Confirm that both reference and sample signals stay below detector
+   saturation and above the measured dark/stray-light floor over the
+   wavelengths used for fitting.
 
 **[ ] Checkpoint 1.** Show the instructor your dark and
 reference spectra, and a solvent-only "absorbance" spectrum, which should be
@@ -206,46 +218,55 @@ feature later.
 
 ### Part B — Absorption and Beer–Lambert
 
-4. Prepare a dilution series: at least six concentrations spanning two orders
-   of magnitude, made by serial dilution from a stock. Record the actual
-   volumes and propagate their uncertainties.
+4. Prepare at least six known concentrations. Use the expected absorptivity
+   and measured signal floor to aim for several peak absorbances from about
+   0.05 to 1.5; include a more concentrated sample only if useful for
+   investigating departures. Record actual volumes and their uncertainties.
+   Serial dilutions share stock and transfer uncertainties.
 5. Record the absorbance spectrum of each. Note the peak wavelength and peak
    absorbance.
-6. Note the concentration at which the peak absorbance passes about 2, and the
-   concentration at which the peak *wavelength* starts to move — the second is
-   evidence of aggregation and marks where [](#eq-beer) has failed physically,
-   not just instrumentally.
+6. Plot peak absorbance against concentration and inspect residuals from the
+   low-concentration line. Check whether departures follow the instrument's
+   dark or stray-light floor, scattering, a pH change, or a reproducible
+   spectral-shape change. A moving peak alone does not prove aggregation.
 
 ### Part C — Emission
 
-7. Choose a dilute sample, $A \lesssim 0.1$ at the excitation wavelength. This
-   matters: at higher absorbance the excitation is absorbed in the first
-   millimeter of the cuvette and the emitted light is re-absorbed on its way
-   out — the **inner filter effect** — which distorts the emission spectrum
-   toward longer wavelengths and will fake a larger Stokes shift.
+7. Choose a dilute sample, ideally $A_{\rm exc}\lesssim0.1$ across the
+   excitation path, and check absorbance across the emission band. At
+   $A_{\rm exc}=0.1$, about 79% of incident light traverses a 1 cm path;
+   stronger absorption changes where fluorescence originates. Reabsorption
+   of emitted light can also alter its profile: together these are
+   **inner-filter effects**.
 8. Illuminate from the side, at $90°$ to the collection axis, so that
    unabsorbed excitation light does not enter the spectrometer.
-9. Add the long-pass filter in front of the collection fiber.
-10. Record the emission spectrum. Record also a blank (solvent only, same
-    excitation) and subtract it — it removes Raman scattering from the solvent
-    and any filter fluorescence.
-11. Repeat with a second excitation wavelength. The emission spectrum should
-    be **independent of excitation wavelength** (Kasha's rule); verifying this
-    is a real test of the relaxation picture in the Theory section.
+9. Put the matched long-pass filter before the collection fiber and verify
+   that it passes the emission peak rather than clipping the blue side.
+10. Record a dark and a solvent-only fluorescence blank at the same settings
+    and subtract both appropriately. Check residual excitation leakage,
+    Raman features, and filter or solvent background.
+11. If a second source also excites the same dye, repeat with its matched
+    filter and blank. Compare normalized, background-corrected band shapes
+    over their common passband. Kasha's rule concerns relaxation to the
+    lowest excited state; different apparent spectra can also arise from
+    filters, detector response, or different chemical forms.
 
 ### Part D — Concentration and quenching
 
-12. Record emission spectra across your dilution series at fixed excitation
-    and geometry. Plot integrated emission against concentration. It should
-    rise linearly and then bend over and fall — the inner filter effect and,
-    at high concentration, self-quenching.
+12. Record emission spectra across the dilution series at fixed excitation
+    power, filter, and geometry. Plot background-corrected integrated
+    emission against concentration. Expect an approximately linear low-
+    concentration region if detector response and quantum yield are stable;
+    a plateau or downturn at higher concentration can reflect inner-filter
+    effects, quenching, aggregation, or detector saturation. Use dilution
+    and geometry checks to distinguish them.
 
 ### Part E (optional) — Chlorophyll
 
-13. Extract chlorophyll from spinach with acetone, filter, and record
-    absorption and emission. Chlorophyll's Stokes shift is remarkably small,
-    and the reason — a rigid conjugated ring whose geometry barely changes on
-    excitation — is exactly the Franck–Condon argument run in reverse.
+13. If a prepared chlorophyll extract and approved solvent-handling setup are
+    available, record its absorption and emission. Compare only an assigned
+    absorption/emission pair, accounting for overlapping pigments,
+    reabsorption, and solvent effects before interpreting the shift.
 
 ## Analysis
 
@@ -259,52 +280,69 @@ A  = np.array([...])           # peak absorbance
 sA = np.array([...])
 c  = np.array([...])           # molarity
 sc = np.array([...])
+ell_cm, sell_cm = 1.00, 0.01   # replace with measured path and uncertainty
 
-sel = A < 1.5                  # stay in the linear, measurable region
-popt, pcov = curve_fit(lambda c, eps: eps * 1.0 * c,      # ell = 1.00 cm
+sel = np.array([...], dtype=bool)  # select a range after checking floor and residuals
+popt, pcov = curve_fit(lambda c, A0, m: A0 + m * c,
                        c[sel], A[sel], sigma=sA[sel], absolute_sigma=True)
-eps, seps = popt[0], np.sqrt(pcov[0, 0])
+A0, m = popt
+eps = m / ell_cm
+seps = np.hypot(np.sqrt(pcov[1, 1]) / ell_cm,
+               abs(eps) * sell_cm / ell_cm)
 ```
 
-Plot all the points, but fit only the linear region, and show on the figure
-where you cut. Report $\varepsilon$ with its uncertainty and compare with the
-literature value.
+Plot all points and fit a justified range whose transmission remains above
+the measured floor. Show the excluded points and residuals. A significant
+nonzero intercept calls for a blank or baseline check; do not silently force
+it to zero. The code propagates fit and path-length uncertainty but treats
+concentrations as exact. If their uncertainties matter, fit with a method
+that includes uncertainty in both axes or propagate the common stock and
+dilution errors by simulation. Report $\varepsilon$ with its uncertainty
+and compare with a literature value for the same dye form, solvent, and pH.
 
 ### Stokes shift and the mirror line
 
-Convert both spectra to a wavenumber axis before comparing peaks. **Also
-convert the intensities**: a spectrum recorded per unit wavelength must be
-multiplied by $\lambda^2$ to become a spectrum per unit wavenumber, because
-$I_{\tilde\nu} = I_\lambda\,|d\lambda/d\tilde\nu| = I_\lambda \lambda^2$.
-Skipping this shifts the apparent emission peak by tens of $\text{cm}^{-1}$
-and is one of the most common errors in undergraduate fluorescence reports.
+Convert both wavelength axes to wavenumber. Absorbance is dimensionless at
+each wavelength, so relabel its axis without multiplying the ordinates.
+For an emission spectrum calibrated as spectral density per nm, preserve
+area when changing axes:
+$F_{\tilde\nu}=F_\lambda\,|d\lambda_{\rm nm}/d\tilde\nu|
+=F_\lambda\lambda_{\rm nm}^2/10^7$ for $\tilde\nu$ in $\text{cm}^{-1}$.
+Raw counts per detector pixel require a wavelength-bin calibration before
+using that Jacobian. Correct the detector's wavelength response and remove
+background before comparing band shapes or quoting a precise peak shift.
 
 ```python
-nu_abs = 1e7 / lam_abs                    # cm^-1 from nm
-I_nu   = I_lam * lam**2                   # Jacobian for the axis change
+nu_abs = 1e7 / lam_abs_nm                # cm^-1; A_abs stays unchanged
+nu_em  = 1e7 / lam_em_nm
+F_nu   = F_lam_per_nm * lam_em_nm**2 / 1e7
 ```
 
-Find both peaks by fitting a low-order polynomial or a Gaussian to the top
-20% of each band, rather than by taking the argmax of noisy data. Report
-$\Delta\tilde\nu_{\text{Stokes}}$ with uncertainty.
+Locate each band maximum using a documented local fit or smoothing window
+that is wider than the noise but narrower than the band; compare reasonable
+window choices. Report $\Delta\tilde\nu_{\text{Stokes}}$ with uncertainty
+from calibration, noise, and peak-finding choices.
 
-Then find the mirror line: reflect the absorption spectrum about a trial
-wavenumber $\tilde\nu_{00}$ and vary $\tilde\nu_{00}$ to maximize the overlap
-with the emission spectrum. That optimum is your estimate of the $0$–$0$
-transition energy, and half the Stokes shift on each side is the relaxation
-energy in each electronic state.
+If an isolated lowest-energy absorption band and corrected emission band
+have sufficient overlap, reflect one about a trial wavenumber and test
+whether a plausible mirror line $\tilde\nu_{00}$ aligns their resolved
+features. State the fit interval and sensitivity to background correction.
+If the bands do not support this test, report that limit. Half the Stokes
+shift equals the relaxation energy on either side only in the ideal
+equal-curvature displaced-harmonic model pictured above.
 
 ### A vibrational quantum
 
-If your spectra show resolved vibronic structure — likely for quinine and for
-a cooled or rigid sample, unlikely for fluorescein in water at room
-temperature — measure the spacing of successive peaks. That spacing is the
-vibrational quantum $\hbar\omega$ of the mode coupled to the transition.
-Report it in $\text{cm}^{-1}$ and meV, and compare with $k_BT$ to explain why
-essentially all molecules start from $v = 0$.
+If your spectra show a resolved, assigned vibronic progression, measure
+successive peak spacings. A nearly constant spacing may estimate the
+coupled mode's vibrational quantum $\hbar\omega$; report it in
+$\text{cm}^{-1}$ and meV. Compare it with $k_BT$: the ground vibrational
+level dominates only when that mode's spacing is large compared with
+$k_BT$.
 
-If no structure is resolved, estimate an upper bound on the vibrational
-spacing from the fact that it is unresolved, and say so — a bound is a result.
+If no structure is resolved, state the instrument resolution and observed
+band width. Overlapping modes and broadening can hide even widely separated
+quanta, so an unresolved band alone gives no bound on their spacing.
 
 ## Post-lab questions
 
@@ -320,54 +358,58 @@ your data, and what limited it at each end?
 :label: q-fluor-06
 
 Report the Stokes shift in $\text{cm}^{-1}$ and eV. Compare it with $k_BT$ and
-with a typical molecular vibrational quantum. How many vibrational quanta are
-dissipated per absorbed photon?
+with a relevant molecular vibrational quantum. Explain why the band-maxima
+shift cannot by itself give a number of vibrational quanta dissipated per
+photon.
 :::
 
 :::{exercise}
 :label: q-fluor-07
 
-Did your emission spectrum depend on the excitation wavelength? State what
-Kasha's rule predicts and whether your data support it, with numbers.
+After blank, filter-passband, and detector-response checks, did the emission
+band shape of the same dye depend on excitation wavelength? State the scope
+of Kasha's rule and whether your data are consistent with it, with numbers.
 :::
 
 :::{exercise}
 :label: q-fluor-08
 
 Explain, using your data, how you could tell the inner filter effect from
-genuine self-quenching. What measurement would distinguish them?
+genuine self-quenching. What dilution or geometry check would help, and
+what would a calibrated fluorescence-lifetime measurement add?
 :::
 
 :::{exercise}
 :label: q-fluor-09
 
 The mirror-image rule worked well or badly for your molecule. Either way,
-explain what its success or failure implies about the vibrational frequencies
-in the two electronic states.
+identify the evidence. Discuss more than one possible cause of a mismatch;
+can these data alone determine the vibrational frequencies of both states?
 :::
 
 :::{exercise}
 :label: q-fluor-10
 
 A photon absorbed at $470\ \text{nm}$ and emitted at $514\ \text{nm}$ has lost
-energy. Where did it go? Account for it explicitly, and explain why this does
-not violate energy conservation.
+energy. Calculate this illustrative difference and identify possible energy
+flows into vibrations, solvent, and heat. Explain why it does not violate
+energy conservation and why not every absorbed photon follows this path.
 :::
 
 ## Going further
 
 - **Fluorescence quantum yield.** Comparing integrated emission against a
-  standard of known yield (quinine sulfate, $\Phi = 0.546$ in
-  $0.1\ \text{M}$ H$_2$SO$_4$) gives the fraction of absorbed photons that are
-  re-emitted. It is a genuinely useful measurement and requires careful
-  attention to the absorbance matching between sample and standard.
-- **Iodine vapor.** A sealed I$_2$ cell in a white beam shows hundreds of
-  resolved vibronic lines in absorption. Fitting the band-head spacings to a
-  Morse potential gives the vibrational constant $\omega_e$, the anharmonicity
-  $\omega_e x_e$, and — by Birge–Sponer extrapolation — the dissociation
-  energy of the molecule. This is the definitive undergraduate molecular
-  spectroscopy experiment and is a good full-report or project topic.
-- **Fluorescence lifetime.** With a fast LED driver, a photodiode, and the
-  oscilloscope from Week 2, the nanosecond decay of the excited state is
-  measurable. Combined with the quantum yield, it separates the radiative and
-  non-radiative decay rates.
+  standard of published yield under specified solvent, pH, temperature, and
+  excitation conditions can give the fraction of absorbed photons
+  re-emitted. Match low absorbances, correct integrated emission for detector
+  response and background, and account for any refractive-index difference.
+- **Iodine vapor.** With a sealed I$_2$ cell and enough spectral range and
+  resolution, assigned vibronic bands can give vibrational spacings. A Morse
+  fit and Birge–Sponer extrapolation require many reliable assignments and
+  a justified dissociation limit; a few unresolved band heads are
+  insufficient.
+- **Fluorescence lifetime.** A nanosecond decay requires a pulsed source,
+  fast detector, sufficient recording bandwidth, and a measured instrument
+  response. If these are available, fit the decay after accounting for that
+  response. Together with an independently measured quantum yield, a
+  single-exponential lifetime can estimate radiative and nonradiative rates.

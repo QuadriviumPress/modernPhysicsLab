@@ -7,10 +7,11 @@ label: lab-index
 # Modern Physics Laboratory
 
 Fourteen experiments, one per week, one per chapter of *Modern Physics:
-Relativity, Quantum Theory, and the Structure of Matter*. Each experiment is
-designed to fit a single three-hour laboratory period, to be built from
-apparatus that a small department can keep working without a service contract,
-and to be analyzed in Python rather than in a proprietary application.
+Relativity, Quantum Theory, and the Structure of Matter*. Most bench work is
+planned for a three-hour laboratory period. Slow counting measurements,
+especially the Week 14 muon telescope, need runs outside that period; arrange
+these with the instructor. The experiments use apparatus that a small
+department can maintain and are analyzed in Python.
 
 ## The schedule
 
@@ -25,19 +26,19 @@ and to be analyzed in Python rather than in a proprietary application.
 * - 1
   - [Michelson Interferometer and the Ether Null Result](#exp-michelson)
   - 1
-  - Laser wavelength to $\sim0.1\%$; an upper bound on ether drift
+  - Laser wavelength at percent-level precision; sensitivity to a modeled ether drift
 * - 2
   - [The Speed of Light](#exp-speed-of-light)
   - 2
-  - $c$ by time of flight over a few meters
+  - Light's speed in air by time of flight over a few meters
 * - 3
   - [Relativistic Electrons from Beta Decay](#exp-beta-electrons)
   - 3
-  - $\beta$ endpoint energy; $v/c$ where the classical formula breaks
+  - Conditional $\beta$ endpoint estimate from the terminal absorption range; relativistic $v/c$
 * - 4
   - [Interference of Light](#exp-interference)
   - 4
-  - Slit separation and film thickness from fringe spacing
+  - Slit separation; hair thickness from air-wedge fringes when resolved
 * - 5
   - [Diffraction and the Resolution Limit](#exp-diffraction)
   - 5
@@ -45,7 +46,7 @@ and to be analyzed in Python rather than in a proprietary application.
 * - 6
   - [Planck's Constant from Light-Emitting Diodes](#exp-planck-leds)
   - 6
-  - $h$ to $\sim10\%$; the Stefan–Boltzmann exponent
+  - Conditional LED estimate of $h$; tungsten lamp's effective power–temperature exponent
 * - 7
   - [The Quantum Eraser](#exp-quantum-eraser)
   - 7
@@ -53,19 +54,19 @@ and to be analyzed in Python rather than in a proprietary application.
 * - 8
   - [Tunneling by Frustrated Total Internal Reflection](#exp-ftir-tunneling)
   - 8
-  - Exponential decay of an evanescent wave across a barrier
+  - Thick-gap transmission decay; comparison with a quantum barrier
 * - 9
   - [Eigenmodes, Degeneracy, and Nodal Patterns](#exp-eigenmodes)
   - 9
-  - A measured eigenvalue spectrum and its degeneracies
+  - Cavity resonances, symmetry splitting, and plate nodal patterns
 * - 10
   - [The Balmer Series and the Rydberg Constant](#exp-balmer)
   - 10
-  - $R_\infty$ to $\sim0.5\%$
+  - Balmer line wavelengths and an uncertainty-bounded estimate of $R_{\mathrm H}$
 * - 11
   - [Alkali Spectra and the Quantum Defect](#exp-quantum-defect)
   - 11
-  - Quantum defects $\delta_s,\delta_p,\delta_d$ for sodium
+  - Sodium D splitting; state-specific defects where weak lines are detected
 * - 12
   - [Molecular Fluorescence and the Stokes Shift](#exp-fluorescence)
   - 12
@@ -73,11 +74,11 @@ and to be analyzed in Python rather than in a proprietary application.
 * - 13
   - [Counting Statistics and Half-Life](#exp-counting-statistics)
   - 13
-  - Poisson statistics; a half-life and an attenuation coefficient
+  - Poisson counting test, a half-life, and an effective gamma attenuation coefficient
 * - 14
   - [A Cosmic-Ray Muon Telescope](#exp-muon-telescope)
   - 14
-  - Muon flux, its $\cos^2\theta$ angular distribution, and time dilation
+  - Penetrating-particle coincidences; angular trend with long runs; conditional muon survival model
 ```
 
 ## What every experiment file contains
@@ -101,9 +102,10 @@ to look in all the others:
 
 
 **Python instead of point-and-click.** Analysis is done in Jupyter with
-`numpy`, `scipy.optimize`, and `matplotlib`. Fits report parameter
-uncertainties from the covariance matrix, and every result is quoted as a
-value, an uncertainty, and a unit. Old `.cap` and `.cmbl` data files remain
+`numpy`, `scipy.optimize`, and `matplotlib`. Fits report uncertainties
+using the model appropriate to the data, including Poisson likelihood
+intervals for sparse counts. Quantitative results state a value, an
+uncertainty or bound, and a unit. Old `.cap` and `.cmbl` data files remain
 readable by exporting to CSV; see [](#python-toolkit).
 
 **Uncertainty is the through-line.** Nearly every experiment produces a number
@@ -115,6 +117,7 @@ measurement itself, and the [rubric](#lab-rubric) says so.
 :::{note} A note on sources and safety
 Radioactive sources, Class 2 and Class 3R lasers, and mains-powered heaters
 appear in this manual. Every experiment that uses one carries a safety section
-naming the specific hazard and the specific control. Read
+naming the specific hazard and control. Follow the institution's approved
+procedures for the actual equipment, and read
 [](#lab-safety) before Week 1.
 :::

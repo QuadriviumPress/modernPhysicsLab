@@ -19,16 +19,17 @@ Any of these works. Pick one and stay with it.
 ```bash
 python -m venv phys320
 source phys320/bin/activate        # Windows: phys320\Scripts\activate
-pip install numpy scipy matplotlib pandas jupyterlab uncertainties
+pip install numpy scipy matplotlib pandas jupyterlab uncertainties imageio pyserial
 jupyter lab
 ```
 
-**Alternative — Google Colab.** No installation; `numpy`, `scipy`,
-`matplotlib`, and `pandas` are preinstalled. Add `!pip install uncertainties`
-in the first cell. Mount your Drive to keep data with the notebook.
+**Alternative — Google Colab.** Run in a browser. Check which packages are
+available in the current runtime and install missing ones in the first cell.
+Save the notebook and raw data to storage you control; the runtime is
+temporary.
 
-**Alternative — Anaconda.** Everything above already present. Heavier, but
-fine.
+**Alternative — Anaconda.** Create an environment and add any packages the
+experiment needs. Record the environment so someone else can rerun the work.
 
 Two packages beyond the standard scientific stack are worth having:
 
@@ -59,8 +60,9 @@ data or the cleaning is at fault.
 
 ### 2. Fit
 
-See the template in [](#uncertainty). The two rules that matter:
-always pass `sigma=`, and always pass `absolute_sigma=True`.
+See the template in [](#uncertainty). When you have defensible standard
+uncertainties for each data point, pass `sigma=` and set
+`absolute_sigma=True`. Examine residuals before trusting parameter errors.
 
 ### 3. Propagate
 
@@ -96,13 +98,18 @@ PDF or SVG, not PNG, for anything that goes in a report.
 
 ```python
 def quote(value, err, unit=""):
-    """Round err to one significant figure and value to match."""
-    from math import floor, log10
-    if err == 0:
-        return f"{value:g} {unit}"
-    d = -int(floor(log10(abs(err))))
-    d += 1 if round(err, d) >= 10 ** (-d) * 9.5 else 0   # keep 1 sig fig
-    return f"{round(value, d)} ± {round(err, d)} {unit}".strip()
+    """Round uncertainty to one significant digit (two if it starts with 1)."""
+    from math import floor, isfinite, log10
+    if not isfinite(err) or err <= 0:
+        raise ValueError("err must be a positive finite standard uncertainty")
+    power = floor(log10(err))
+    leading = err / 10**power
+    digits = 2 if leading < 2 else 1
+    rounded_err = float(f"{err:.{digits}g}")
+    places = digits - 1 - floor(log10(rounded_err))
+    rounded_value = round(value, places)
+    fmt = f".{max(places, 0)}f"
+    return f"{rounded_value:{fmt}} ± {rounded_err:{fmt}} {unit}".strip()
 
 print(quote(633.4271, 0.8113, "nm"))    # -> 633.4 ± 0.8 nm
 ```
@@ -152,11 +159,13 @@ with serial.Serial("/dev/ttyACM0", 115200, timeout=2) as ser, \
         line = ser.readline().decode().strip()
         if line:
             w.writerow([round(time.time() - t0, 3), line])
-            f.flush()                          # survive a crash at minute 58
+            f.flush()                          # flush Python's output buffer
 ```
 
-The `f.flush()` is not optional. A long acquisition that buffers everything in
-memory and then dies has produced nothing.
+The `f.flush()` call sends each line from Python's buffer to the operating
+system, so a Python process crash is less likely to lose the last readings.
+It does not guarantee that data reached the storage device; copy the raw file
+to durable storage after acquisition.
 
 ### Images to intensity profiles
 
@@ -179,8 +188,9 @@ applied, none of which is linear in incident intensity. For quantitative
 photometry, shoot RAW (or use a machine-vision camera), lock the exposure, and
 verify linearity by imaging a target through calibrated neutral-density
 filters before you trust an intensity ratio. For measuring fringe *positions*
-— which is what Experiments 4 and 5 mostly need — nonlinearity is harmless,
-because a monotonic transformation does not move a maximum.
+— which is what Experiments 4 and 5 mostly need — a fixed monotonic tone curve
+may leave maxima in place, but sharpening and local image processing can move
+or create features. Check against an unprocessed image when possible.
 :::
 
 ## Notebook hygiene

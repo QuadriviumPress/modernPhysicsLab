@@ -13,13 +13,13 @@ from labstyle import (
 
 def _polarizer(ax, xy, angle_deg, color, h=0.5):
     x, y = xy
-    import numpy as np
     th = np.radians(angle_deg)
-    dx, dy = np.sin(th) * h / 2, -np.cos(th) * h / 2
     ax.add_patch(Rectangle((x - 0.05, y - h / 2), 0.10, h, facecolor="#eef3f7",
                             edgecolor=color, lw=1.2, zorder=3))
-    for t in [-0.3, -0.1, 0.1, 0.3]:
-        ax.plot([x - 0.05, x + 0.05], [y + t * h, y + t * h], color=color, lw=0.7, zorder=4)
+    # A line through the optic indicates the transmission axis.
+    ax.plot([x - 0.038 * np.cos(th), x + 0.038 * np.cos(th)],
+            [y - 0.20 * np.sin(th), y + 0.20 * np.sin(th)],
+            color=color, lw=1.5, zorder=4)
 
 
 def eraser_layout():
@@ -33,7 +33,9 @@ def eraser_layout():
     from labstyle import box
     box(ax, laser, 0.85, 0.4, "EDU-QE1\n532 nm laser", fontsize=7.6)
     source_dot(ax, (laser[0] + 0.5, 0), color="#4caf50", ms=7, glow=False)
-    beam(ax, (laser[0] + 0.6, 0), (slits[0] - 0.12, 0), color="#4caf50")
+    beam(ax, (laser[0] + 0.6, 0), (-2.02, 0), color="#4caf50")
+    _polarizer(ax, (-2.02, 0), 45, PURPLE, h=0.62)
+    label(ax, (-2.02, 1.05), "45° input\npolarizer", fontsize=7.4, color=PURPLE)
 
     d = 0.45
     ax.plot([slits[0], slits[0]], [-1.0, -d - 0.1], color=DARK, lw=2.2, zorder=2)
@@ -42,6 +44,9 @@ def eraser_layout():
     ax.add_patch(Rectangle((slits[0] - 0.18, -1.08), 0.36, 2.16,
                            facecolor="none", edgecolor=GRAY, lw=1.0,
                            linestyle="--", zorder=1))
+    for slit_y in (d, -d):
+        beam(ax, (-1.97, 0), (slits[0] - 0.10, slit_y),
+             color="#4caf50", lw=1.0, alpha=0.75)
     _polarizer(ax, (slits[0], d), 0, RED)
     _polarizer(ax, (slits[0], -d), 90, BLUE)
     label(ax, (slits[0], -1.35), "separate double-slit add-on,\nH / V polarizers\non each slit", fontsize=7.0)
@@ -58,11 +63,11 @@ def eraser_layout():
         beam(ax, (analyzer[0] + 0.05, dy0), (cam[0] - 0.05, dy0 * 1.4), color=DARK, lw=0.9, alpha=0.5)
 
     screen(ax, cam, height=1.4)
-    label(ax, (cam[0], 1.05), "camera /\nscanning photodiode", fontsize=7.4)
+    label(ax, (cam[0], 1.05), "screen /\nscanning detector", fontsize=7.4)
 
     label(ax, (-0.4, 1.9),
-          "Analyzer aligned to H or V $\\to$ which-path is marked, fringes vanish.\n"
-          "Analyzer at 45$°$ $\\to$ which-path information is erased, fringes return.",
+          "H/V slit markers remove interference from the full beam.\n"
+          "A 45° output analyzer selects a subset with fringes.",
           fontsize=7.8, color=DARK, ha="center")
 
     ax.set_xlim(-4.1, 3.6)
@@ -79,15 +84,15 @@ def complementarity_figure():
     V = np.abs(np.sin(np.radians(2 * theta)))
     D = np.abs(np.cos(np.radians(2 * theta)))
 
-    axL.plot(theta, V, color=RED, lw=1.9, label=r"$V = |\sin 2\theta|$")
-    axL.plot(theta, D, color=BLUE, lw=1.9, label=r"$D = |\cos 2\theta|$")
+    axL.plot(theta, V, color=RED, lw=1.9, label=r"$V_{\rm ideal} = |\sin 2\theta|$")
+    axL.plot(theta, D, color=BLUE, lw=1.9, label=r"$D_{\rm ideal} = |\cos 2\theta|$")
     axL.set_xlabel(r"analyzer angle $\theta$ (degrees)")
     axL.set_ylabel("value")
     axL.set_xlim(0, 90)
     axL.set_ylim(0, 1.05)
     axL.set_xticks([0, 15, 30, 45, 60, 75, 90])
     axL.legend(loc="center right", fontsize=9, frameon=False)
-    axL.set_title("Visibility and distinguishability\nversus analyzer angle", fontsize=9.5)
+    axL.set_title("Ideal balanced-beam model\nversus analyzer angle", fontsize=9.5)
 
     # theta in [0, 45] traces the full quarter circle once; theta in [45, 90]
     # retraces the same arc back to (D, V) = (1, 0), so only the first quarter

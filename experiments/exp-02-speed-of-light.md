@@ -13,7 +13,7 @@ numbering:
 
 **Accompanies** Chapter 2, *Special Relativity*
 **Apparatus** Pulsed laser diode or fast LED, two photodiodes, ≥100 MHz oscilloscope, folded optical path
-**You will measure** $c$ by time of flight, to $\sim1$–$3\%$
+**You will measure** the speed of light in air by time of flight, targeting $\sim1$–$3\%$ if the timing is stable
 **Report** Short
 :::
 
@@ -34,12 +34,17 @@ By the end of this experiment you should be able to:
 ## Textbook connection
 
 Read §2.1–2.3. Einstein's second postulate makes $c$ the same in every
-inertial frame; since 1983 the meter has been *defined* so that
+inertial frame; since 1983 the metre has been *defined* so that
 $c = 299\,792\,458\ \text{m/s}$ exactly. You are therefore not measuring a
 constant of nature this afternoon — you are calibrating your meter stick
 against your oscilloscope. That is a slightly deflating way to put it, and it
 is worth being clear-eyed about, because it is exactly the kind of
-definitional shift that Chapter 2 argues relativity forced on physics.
+definitional shift that Chapter 2 argues relativity forced on physics. The
+[BIPM definition of the metre](https://www.bipm.org/en/si-base-units/metre)
+fixes the value of $c$ **in vacuum**. This experiment measures pulse travel
+through air; its group speed differs from vacuum $c$ by roughly three parts
+in ten thousand, smaller than the target uncertainty here. State this
+approximation when comparing your result with the defined value.
 
 ## Theory
 
@@ -52,11 +57,12 @@ $$
 t = t_0 + \frac{L}{c} + \tau,
 $$ (eq-sol-tof)
 
-where $\tau$ lumps together every fixed delay in the system: the LED's turn-on
-lag, the photodiode's response time, the amplifier, and the electrical length
-of the cables. $\tau$ is of order tens of nanoseconds — comparable to or
-larger than the flight time you are trying to measure — and you have no
-reliable way to compute it.
+where $\tau$ represents fixed delays in a single detection channel. In the
+actual two-channel measurement, the common source turn-on time cancels;
+$\tau$ represents the difference between the reference and signal path
+lengths, detector and amplifier delays, and cable delays. It may be
+comparable to the flight time you are trying to measure and is best measured
+as the intercept rather than assumed from component labels.
 
 The way out is not to measure $\tau$ but to *eliminate* it. Take the delay
 $\Delta t$ at two or more path lengths $L$. Since $\tau$ does not depend on
@@ -68,9 +74,10 @@ $$
 \frac{d(\Delta t)}{dL} = \frac{1}{c}.
 $$ (eq-sol-slope)
 
-Fit a straight line to $\Delta t$ against $L$; the slope gives $c$ and the
-intercept gives $\tau$, which you get for free and which is a useful check
-that nothing is drifting.
+Fit a straight line to $\Delta t$ against $L$; the inverse slope estimates
+the light speed in air and the intercept estimates $\tau$. This cancellation
+works only if the reference path and the channel delays stay fixed as $L$
+changes.
 
 This is a general and important technique: **when an unknown offset
 contaminates a measurement, vary the quantity of interest and fit a slope.**
@@ -96,18 +103,21 @@ $3.5\ \text{ns}$ — about a meter of light travel. This does *not* mean you
 cannot do better than a meter. A smeared edge can still be *located* to a
 fraction of its rise time, because averaging many acquisitions beats down the
 noise on the edge and the scope interpolates between samples. In practice,
-with 128-fold averaging and a stable trigger, locating an edge to $\sim0.2$–$0.5\ \text{ns}$
-is achievable, which over a $10\ \text{m}$ path length change is a 1–2%
-measurement of $c$.
+with enough signal, sampling, and a stable trigger, locating an edge to a
+fraction of a nanosecond may be possible. Measure that timing scatter on your
+actual setup. Across a $10\ \text{m}$ path change, $0.4\ \text{ns}$ is about
+1.2% of the $33\ \text{ns}$ flight-time change.
 
 The other contributors are: the sampling interval (use the fastest time base
 that still shows both edges), trigger jitter (trigger on the *reference*
 channel, which is bright and fast), and — the one students usually forget —
-the unequal electrical lengths of the two BNC cables. Signal travels in RG-58
-at about $0.66c$, so a $30\ \text{cm}$ cable mismatch is $1.5\ \text{ns}$,
-which is a systematic error of the same size as your entire statistical
-uncertainty. Measure the cables, or better, swap them and see if the answer
-moves.
+the unequal electrical lengths of the two BNC cables. Signal travels in
+typical RG-58 at about $0.66c$, so a $30\ \text{cm}$ cable mismatch changes
+the channel offset by about $1.5\ \text{ns}$. If the cables remain fixed
+throughout the path-length series, that offset changes the *intercept*, not
+the fitted speed. Measure the cables and swap them once as a control; a
+path-dependent change in electronics or detector response would affect the
+slope.
 
 ## Pre-lab
 
@@ -124,8 +134,8 @@ path difference you can display on one screen without scrolling?
 :label: q-sol-02
 
 Using [](#eq-sol-risetime), find the rise time of a $100\ \text{MHz}$ scope and
-of a $200\ \text{MHz}$ scope. If two independent elements each contribute a
-rise time, the total is $t_r = \sqrt{t_{r,1}^2 + t_{r,2}^2}$. Given a
+rise time, the total is approximately
+$t_r = \sqrt{t_{r,1}^2 + t_{r,2}^2}$ for Gaussian-like responses. Given a
 photodiode with $t_r = 2\ \text{ns}$ and a $100\ \text{MHz}$ scope, what total
 rise time do you expect to see on the screen?
 :::
@@ -152,26 +162,29 @@ determining, and why the experiment is still worth doing.
 
 - Fast pulsed source: a laser diode module driven by a $\sim1\ \text{MHz}$
   square wave with a fast edge, or a red/IR LED driven hard by a MOSFET
-  gate-driver. A microcontroller GPIO pin alone is too slow; use the driver.
+  gate-driver. Check source current and edge-speed requirements; a
+  microcontroller GPIO may not drive the source adequately by itself.
 - Function generator or microcontroller producing the drive pulse
 - Two photodiodes with fast amplifiers (target bandwidth at least 200 MHz;
-  a 12 MHz PDA36A2 is too slow for the 3.3 ns-per-meter delay used here)
+  a 12 MHz PDA36A2 would broaden the edge substantially and make the target
+  timing precision harder to reach)
 - Oscilloscope, $\ge 100\ \text{MHz}$, with averaging
 - Two front-surface mirrors on adjustable mounts, to fold the path
 - Tape measure ($\pm 2\ \text{mm}$) and a target card
 - Two BNC cables of *measured*, ideally equal, length
 
 :::{danger}
-If the source is a laser diode rather than an LED, the folded beam crosses the
-room at head height. Mark the path, keep the room clear, and terminate the
-beam on a block. See [](#lab-safety).
+If the source is a laser diode rather than an LED, confirm its class and
+follow the site's laser procedure. Route the folded beam below eye level,
+mark the path, keep the room clear, and terminate it on a beam stop. See
+[](#lab-safety).
 :::
 
 ```{figure} ../images/exp02-time-of-flight-schematic.svg
 :label: fig:exp02-tof
 :alt: A pulsed source is split at a beamsplitter into a short reference path to one photodiode and a folded path via two mirrors to a second photodiode, both feeding a fast oscilloscope.
 
-The time-of-flight bench. A fast pulse is split into a short reference path and a folded path of measured length $L$; the delay between the two pulses on the scope gives $c = L/\Delta t$.
+The time-of-flight bench. A fast pulse is split into a fixed reference path and a folded path of measured length $L$; the inverse slope of delay versus $L$ estimates the propagation speed while fixed channel delays enter the intercept.
 ```
 
 ## Procedure
@@ -205,12 +218,14 @@ The time-of-flight bench. A fast pulse is split into a short reference path and 
    path, about $2\ \text{m}$ total.
 3. Trigger the scope on the reference channel. Set both channels to the same
    vertical scale and DC coupling.
-4. Turn on averaging (128 acquisitions is a good starting point) and watch the
-   edges sharpen.
+4. Turn on averaging (128 acquisitions is a starting point) and compare the
+   timing scatter. Averaging reduces random noise; it does not restore edge
+   speed lost to limited detector or oscilloscope bandwidth.
 
 **[ ] Checkpoint 1.** Show the instructor two clean,
 averaged edges with a stable trigger. If the signal edge is noisy, the beam is
-not centered on the detector — walk the mirrors, do not turn up the gain.
+possibly off-center; check beam centering, source stability, and electronic
+noise before changing the amplifier gain.
 
 ### Part B — The delay measurement
 
@@ -230,21 +245,22 @@ not centered on the detector — walk the mirrors, do not turn up the gain.
 
 :::{warning}
 Every time you move a mirror you must re-center the beam on the detector. A
-beam that lands on the edge of the photodiode produces a smaller, slower pulse
-whose 50% crossing is *later* — a systematic error that grows with path
-length, which is exactly where it does the most damage. Re-peak the signal
+beam that lands on the edge of the photodiode may produce a smaller or
+different-shaped pulse whose 50% crossing shifts — a systematic error that
+can grow with path length. Re-peak the signal
 amplitude after every move.
 :::
 
 ### Part C — Controls
 
-9. **Swap the two BNC cables** and repeat one measurement. Any shift is twice
-   the cable-length mismatch; correct for it or fold it into the systematic
-   uncertainty.
-10. **Block the main beam** and confirm the signal channel goes flat. If it
-    does not, you are picking up electrical crosstalk from the drive pulse,
-    not light, and the whole measurement is invalid. Fix it with shielding or
-    by moving the drive electronics.
+9. **Swap the two BNC cables** and repeat one measurement. If cable delay is
+   the only change, the measured delay shifts by twice the original cable
+   offset. This checks the intercept contribution; a fixed offset cancels
+   from the fitted slope. Restore the original cabling for the series.
+10. **Block the main beam** and confirm that the pulse correlated with the
+    reference disappears from the signal channel. A remaining correlated
+    pulse suggests electrical crosstalk; find and remove it before fitting.
+    Background and detector noise need not disappear completely.
 11. If time allows, repeat one path length with the averaging turned off, to
     see what averaging bought you.
 
@@ -275,9 +291,10 @@ resid = (dt - model(L, *popt)) / sdt
 print(f"chi2/nu = {np.sum(resid**2) / (len(L) - 2):.2f}")
 ```
 
-Note the propagation in the fourth-to-last line: the fit parameter is $1/c$,
+Note the propagation in the calculation of `sc`: the fit parameter is $1/c$,
 so $\sigma_c = \sigma_{1/c}/(1/c)^2$. Fitting $1/c$ rather than $c$ keeps the
-model linear, which makes the fit robust and the covariance matrix meaningful.
+model linear; the covariance matrix still depends on a suitable uncertainty
+model and stable channel delays.
 
 Because $L$ also carries uncertainty, check whether it matters: the effective
 uncertainty on $\Delta t$ from a position error is $\sigma_L/c$. For
@@ -285,9 +302,9 @@ $\sigma_L = 5\ \text{mm}$ this is $17\ \text{ps}$, far below your timing
 uncertainty — so position error is negligible here, and you should say so
 rather than silently ignoring it.
 
-Plot the residuals. A *curved* residual pattern means something depends on
-path length that should not — almost always the beam-centering problem in the
-warning above.
+Plot the residuals. A curved pattern suggests an effect that changes with path
+length, such as detector illumination, pulse shape, or a changing electronic
+delay. Investigate before interpreting the fitted speed.
 
 ## Post-lab questions
 
@@ -302,9 +319,10 @@ or would it also show up as a bad $\chi^2_\nu$? What does each case imply?
 :::{exercise}
 :label: q-sol-06
 
-Your fitted $\tau$ has a physical meaning. Estimate independently what it
-should be from the cable lengths ($v \approx 0.66c$ in RG-58) and the
-photodiode rise times, and compare. Does your fit's intercept make sense?
+Your fitted $\tau$ combines the reference-path offset and unequal channel
+delays. Estimate the cable and optical-path contributions, then identify
+which detector and amplifier delays you have not calibrated. Is the intercept
+plausible? Why would a photodiode's *rise time* alone not determine its delay?
 :::
 
 :::{exercise}
@@ -319,11 +337,11 @@ slope method — state it in one sentence.
 :::{exercise}
 :label: q-sol-08
 
-Rømer inferred a finite speed of light in 1676 from the timing of Jupiter's
-moon Io, using a baseline of the Earth's orbital diameter rather than a
-laboratory. His result was about 25% low. Given that his *timing* was good to
-minutes on a delay of about 16 minutes, what was almost certainly the limiting
-error, and how does that compare with your own limiting error?
+Rømer inferred a finite light-travel time in 1676 from the changing timing of
+Io's eclipses as Earth moved toward and away from Jupiter. Explain why both
+reliable eclipse timing and the changing Earth–Jupiter distance are needed to
+infer a speed. Which quantity is harder to control in this laboratory setup?
+See [NASA's account of Rømer's method](https://pwg.gsfc.nasa.gov/stargaze/Sun4Adop1.htm).
 :::
 
 :::{exercise}

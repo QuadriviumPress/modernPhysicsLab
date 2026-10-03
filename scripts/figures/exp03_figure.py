@@ -56,44 +56,51 @@ def beta_shelf_layout():
 
 
 def absorption_curve_figure():
-    """The shape of a beta absorption curve: a quasi-exponential fall,
-    bending over into a bremsstrahlung tail and a background floor, with
-    the maximum range found by extrapolating the steep part to the floor."""
-    fig, ax = plt.subplots(figsize=(6.4, 4.4))
+    """Illustrative mixed-beta transmission and a linear terminal-range fit.
 
-    mu = 6.5e-3  # 1/(mg/cm^2), the beta absorption coefficient
-    R0 = 8000.0  # counts/s at x = 0
-    bg = 4.0  # counts/s, background + residual bremsstrahlung floor
-    tail0 = 45.0
-    mu_tail = 1.6e-3
+    The synthetic curve is chosen to show the analysis geometry, not to model
+    the exact spectrum or source-detector response of a particular lab.
+    """
+    fig, (ax, zoom) = plt.subplots(1, 2, figsize=(9.2, 4.0))
+    floor = 20.0  # illustrative background plus source-related photons
+    x = np.linspace(0, 1600, 800)
+    rate = floor + 600 * np.maximum(1 - x / 1100, 0) + 5000 * np.exp(-x / 130)
 
-    x = np.linspace(0, 1200, 800)
-    R = R0 * np.exp(-mu * x) + tail0 * np.exp(-mu_tail * x) + bg
+    ax.semilogy(x, rate, color=RED, lw=2.0)
+    ax.axhline(floor, color=GRAY, ls=":", lw=1.0)
+    ax.text(170, 1050, "mixed beta\ntransmission", fontsize=8.5, color=DARK)
+    ax.text(1130, 28, "measured floor", fontsize=8, color=GRAY)
+    ax.set_xlabel(r"Al thickness $x$ (mg/cm$^2$)")
+    ax.set_ylabel(r"gross rate (s$^{-1}$, log scale)")
+    ax.set_xlim(0, 1600)
+    ax.set_ylim(10, 1e4)
+    ax.set_title("Full curve", fontsize=10)
 
-    ax.semilogy(x, R, color=RED, lw=2.0, zorder=3)
-    ax.axhline(bg, color=GRAY, lw=1.1, ls=":", zorder=1)
-    label(ax, (1020, bg * 1.35), "background", fontsize=8.5, color=GRAY, ha="left")
+    fit_x = np.array([650, 725, 800, 875, 950, 1025], dtype=float)
+    fit_rate = floor + 600 * np.maximum(1 - fit_x / 1100, 0) + 5000 * np.exp(-fit_x / 130)
+    slope, intercept = np.polyfit(fit_x, fit_rate, 1)
+    tail_x = np.array([1200, 1300, 1400, 1500], dtype=float)
+    tail_rate = floor + 5000 * np.exp(-tail_x / 130)
+    measured_floor = tail_rate.mean()
+    practical_range = (measured_floor - intercept) / slope
 
-    # Extrapolate the steep early region as a straight line on this semilog plot.
-    x1, x2 = 60.0, 320.0
-    y1, y2 = np.log(R0 * np.exp(-mu * x1) + bg), np.log(R0 * np.exp(-mu * x2) + bg)
-    slope = (y2 - y1) / (x2 - x1)
-    x_Rm = x1 + (np.log(bg) - y1) / slope
-    xline = np.linspace(0, x_Rm, 100)
-    ax.semilogy(xline, np.exp(y1 + slope * (xline - x1)), color=DARK, lw=1.2, ls="--", zorder=2)
-
-    ax.plot([x_Rm], [bg], marker="o", color=PURPLE, ms=6, zorder=4)
-    ax.annotate(r"$R_m$ (extrapolated range)", xy=(x_Rm, bg),
-                xytext=(x_Rm + 40, bg * 9), fontsize=8.5, color=PURPLE, ha="left",
-                arrowprops=dict(arrowstyle="-", color=PURPLE, lw=0.9))
-
-    label(ax, (140, 900), "beta absorption\n(quasi-exponential)", fontsize=8.5, color=DARK, ha="left")
-    label(ax, (430, 90), "bremsstrahlung tail", fontsize=8.5, color=GRAY, ha="left")
-
-    ax.set_xlabel(r"absorber mass thickness $x$ (mg/cm$^2$)")
-    ax.set_ylabel(r"count rate $R$ (s$^{-1}$, log scale)")
-    ax.set_xlim(0, 1200)
-    ax.set_ylim(2, 1.5e4)
+    zoom.plot(x, rate, color=RED, lw=1.8)
+    zoom.plot(fit_x, fit_rate, "o", color=BLUE, ms=4)
+    zoom.plot(tail_x, tail_rate, "o", color=PURPLE, ms=4)
+    zoom.axhline(measured_floor, color=GRAY, ls=":", lw=1.0)
+    fit_line_x = np.linspace(fit_x.min(), practical_range, 100)
+    zoom.plot(fit_line_x, intercept + slope * fit_line_x, color=DARK, ls="--", lw=1.2)
+    zoom.plot(practical_range, measured_floor, "o", color=PURPLE, ms=6)
+    zoom.annotate(r"$R_m$", xy=(practical_range, measured_floor),
+                  xytext=(practical_range + 110, 125), fontsize=10, color=PURPLE,
+                  arrowprops=dict(arrowstyle="-", color=PURPLE, lw=0.9))
+    zoom.text(670, 320, "terminal fit", fontsize=8, color=DARK)
+    zoom.text(1250, 43, "floor", fontsize=8, color=GRAY)
+    zoom.set_xlabel(r"Al thickness $x$ (mg/cm$^2$)")
+    zoom.set_ylabel(r"gross rate (s$^{-1}$, linear scale)")
+    zoom.set_xlim(600, 1600)
+    zoom.set_ylim(0, 380)
+    zoom.set_title("Terminal region", fontsize=10)
 
     fig.tight_layout()
     save(fig, "exp03-absorption-curve-concept")

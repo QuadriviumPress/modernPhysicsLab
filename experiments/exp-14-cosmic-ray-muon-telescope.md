@@ -13,7 +13,7 @@ numbering:
 
 **Accompanies** Chapter 14, *Elementary Particles and the Standard Model*
 **Apparatus** Two Geiger–Müller tubes, microcontroller coincidence unit, absorbers, protractor mount
-**You will measure** the sea-level muon flux, its $\cos^2\theta$ angular distribution, and the time-dilation factor needed to explain it
+**You will measure** the coincidence rate of penetrating cosmic-ray particles, and its angular dependence if enough counts can be collected
 **Report** **Full report** — this is one of the three
 :::
 
@@ -23,20 +23,21 @@ By the end of this experiment you should be able to:
 
 - Build and validate a coincidence detector, and distinguish true coincidences
   from accidentals.
-- Estimate the absolute vertical flux of cosmic-ray muons at sea level, using
-  a measured detector efficiency and geometric acceptance.
-- Measure the angular distribution of that flux and fit it to $\cos^n\theta$.
-- Show quantitatively that muons could not reach the ground without
-  relativistic time dilation, and extract the Lorentz factor required.
+- Estimate a vertical muon intensity only if detector efficiency and
+  non-muon coincidences can be independently constrained.
+- Compare corrected angular rates with a finite-acceptance
+  $\cos^n\theta$ model when the counts support a fit.
+- Calculate survival for a stated muon energy and production altitude,
+  while distinguishing that model from what a one-altitude rate measures.
 
 ## Textbook connection
 
 Read §14.1–14.4, and §2.5 on time dilation. The muon is a second-generation
-charged lepton — an electron in every respect but mass — and it was the first
-particle discovered that nobody had asked for. ("Who ordered that?" is
-attributed to I. I. Rabi.) It is also the most accessible relativistic
-particle in existence: several of them pass through your hand every second,
-and they are here only because of time dilation.
+charged lepton with the same electric charge and spin as the electron. Its
+discovery prompted the question "Who ordered that?", attributed to
+I. I. Rabi. It is also an accessible relativistic
+particle in existence. Muons from upper-atmosphere showers can reach sea
+level because their laboratory-frame lifetimes are dilated.
 
 This experiment closes the course by using the relativity of Weeks 1–3 to
 explain the particle physics of Chapter 14, with a detector you build.
@@ -45,106 +46,129 @@ explain the particle physics of Chapter 14, with a detector you build.
 
 ### Where muons come from
 
-Primary cosmic rays — mostly protons at GeV to TeV energies — strike nuclei in
-the upper atmosphere at altitudes around $15\ \text{km}$ and produce showers
-of pions. Charged pions decay,
+Primary cosmic rays — mostly protons and other nuclei — strike nuclei in
+the upper atmosphere and produce showers containing pions. Charged
+pions decay,
 
 $$
-\pi^\pm \to \mu^\pm + \nu_\mu\ (\bar\nu_\mu) ,
+\pi^+ \to \mu^+ + \nu_\mu,
+\qquad
+\pi^- \to \mu^- + \bar\nu_\mu ,
 $$
 
-and the muons, being weakly interacting and only minimally ionizing, penetrate
-the remaining atmosphere. A typical sea-level muon has energy around
+and many resulting muons penetrate the remaining atmosphere. They are
+charged and ionize matter, but their much larger mass than the electron's
+greatly reduces radiative energy loss at a few GeV. A typical sea-level
+muon has energy around
 $4\ \text{GeV}$; the muon's rest energy is $105.66\ \text{MeV}$, so a typical
 Lorentz factor is of order $\gamma \approx 40$, and lower-energy muons at
 $\gamma \approx 20$ are abundant.
 
 ### Why they should not get here
 
-The muon's proper lifetime is $\tau_0 = 2.197\ \mu\text{s}$. Traveling at
-essentially $c$, a muon covers
+The muon's proper mean lifetime is $\tau_0 = 2.197\ \mu\text{s}$. The length
+scale $c\tau_0$ is
 
 $$
 c\tau_0 = 659\ \text{m}
 $$
 
-in one lifetime *as measured in its own frame*. From $15\ \text{km}$, a
-non-relativistic accounting gives $15000/659 = 22.8$ lifetimes, and a survival
+but it is not a distance traveled in the muon's rest frame. For a
+hypothetical muon produced $15\ \text{km}$ above the detector, a
+calculation that omits time dilation and sets $\beta\approx1$ gives
+$15000/659 = 22.8$ lifetimes and a survival
 probability of
 
 $$
 e^{-22.8} \approx 1.2\times10^{-10} .
 $$
 
-Essentially none should arrive. In fact roughly one muon per square centimeter
-per minute arrives at sea level.
+This is a model comparison, not a prediction of the observed flux:
+production occurs over a range of altitudes and energies. The familiar
+roughly one muon per square centimeter per minute is a flux integrated
+over arrival directions, not an intensity per steradian.
 
 ### Why they do
 
 In the laboratory frame the muon's lifetime is dilated to $\gamma\tau_0$, so
-its decay length is $\gamma\beta c\tau_0$. For $\gamma = 20$ this is
-$13.2\ \text{km}$, and the survival probability from $15\ \text{km}$ becomes
-$e^{-15/13.2} \approx 0.32$ — a factor of $2.7\times10^{9}$ larger.
+its mean decay length at fixed speed is $\gamma\beta c\tau_0$. For
+$\gamma = 20$ this is approximately $13.2\ \text{km}$, and survival
+from the assumed $15\ \text{km}$ becomes
+$e^{-15/13.2} \approx 0.32$ — a factor of about $2.5\times10^{9}$ larger.
 
-Seen from the muon's own frame the explanation is length contraction: the
-atmosphere is only $15\ \text{km}/\gamma = 750\ \text{m}$ thick, which it
-crosses comfortably in about one lifetime. The two descriptions are the same
+In the muon's frame the distance between the chosen production and detection
+events is $15\ \text{km}/\gamma = 750\ \text{m}$ in this constant-speed
+model. It crosses in about $0.75\ \text{km}/(\beta c)$, close to one
+proper mean lifetime. The two descriptions are the same
 physics in different coordinates, and being able to give both is one of the
 things this course is for.
 
 ```{figure} ../images/exp14-time-dilation-concept.svg
 :label: fig:exp14-time-dilation
-:alt: Left, in the lab frame the atmosphere is 15 km while the muon decay length grows from 0.66 km without dilation to 13.2 km with it. Right, in the muon's own frame the atmosphere is contracted to 0.75 km, almost matching the undilated proper decay length of 0.66 km.
+:alt: For a hypothetical 15 km production path and muon Lorentz factor 20, the lab-frame 13.2 km mean decay length is compared with the 0.66 km length scale obtained by omitting dilation. In the muon's frame the 15 km path contracts to 0.75 km, compared with the 0.66 km scale c times proper mean lifetime.
 
-The same numbers, both ways. Left: without dilation the decay length is far too short to matter; with it, the decay length nearly spans the atmosphere. Right: in the muon's frame it is the atmosphere, not the muon's lifetime, that shrinks — down to almost exactly one proper decay length.
+The same illustrative 15 km path in two frames, for $\gamma=20$ and
+approximately constant speed. The bars compare mean decay lengths with
+distance; they do not represent measured production heights or energies.
 ```
 
 ### The angular distribution
 
 Muons arriving from a zenith angle $\theta$ must traverse a longer slant path
 through the atmosphere, roughly $\propto \sec\theta$, and so are more likely to
-decay or be absorbed. The empirical result at sea level is
+decay or be absorbed. For a restricted zenith and energy range, a useful
+empirical approximation is
 
 $$
 I(\theta) = I_0\cos^{n}\theta, \qquad n \approx 2 ,
 $$ (eq-muon-angular)
 
-with $I_0 \approx 1\ \text{cm}^{-2}\text{min}^{-1}\text{sr}^{-1}$ for vertical
-muons above about $1\ \text{GeV}$. Measuring $n$ is the central quantitative
-result of this experiment.
+with representative near-vertical intensity of order
+$0.5\ \text{cm}^{-2}\text{min}^{-1}\text{sr}^{-1}$ at sea level.
+The normalization and exponent depend on energy threshold, altitude,
+and angular range; the $\cos^2\theta$ approximation is not reliable
+near the horizon. The central bench result is a validated coincidence
+rate. An exponent needs much longer runs.
 
 ### Coincidence and accidentals
 
 A single GM tube counts local radioactivity and electronic noise as well as
-muons. Requiring two tubes, one above the other, to fire within a short
-window $\tau_{\text{coinc}}$ selects particles that passed through both — a
-*telescope* whose axis you can point.
+muons. Requiring two aligned tubes to fire within a short window selects
+penetrating-particle candidates. Some correlated shower secondaries can
+also fire both, so coincidence alone does not identify every event as
+a muon.
 
-The rate of **accidental** coincidences from two uncorrelated singles rates
-$R_1$ and $R_2$ is
+For a symmetric timestamp cut $|t_1-t_2|\le\tau_{\text{coinc}}$, the
+rate of **accidental** coincidences from two independent stationary singles
+streams of rates $R_1$ and $R_2$ is approximately
 
 $$
 R_{\text{acc}} = 2\,\tau_{\text{coinc}}\,R_1 R_2 .
 $$ (eq-accidentals)
 
 For $R_1 = R_2 = 0.5\ \text{s}^{-1}$ and $\tau_{\text{coinc}} = 1\ \mu\text{s}$
-this is $5\times10^{-7}\ \text{s}^{-1}$ — utterly negligible against an
-expected true rate of order one per minute. You will verify this experimentally
-rather than trusting the arithmetic.
+this is $5\times10^{-7}\ \text{s}^{-1}$, or about one event in 23 days.
+A short laboratory run cannot measure that tiny rate directly. Use the
+measured singles rates, an offset-timestamp control, and a timing-window
+scan to test the estimate and report an upper limit if no accidentals appear.
 
 ### Geometric acceptance
 
-For two detectors of area $A$ separated by a distance $d \gg \sqrt{A}$, the
-solid angle subtended is approximately $\Omega \approx A/d^2$, and the expected
-coincidence rate is
+For two ideal parallel planar detectors of area $A$ separated by
+$d \gg \sqrt{A}$, the solid angle subtended is approximately
+$\Omega \approx A/d^2$, and the near-vertical coincidence rate is
 
 $$
-R \approx I_0\, A\, \Omega .
+R \approx \epsilon_1\epsilon_2 I_0\, A\, \Omega .
 $$ (eq-muon-rate)
 
-For $A = 10\ \text{cm}^2$ and $d = 10\ \text{cm}$, $\Omega = 0.1\ \text{sr}$
-and $R \approx 1\ \text{min}^{-1}$. That is a *slow* experiment, and the
-counting-statistics discipline of Week 13 is what makes it possible.
+For $A = 10\ \text{cm}^2$, $d = 10\ \text{cm}$, and
+$I_0=0.5\ \text{cm}^{-2}\text{min}^{-1}\text{sr}^{-1}$,
+$\Omega\approx0.1\ \text{sr}$ and the ideal rate is only
+$0.5\ \text{min}^{-1}$ before efficiency losses. A 30-minute run then
+expects about 15 ideal counts, or 26% counting uncertainty. The finite
+geometry needs an acceptance calculation, and cylindrical GM tubes
+cannot simply use their external cross section as $A$.
 
 ## Pre-lab
 
@@ -166,45 +190,50 @@ $1-\beta$. How many significant figures do you need to write $\beta$ usefully?
 :::{exercise}
 :label: q-muon-03
 
-Using [](#eq-muon-rate) with the actual dimensions of the GM tubes on the
-bench, estimate your coincidence rate in counts per minute, and hence the
-counting time needed for a 10% measurement. How many angles can you cover in a
-three-hour period? Plan the run before you arrive.
+Use [](#eq-muon-rate) for the illustrative planar geometry, then estimate
+how active tube shape and unknown efficiency might lower the actual rate.
+How many counts give 10% Poisson uncertainty, and how long would those
+counts take at the illustrative $0.5\ \text{min}^{-1}$ rate? Plan what a
+three-hour session can establish.
 :::
 
 :::{exercise}
 :label: q-muon-04
 
-Evaluate [](#eq-accidentals) with the tubes' measured background singles rates
-and a $1\ \mu\text{s}$ window. Express the accidental rate as a fraction of
-your expected true rate.
+Evaluate [](#eq-accidentals) for assumed singles rates of
+$0.5\ \text{s}^{-1}$ each and a symmetric $1\ \mu\text{s}$ half-window.
+How many accidental counts would you expect in three hours? In the lab,
+repeat the estimate with the selected timing window.
 :::
 
 ## Apparatus
 
 - Two larger-area GM tubes with matched high voltage and accessible pulse
   outputs, mounted rigidly one above the other with adjustable separation
-- Microcontroller (Arduino, Raspberry Pi Pico) with pulse-shaping input
-  circuitry for each tube: a limiting resistor, a clamp diode pair, and a
-  comparator or Schmitt input. **The tube's raw pulse must not reach a GPIO
-  pin directly.**
+- Microcontroller coincidence unit with manufacturer-approved, isolated
+  low-voltage pulse outputs and characterized timing inputs. **Never
+  connect a raw GM high-voltage pulse to a GPIO pin.**
 - Rotating mount with an angle scale, or a rigid frame that can be set at
   measured zenith angles
-- Lead absorber sheets (for the range/energy extension)
-- Long counting times: the setup should be able to run unattended overnight
+- Optional absorber placed **between** tubes for a penetration control
+- A data logger able to record long runs under the institution's unattended
+  equipment procedure
 
 :::{danger}
-GM supplies at $400$–$900\ \text{V}$. Power down before touching the tubes or
-the wiring. The microcontroller side must be optically or resistively isolated
-from the high-voltage side; do not modify the interface circuit. See
-[](#lab-safety).
+GM supplies may operate at several hundred volts. Power down and follow
+the discharge procedure before changing connections. Use only the
+approved isolated pulse interface; a resistor or clamp alone is not a
+high-voltage isolation barrier. Do not modify the interface circuit.
+See [](#lab-safety).
 :::
 
 ```{figure} ../images/exp14-muon-telescope-schematic.svg
 :label: fig:exp14-telescope
-:alt: Two Geiger–Müller tubes are mounted horizontally one above the other on a rigid, rotatable frame with adjustable separation; muon tracks pass through both tubes at an adjustable zenith angle, and both tubes feed a coincidence microcontroller, with optional lead absorbers below.
+:alt: Two Geiger–Müller tubes and an optional absorber between them are fixed to a frame tilted from vertical by a zenith angle theta. Penetrating-particle tracks pass through both tubes, whose isolated low-voltage outputs feed a coincidence unit.
 
-The two-tube coincidence telescope. Only muons crossing both tubes' overlap volume trigger a coincidence count; rotating the frame to a zenith angle $\theta$ maps out the $\cos^2\theta$ angular distribution.
+The two-tube coincidence telescope. Charged particles traversing both
+active volumes can trigger a count; the optional absorber tests penetration.
+Rotate the complete rigid frame to set its zenith angle $\theta$.
 ```
 
 ## Procedure
@@ -212,31 +241,30 @@ The two-tube coincidence telescope. Only muons crossing both tubes' overlap volu
 ### Before you build the telescope
 
 - Match the stacked-tube geometry, angle definition, adjustable separation,
-  and coincidence electronics to [](#fig:exp14-telescope). Measure active
-  dimensions and center-to-center separation on the real instrument; the
-  drawing is intentionally not to scale.
+  and coincidence electronics to [](#fig:exp14-telescope). Determine the
+  active dimensions, projected shape, and center-to-center separation on
+  the real instrument; the drawing is not to scale.
 - Label the tubes and electronic channels permanently. Record plateau voltage,
   threshold, pulse polarity, pulse width, cable length, and firmware version
   for each channel before combining them.
-- Synchronize the acquisition computer clock and choose a run-naming scheme
-  containing angle, separation, coincidence window, and start time. Write a
-  metadata line even for control runs.
+- Check timestamp resolution, dropped pulses, and clock stability. Choose
+  run names recording angle, separation, coincidence window, and start
+  time; write metadata even for controls.
 - Level the rotation axis, define $0°$ with a plumb line or inclinometer, and
   mark the tube centers. At each angle confirm that the two active areas remain
   aligned rather than merely reading the scale.
-- Make a run plan before collecting data: singles, side-by-side control,
-  coincidence-window scan, source control, every angle, and a final return to
-  $0°$. Estimate durations from a short rate test so low-angle and high-angle
-  points reach useful statistical precision.
+- Make a run plan: singles, displaced-geometry control, timestamp-offset
+  control, window scan, and a vertical baseline. Add angles only after a
+  short rate test shows that they can accumulate useful counts.
 
 ### Part A — Build and validate the coincidence unit
 
 1. Set both tubes to their plateau operating voltages, individually, as in
    [](#exp-beta-electrons).
-2. Program the microcontroller to timestamp pulses on both channels and to
-   report a coincidence when they fall within a window $\tau_{\text{coinc}}$.
-   Have it print a CSV line per coincidence, and a running singles rate. Print
-   the timestamps too — you will want them for Part D.
+2. Configure the approved unit to timestamp pulses on both channels and
+   count a pair when $|t_1-t_2|\le\tau_{\text{coinc}}$. Save both singles
+   streams, pair time differences, and live duration, or save enough data
+   to reconstruct them. Prevent one pair from being counted twice.
 3. Record the singles rate of each tube separately, over at least 10 minutes.
 
 **[ ] Checkpoint 1.** Show the instructor your singles
@@ -244,167 +272,196 @@ rates and one minute of coincidence output.
 
 ### Part B — Prove that the coincidences are real
 
-Three controls, all essential, and all quick:
+Three controls test different failure modes:
 
-4. **Separate the tubes** so that they are side by side rather than one above
-   the other, with no common line of sight. The coincidence rate should fall
-   nearly to the accidental rate.
-5. **Vary the coincidence window** from $\sim0.5\ \mu\text{s}$ to
-   $\sim100\ \mu\text{s}$. The true rate should be flat; the accidental rate
-   should rise linearly with $\tau_{\text{coinc}}$, exactly as
-   [](#eq-accidentals) predicts. Plot the two contributions.
-6. **Add a radioactive source** beside one tube. Its singles rate rises
-   sharply; the coincidence rate should barely move.
+4. **Displace the tubes** so their direct overlap is removed while the
+   electronics and environment stay fixed. Record the residual coincidence
+   rate or its Poisson upper limit; correlated shower particles may remain.
+5. **Offset one timestamp stream** by much more than the timing window,
+   wrapping within a long run if needed. Count offset matches at many shifts
+   and compare their average with the independent-singles prediction.
+6. **Scan the symmetric half-window** across the measured pair-time peak.
+   Choose a width that contains the stable prompt peak while limiting
+   accidentals. The prompt efficiency need not be flat below the timing
+   jitter. Plot counts versus window width with Poisson intervals.
 
-**[ ] Checkpoint 2.** Present all three controls before
-starting the long runs. This is the part of the experiment that turns a number
-into evidence, and it is graded accordingly.
+**[ ] Checkpoint 2.** Present the controls and chosen window before
+starting long runs. If the rate is too low to measure a control directly,
+show its upper limit and the corresponding live time.
 
 ### Part C — The angular distribution
 
-7. With the tubes vertical ($\theta = 0$), count for at least $30\ \text{min}$.
-8. Rotate to $\theta = 30°, 45°, 60°, 75°$, counting at each for as long as the
-   period allows — longer at large $\theta$, where the rate is lowest. With
-   small-area tubes, these runs must be overnight or the angular fit should be
-   reported as qualitative only.
-9. Return to $\theta = 0$ at the end and re-count for 15 minutes. A change
-   indicates drift, which must be included in the systematic budget.
-10. Measure the tube active areas and their separation carefully, and determine
-    the single-tube detection efficiency with a calibrated reference or a
-    documented manufacturer value. The absolute flux depends on these factors,
-    not just the raw coincidence count.
+7. With the telescope vertical ($\theta = 0$), make a baseline run and
+   estimate the live time needed for the planned uncertainty. At the
+   illustrative ideal rate, 30 minutes gives only about 15 counts.
+8. If time permits, rotate the **whole frame** to $30°$, $45°$, and $60°$;
+   give each angle enough exposure to provide a useful count or Poisson
+   upper limit. Record actual live time and angle. Treat $75°$ as an
+   extension: rates are very low and the simple $\cos^2\theta$ model
+   may fail there.
+9. Return to $0°$ for a second baseline of comparable precision if
+   possible. A rate difference may signal drift or changing environmental
+   conditions and needs investigation.
+10. Determine the active-area geometry and separation. For an absolute
+    intensity, use an independently calibrated **muon** reference detector
+    or a suitable third-detector efficiency measurement, and estimate
+    correlated non-muon coincidences. A gamma check source or an
+    unqualified tube data-sheet value does not give muon efficiency.
+    Otherwise report the background-corrected coincidence rate and
+    relative angular trend.
 
 :::{tip} Use the week, not just the period
-This experiment is limited by counting statistics, and the apparatus needs no
-supervision. Leave it running at $\theta = 0$ overnight, and arrange with the
-instructor to swap the angle daily. A week of unattended running turns a 15%
-measurement into a 3% one for no additional effort.
+This experiment is limited by counting statistics. If the institution
+approves unattended operation, schedule longer runs at each planned angle.
+At $0.5$ ideal count per minute, about 200 minutes gives 100 counts
+(10% Poisson uncertainty) at one angle; 3% requires roughly 1,100 counts,
+or 37 hours before efficiency losses.
 :::
 
-### Part D (optional) — Muon lifetime by delayed coincidence
+### Part D (optional) — Penetration control
 
-11. Some muons stop in an absorber between the tubes and decay there, giving a
-    second pulse microseconds later. Program the microcontroller to record the
-    interval between a stopping signal and any subsequent pulse, and histogram
-    the intervals. The exponential decay constant is the muon lifetime.
-12. This is a low-rate measurement — the stopping fraction is small — and is
-    realistically an overnight or week-long run. It is, however, a direct
-    measurement of a fundamental particle lifetime with parts from a drawer.
+11. With the frame vertical, place the approved absorber **between** the
+    tubes and compare the coincidence rate with a no-absorber run of
+    comparable duration. Keep geometry fixed and include accidental and
+    background intervals.
+12. A modest absorber may suppress soft charged secondaries while
+    transmitting most GeV muons. It does not measure a muon momentum
+    spectrum or identify every surviving coincidence as a muon.
 
 ## Analysis
 
 ### Flux
 
-Correct each measured coincidence rate for accidentals, then convert to an
-absolute intensity using your measured geometry:
+For the narrow-angle, ideal planar approximation, a vertical measurement
+would give
 
 $$
-I(\theta) = \frac{R(\theta) - R_{\text{acc}}}{A\,\Omega} ,
-\qquad \Omega \approx \frac{A}{d^2} .
+I_0 \approx
+\frac{R(0)-R_{\text{acc}}-R_{\text{corr}}}
+{\epsilon_1\epsilon_2\, A\,\Omega},
+\qquad \Omega \approx \frac{A}{d^2} ,
 $$
 
-The $\Omega \approx A/d^2$ approximation is crude for the geometry you
-actually have. A better acceptance comes from a short Monte Carlo:
+where $R_{\text{corr}}$ is a separately estimated correlated non-muon
+coincidence rate. With only two GM tubes, $\epsilon_1\epsilon_2$ and
+$R_{\text{corr}}$ are not determined by the singles and coincidence rates.
+Report an absolute intensity only when those quantities have independent
+support. The planar formula also needs a finite-geometry check.
+
+For two planar rectangles of active width $w_x$, height $w_y$, and
+separation $d$, this Monte Carlo estimates a vertical geometric factor
+for a direction-independent intensity:
 
 ```python
 import numpy as np
 rng = np.random.default_rng(0)
 
-# Throw isotropic-in-cos^2 tracks and count those hitting both rectangles.
 n = 2_000_000
-# sample cos^2 zenith distribution on the upper hemisphere
-u   = rng.random(n)
-cth = u ** (1/3)                       # inverse CDF for I ~ cos^2 theta on dOmega
-sth = np.sqrt(1 - cth**2)
+wx, wy, d = ..., ..., ...              # measured active dimensions, cm
+A = wx * wy
+x0 = rng.uniform(-wx/2, wx/2, n)
+y0 = rng.uniform(-wy/2, wy/2, n)
+u = rng.random(n)                       # cos(angle to telescope axis)
 phi = rng.uniform(0, 2*np.pi, n)
-# ... propagate a straight line through both detector rectangles and count hits
+shift = d * np.sqrt(1-u*u) / u
+hit = ((np.abs(x0 + shift*np.cos(phi)) <= wx/2) &
+       (np.abs(y0 + shift*np.sin(phi)) <= wy/2))
+G0 = 2*np.pi*A*np.mean(u*hit)           # cm^2 sr
+G_vertical_cos2 = 2*np.pi*A*np.mean(u**3*hit)  # for I ~ cos^2(zenith)
+sG0 = 2*np.pi*A*np.std(u*hit, ddof=1)/np.sqrt(n)
+sG_vertical_cos2 = 2*np.pi*A*np.std(u**3*hit, ddof=1)/np.sqrt(n)
 ```
 
-Report the acceptance from both methods and use the difference as a systematic
-uncertainty. Doing the Monte Carlo is worth substantial credit; it is how a
-real detector acceptance is computed.
+The factor $u$ is the projected-area factor. The sampled directions are
+uniform in solid angle, with $u$ uniform from 0 to 1; sampling
+$u^{1/3}$ would instead bake a $\cos^2$ intensity into the sample.
+Report both geometric factors and their Monte Carlo uncertainties;
+compare $G_0$ with $A^2/d^2$. The $\cos^2$ weighting changes the
+vertical count prediction for a finite field of view.
+For a real cylindrical GM tube, use its active volume and directional
+efficiency in a refined model. The difference between approximate and
+refined acceptances is a correction, not automatically an uncertainty.
 
-Compare your vertical intensity with the accepted
-$\approx1\ \text{cm}^{-2}\text{min}^{-1}\text{sr}^{-1}$.
+If qualified, compare your vertical intensity with a reference for the
+same energy threshold and altitude; do not compare it with the
+all-direction flux of about $1\ \text{cm}^{-2}\text{min}^{-1}$.
 
 ### The angular exponent
 
-```python
-from scipy.optimize import curve_fit
-import numpy as np
-
-theta = np.radians(np.array([0, 30, 45, 60, 75]))
-I     = np.array([...])
-sI    = np.array([...])
-
-popt, pcov = curve_fit(lambda t, I0, n: I0 * np.cos(t)**n,
-                       theta, I, p0=[1.0, 2.0],
-                       sigma=sI, absolute_sigma=True)
-```
-
-Report $n$ with its uncertainty and compare with 2. Note that the acceptance
-$\Omega$ itself changes with $\theta$ for a real detector pair only if the
-geometry changes — if you rotate the whole rigid assembly, it does not, which
-is why the assembly must be rigid.
+Fit **raw counts** with a Poisson model using each angle's live time.
+For a narrow telescope, model its corrected rate as
+$R(\theta)\approx\epsilon_1\epsilon_2 I_0 G_0\cos^n\theta+
+R_{\text{acc}}+R_{\text{corr}}$.
+For a broad acceptance, integrate $\cos^n\zeta$ over all directions that
+can cross both detectors after the entire frame rotates; $\zeta$ is the
+track's zenith angle, which differs from the frame angle for off-axis
+tracks. The telescope's local geometric factor remains fixed when the
+whole rigid frame rotates, but the sky intensity across its field of view
+does not. Quote $n$ only if several angles have enough counts to constrain
+it; otherwise show intervals or upper limits and state the angular trend.
 
 ### Time dilation
 
-From your measured sea-level flux and an assumed production altitude of
-$15\ \text{km}$, find the Lorentz factor required for the observed survival
-fraction. You will need an estimate of the production rate, which you do not
-have — so instead invert the question and answer the one your data can
-support:
+The one-altitude coincidence rate cannot determine a Lorentz factor or a
+survival fraction because the production rate, height distribution, and
+energy spectrum are unmeasured. As a **model exercise**, suppose a muon
+starts at $h=15\ \text{km}$ with constant speed and ask what
+$\gamma\beta$ gives a specified survival probability $p$:
 
-> Given the observed flux and the known production altitude, what is the
-> *minimum* $\gamma$ consistent with muons surviving the trip with probability
-> at least $10^{-2}$?
+$$
+\gamma\beta = \frac{h}{c\tau_0\ln(1/p)}.
+$$
 
-Solve $e^{-h/(\gamma\beta c\tau_0)} \ge 10^{-2}$ for $\gamma$, and compare with
-$\gamma$ for a $4\ \text{GeV}$ muon. State clearly what your data do and do not
-establish. A bound honestly derived is a result; an unbounded claim is not.
+For $p=0.01$, convert this to $\gamma$ using
+$\gamma=\sqrt{1+(\gamma\beta)^2}$, then compare with a muon of
+$4\ \text{GeV}$ **total** energy. This is a conditional threshold from
+chosen assumptions, not a lower bound extracted from your telescope data.
 
 ## Post-lab questions
 
 :::{exercise}
 :label: q-muon-05
 
-Report your vertical muon intensity with its uncertainty, and compare with the
-accepted value. Which contributed more to the uncertainty: counting statistics
-or the acceptance calculation?
+Report the corrected vertical coincidence rate with its count interval.
+If you have independent muon efficiency and non-muon background estimates,
+also report vertical intensity and compare it with an appropriate reference.
+Which uncertainty component dominates?
 :::
 
 :::{exercise}
 :label: q-muon-06
 
-Report the fitted exponent $n$ with uncertainty. Is it consistent with 2?
-Explain physically why the flux falls with zenith angle at all.
+If the angular data constrain $n$, report it with uncertainty and compare
+with 2 over the fitted angular range. Otherwise report rate intervals or
+upper limits. Explain physically why the sea-level rate usually falls
+with zenith angle.
 :::
 
 :::{exercise}
 :label: q-muon-07
 
-Present your three validation controls from Part B with numbers, and state
-what each rules out. In particular, give the measured dependence of the
-accidental rate on $\tau_{\text{coinc}}$ and compare with
-[](#eq-accidentals).
+Present the three Part B controls with counts, live times, or upper limits.
+Show the measured prompt time-difference distribution and compare the
+offset-timestamp accidentals with [](#eq-accidentals).
 :::
 
 :::{exercise}
 :label: q-muon-08
 
-State your lower bound on $\gamma$ and the corresponding muon energy. Then
-give both explanations of the muon's survival — time dilation in the
-laboratory frame, length contraction in the muon frame — and show explicitly
-that they give the same numerical answer.
+For the stated 15 km model and 1% survival threshold, report the required
+$\gamma$ and corresponding total muon energy. Explain why it is not a
+bound measured by this telescope. Give the equivalent lab-frame
+time-dilation and muon-frame length-contraction calculations.
 :::
 
 :::{exercise}
 :label: q-muon-09
 
-The muon is a lepton of the second generation. Using the Standard Model table
-in Chapter 14, state which interactions it participates in and which it does
-not, and explain how that accounts for its ability to traverse kilometers of
-atmosphere while an electron of the same energy could not.
+The muon is a second-generation charged lepton. Using the Standard Model
+table in Chapter 14, state which fundamental interactions it participates
+in and which it does not. Explain why a muon of a few GeV loses much less
+energy to bremsstrahlung in the atmosphere than an electron of the same
+energy; both carry electric charge.
 :::
 
 :::{exercise}
@@ -413,26 +470,23 @@ atmosphere while an electron of the same energy could not.
 Rossi and Hall measured the muon flux at two altitudes in 1941 and compared
 the attenuation with the muon lifetime. Explain why measuring at *two*
 altitudes is a much stronger test of time dilation than measuring at one, and
-describe how you would do it with your apparatus given access to a mountain
-road.
+describe the energy threshold, detector calibration, atmospheric
+production, and exposure controls needed for a modern version.
 :::
 
 ## Going further
 
-- **Two-altitude measurement.** The Rossi–Hall experiment, done with your own
-  telescope: measure the rate at the bottom and the top of the tallest
-  accessible building or hill, and compare the attenuation with what
-  $\gamma\beta c\tau_0$ predicts. Even a $100\ \text{m}$ height difference
-  gives a measurable effect if you count long enough.
-- **A momentum spectrum by absorption.** Adding lead between the tubes cuts
-  off low-momentum muons, since the range in lead is a known function of
-  momentum. Rate versus lead thickness is a crude momentum spectrum, and it
-  gives a mean muon energy to compare with the $\gamma$ you bounded.
-- **East–west effect.** Slightly more muons arrive from the west than from the
-  east, because positive primaries are deflected by the geomagnetic field.
-  The asymmetry is a few percent, so it needs a week of running and careful
-  attention to systematics — a good senior project, and a measurement of the
-  *sign of the charge* of the primary cosmic rays, made from a bench.
-- **Muon lifetime.** Complete Part D with a week-long run and fit the decay
-  histogram. Getting $2.2\ \mu\text{s}$ out of two Geiger tubes and a
-  microcontroller is a fitting way to end the course.
+- **Two-altitude measurement.** With a sufficiently large, calibrated
+  telescope, compare rates at widely separated heights while matching
+  zenith acceptance and energy threshold. Model additional atmospheric
+  production and energy loss before interpreting the ratio as survival.
+  A 100 m height difference changes the survival factor of a
+  $\gamma=40$ muon by only about 0.4%, before these other effects.
+- **Penetration study.** Compare well-measured rates with and without an
+  absorber between the detectors. A modest thickness can help identify
+  a soft component, but it does not yield a GeV muon momentum spectrum.
+- **Stopped-muon lifetime project.** Use a separate detector with a
+  stopping target, fast scintillation readout, and a decay-electron
+  trigger. Measure timing response and accidental delayed pairs before
+  fitting a lifetime. A GM tube's recovery time and this two-tube layout
+  cannot reliably resolve a 2.2 $\mu\text{s}$ stopped-muon decay.

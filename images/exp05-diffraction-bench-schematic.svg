@@ -500,7 +500,7 @@ z
 L 178.425 103.2345 
 " clip-path="url(#pffea53dbf3)" style="fill: none; stroke: #333333; stroke-width: 3; stroke-linecap: square"/>
    </g>
-   <g id="text_2">
+   <g id="text_2" opacity="0">
     <!-- slit / aperture / -->
     <g style="fill: #333333" transform="translate(151.415 72.114078) scale(0.073 -0.073)">
      <defs>
@@ -1045,7 +1045,7 @@ z
      <use xlink:href="#DejaVuSans-Oblique-34c" transform="translate(0 0.234375)"/>
     </g>
    </g>
-   <g id="text_10">
+   <g id="text_10" opacity="0">
     <!-- Same rail for every part: swap the sample and, for large angles, -->
     <g style="fill: #333333" transform="translate(69.485875 30.172344) scale(0.08 -0.08)">
      <defs>
@@ -1356,6 +1356,12 @@ z
      <use xlink:href="#m7bcbe3f297" x="80.4348" y="129.915" style="fill: #b33a3a; stroke: #7a4a00; stroke-width: 0.4; stroke-linejoin: bevel"/>
     </g>
    </g>
+  </g>
+  <g id="corrected-transmission-labels" font-family="DejaVu Sans, sans-serif" fill="#333333" text-anchor="middle">
+   <text x="184" y="72" font-size="7.3">slit / aperture /</text>
+   <text x="184" y="81" font-size="7.3">transmission grating</text>
+   <text x="195" y="30" font-size="8">Transmission layout: swap the sample and, for large angles,</text>
+   <text x="195" y="40" font-size="8">use a rotating detector or protractor. Discs use reflection.</text>
   </g>
  </g>
  <defs>

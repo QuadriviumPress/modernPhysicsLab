@@ -13,7 +13,7 @@ numbering:
 
 **Accompanies** Chapter 3, *Relativistic Dynamics*
 **Apparatus** Geiger–Müller counter, $^{90}$Sr/$^{90}$Y beta source, aluminum absorber set
-**You will measure** the beta endpoint energy from an absorption curve, and the speed it implies
+**You will estimate** the $^{90}$Y beta endpoint energy from an absorption curve, if the absorber set spans the terminal region and floor, and calculate the speed it implies
 **Report** Short
 :::
 
@@ -21,7 +21,8 @@ numbering:
 
 By the end of this experiment you should be able to:
 
-- Measure an absorption curve and extract a maximum range by extrapolation.
+- Measure an absorption curve and estimate a practical range from its terminal
+  region, while recognizing when the available absorber thickness is insufficient.
 - Convert a range in aluminum into a maximum kinetic energy using an
   empirical range–energy relation.
 - Compute $v/c$ for that energy both relativistically and classically, and
@@ -50,31 +51,40 @@ essentially nothing. It was precisely this continuous spectrum — apparently
 violating energy conservation — that led Pauli to postulate the neutrino in
 1930, so the shape you are measuring around today has some history in it.
 
-The source is a $^{90}$Sr/$^{90}$Y pair in secular equilibrium:
+After several $^{90}$Y half-lives, an older sealed $^{90}$Sr source contains
+$^{90}$Sr/$^{90}$Y near secular equilibrium:
 
 $$
-^{90}\text{Sr} \xrightarrow{\ \beta^-,\ 28.8\ \text{y}\ } {}^{90}\text{Y}
-\xrightarrow{\ \beta^-,\ 64\ \text{h}\ } {}^{90}\text{Zr\ (stable)} ,
+^{90}\text{Sr} \xrightarrow{\ \beta^-,\ 28.91\ \text{y}\ } {}^{90}\text{Y}
+\xrightarrow{\ \beta^-,\ 64.05\ \text{h}\ } {}^{90}\text{Zr\ (stable)} ,
 $$
 
 with endpoints $0.546\ \text{MeV}$ and $2.28\ \text{MeV}$ respectively. The
 high-energy $^{90}$Y component is the one whose range you will measure,
-because it is the only part of the beam that survives the thickest absorbers.
+because it is the only beta component that survives the thicker absorbers.
+See the evaluated [strontium-90](https://www.nndc.bnl.gov/nudat3/getdecaydataset.jsp?dsid=90sr+bM+decay+%2828.91+y%29&nucleus=90Y)
+and [yttrium-90](https://www.nndc.bnl.gov/nudat3/getdecaydataset.jsp?dsid=90y+bM+decay+%2864.05+h%29&nucleus=90ZR)
+decay data.
 
 ### Absorption and range
 
-Beta particles lose energy continuously by ionization and, at these energies,
-significantly by bremsstrahlung as well. Empirically, the counting rate behind
-an absorber of *mass thickness* $x$ (in $\text{mg/cm}^2$: the density times
-the physical thickness) falls close to exponentially,
+Beta particles lose energy mainly through collisions and can also produce
+bremsstrahlung photons. The counting rate behind an absorber of *mass
+thickness* $x$ (in $\text{mg/cm}^2$: density times physical thickness) falls
+as the electron spectrum is filtered. A single exponential is a rough
+description of part of that curve, not a law for the mixed source:
 
 $$
 R(x) = R_0\, e^{-\mu_m x} + R_{\text{bg}} ,
 $$ (eq-beta-exp)
 
-over the first part of the curve, and then bends over and flattens into a
-residual bremsstrahlung tail plus background. The **maximum range** $R_m$ is
-the mass thickness at which the beta contribution disappears into that floor.
+At large thickness, the measured rate may approach a floor from background
+and source-related photons. The practical, or *extrapolated*, range $R_m$ is
+estimated from the terminal electron-dominated decline and its intersection
+with that floor on a **linear rate axis**. It is not the thickness at which
+every electron track ends, and a threshold chosen from counting noise does
+not define it. See the [Katz–Penfold range study](https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.24.28)
+and the [University of Texas at Arlington absorption procedure](https://cdn.web.uta.edu/-/media/project/website/science/physics/documents/degree-programs/physics-lab/nuclear-lab/lab-absorption-of-beta-particles.ashx?revision=c984b7a8-6329-425c-9c91-bcfff216de47).
 
 Mass thickness is used rather than physical thickness because energy loss per
 unit mass is nearly the same in all light materials — so a range quoted in
@@ -83,9 +93,12 @@ physical millimeters are not.
 
 ```{figure} ../images/exp03-absorption-curve-concept.svg
 :label: fig:exp03-absorption-curve
-:alt: A semilog plot of count rate against absorber mass thickness: a straight quasi-exponential fall bends over into a shallow bremsstrahlung tail and flattens onto a background floor; extrapolating the steep straight-line region down to the background locates the maximum range R_m.
+:alt: Left, a semilog plot shows a rapid fall in beta transmission and a flat background-plus-photon floor. Right, a linear-scale view of the terminal region fits its declining count rate and marks the intersection with the measured floor as practical range R_m.
 
-The shape of an absorption curve, on a log rate axis. The early, steep region is nearly a straight line — extrapolate it down to where it meets the background floor to read off $R_m$, rather than trying to find where the real (curved) data disappear into the noise.
+Read the full curve on a log rate axis to identify the components. Estimate
+$R_m$ from the terminal electron-dominated decline on a linear rate axis,
+extrapolated to a floor measured with thicker absorbers. If the floor or the
+terminal decline is absent, the plot does not support an endpoint estimate.
 ```
 
 ### From range to energy
@@ -94,20 +107,21 @@ Two standard empirical relations connect the maximum range in aluminum to the
 endpoint energy. **Feather's rule**, valid for $T_{\max} > 0.8\ \text{MeV}$:
 
 $$
-R_m\ [\text{g/cm}^2] = 0.542\, T_{\max}\ [\text{MeV}] - 0.133 ,
+\frac{R_m}{\text{g/cm}^2} = 0.542\,\frac{T_{\max}}{\text{MeV}} - 0.133 ,
 $$ (eq-feather)
 
-and the **Katz–Penfold relation**, valid over $0.01$–$3\ \text{MeV}$:
+and the **Katz–Penfold relation**, used here below $2.5\ \text{MeV}$:
 
 $$
-R_m\ [\text{mg/cm}^2] = 412\, T_{\max}^{\,n}, \qquad
-n = 1.265 - 0.0954\,\ln T_{\max}\ [\text{MeV}] .
+\frac{R_m}{\text{mg/cm}^2} = 412\left(\frac{T_{\max}}{\text{MeV}}\right)^{n}, \qquad
+n = 1.265 - 0.0954\,\ln\!\left(\frac{T_{\max}}{\text{MeV}}\right) .
 $$ (eq-katz-penfold)
 
 Katz–Penfold is implicit in $T_{\max}$ and must be inverted numerically; doing
-so is one of the analysis steps. Report both, and comment on the difference —
-these are fits to data, not laws, and they disagree by a few percent, which is
-itself an honest systematic uncertainty on your energy.
+so is one of the analysis steps. These are empirical calibrations, not exact
+laws. Near $2.28\ \text{MeV}$, their predicted ranges differ by less than 1%,
+so their agreement does not remove uncertainty from the practical-range
+method or the source geometry. Discuss those effects separately.
 
 ### The relativistic payoff
 
@@ -161,23 +175,29 @@ count for 1%?
 :label: q-beta-04
 
 Why is the *maximum* range, rather than a half-value thickness, the quantity
-related to the endpoint energy? Sketch the expected shape of $\log R$ against
-$x$ and mark where the endpoint information lives.
+related to the endpoint energy? Sketch the full curve on a log rate axis and
+the terminal region on a linear rate axis. Mark where the endpoint
+information lives.
 :::
 
 ## Apparatus
 
 - GM tube with a thin end window ($\lesssim 2\ \text{mg/cm}^2$ mica) on a
   shelf stand, with counter/timer and high-voltage supply
-- Sealed $^{90}$Sr/$^{90}$Y source, $\sim1\ \mu\text{Ci}$
-- Aluminum absorber set, roughly $5$ to $1200\ \text{mg/cm}^2$
+- Institution-approved sealed $^{90}$Sr/$^{90}$Y source; record the actual
+  activity and source identification from the local inventory
+- Aluminum absorber set spanning a few $\text{mg/cm}^2$ to at least
+  $1.5\ \text{g/cm}^2$, with several settings beyond the predicted
+  $^{90}$Y range near $1.1\ \text{g/cm}^2$. If the set ends near the predicted
+  range, plan to report only a lower bound or a provisional estimate.
 - Micrometer and balance, to verify the labeled mass thicknesses
-- Source tongs; the source log sheet
+- Approved source holder or handling tools; the source log sheet
 
 :::{danger}
-Sealed beta source. Sign it in and out, handle with tongs, keep it in the
-shielded holder except while counting, and wash your hands when you leave.
-Read [](#lab-safety).
+Sealed beta source and a high-voltage GM supply. Follow the instructor's
+approved source sign-out, handling, storage, and voltage procedures. Keep
+the source in its designated holder except during authorized measurements;
+power down before changing detector connections. Read [](#lab-safety).
 :::
 
 ```{figure} ../images/exp03-beta-shelf-schematic.svg
@@ -208,49 +228,55 @@ The fixed source-absorber-tube geometry. Swapping absorber thicknesses and readi
 
 ### Part A — The plateau and the operating voltage
 
-1. With the source on the second shelf, ramp the GM high voltage upward in
-   $25\ \text{V}$ steps from below the starting voltage, counting for
-   $30\ \text{s}$ at each step. Plot rate against voltage as you go.
-2. Identify the plateau — the flat region where the rate is nearly independent
-   of voltage — and set the operating voltage about $75$–$100\ \text{V}$ above
-   the plateau knee.
+1. Use the instructor-approved voltage range and source shelf. If students
+   are authorized to measure the plateau, follow the tube's procedure for
+   voltage steps and count duration, and plot rate against voltage as you go.
+   Otherwise, record the approved operating voltage and skip the scan.
+2. Identify a stable plateau if a scan is performed. Use the operating
+   voltage approved for this specific tube; do not infer a universal offset
+   above the knee.
 
 **[ ] Checkpoint 1.** Show the instructor your plateau
-plot and your chosen operating voltage. A tube run above the plateau goes into
-continuous discharge and will be destroyed.
+plot or the approved operating setting before taking source data. Do not
+increase voltage beyond the specified operating range.
 
 :::{warning}
-Never leave the supply above the plateau while you go and think about it. If
-the count rate starts climbing steeply with voltage, come back down at once.
+If the count rate climbs steeply as voltage rises, stop the scan and return to
+the approved setting with the instructor. Do not leave the supply at an
+unverified voltage.
 :::
 
 ### Part B — Background
 
 3. Return the source to its shielded storage. Count the background for at
    least $10\ \text{minutes}$ in a single run and record $N_{\text{bg}}$ and
-   the live time. You will subtract this rate from everything.
+   the live time. Use this rate to calculate net source rates; the terminal
+   range fit below uses gross rates so the shared background estimate does
+   not introduce correlations.
 4. Note the counts, not just the rate; you need $N$ to get the Poisson
    uncertainty.
 
 ### Part C — The absorption curve
 
-5. Place the source on a fixed shelf and *do not move it again* — the
-   source–detector distance must be identical for every point, or the inverse
-   square law will masquerade as absorption.
-6. Count with no absorber. Choose a counting time long enough to accumulate at
-   least $10\,000$ counts.
-7. Add absorbers one at a time, working upward in mass thickness. Use at least
-   **fifteen** absorber values, spaced so that the points are roughly evenly
-   distributed in $\log(\text{rate})$ — that means fine steps at first and
-   coarser ones later.
-8. **Increase the counting time as the rate falls**, so that every point
-   carries a comparable *relative* uncertainty. This is the single most
-   important procedural habit in this experiment. A point at
-   $1200\ \text{mg/cm}^2$ counted for $30\ \text{s}$ contributes nothing but
-   noise to the extrapolation that determines your answer.
-9. Continue past the point where the rate stops falling, and take at least
-   four points on the flat tail. That tail is what defines the background-plus-
-   bremsstrahlung floor, and the extrapolation to it is your measurement.
+5. Place the source on the assigned fixed shelf and *do not move it again* —
+   a changed source–detector geometry changes detection efficiency and can
+   masquerade as absorption. The near-field geometry does not generally obey
+   a simple inverse-square law.
+6. Count with no absorber. Aim for about $10\,000$ counts if the detector is
+   within its validated count-rate range; otherwise follow the instructor's
+   lower-rate geometry or timing plan.
+7. Add absorbers in increasing mass thickness. Use roughly 10–15 values,
+   placing more points near the predicted $^{90}$Y endpoint than in the
+   rapidly falling low-thickness region. Record the *total* stack thickness
+   for every setting.
+8. **Increase counting time as the rate falls**, especially in the terminal
+   region. Estimate the time budget before beginning: at $2\ \text{s}^{-1}$,
+   100 counts take 50 s but a 1% Poisson measurement takes 5,000 s. The
+   latter is not a reasonable target for every point in a three-hour period.
+9. If the absorber set extends beyond the terminal fall, take at least four
+   thick-absorber points to characterize the floor. If the measured rate is
+   still falling at the thickest available setting, record the limitation;
+   do not extrapolate an unobserved floor into a claimed endpoint.
 10. Verify two or three of the absorbers' labeled mass thicknesses by
     weighing them and measuring their area. Foil labels are sometimes optimistic.
 
@@ -258,7 +284,8 @@ the count rate starts climbing steeply with voltage, come back down at once.
 
 ### Rates and their uncertainties
 
-For each point, the net rate and its uncertainty are
+For each point, the net rate and its uncertainty, before any dead-time
+correction, are
 
 $$
 R = \frac{N}{t} - \frac{N_{\text{bg}}}{t_{\text{bg}}},
@@ -266,52 +293,84 @@ R = \frac{N}{t} - \frac{N_{\text{bg}}}{t_{\text{bg}}},
 \sigma_R = \sqrt{\frac{N}{t^2} + \frac{N_{\text{bg}}}{t_{\text{bg}}^2}} .
 $$
 
-Correct for dead time if the no-absorber rate exceeds a few hundred per
-second: with dead time $\tau_d \approx 100\ \mu\text{s}$ for a typical GM tube,
-the true rate is $R_{\text{true}} = R_{\text{obs}}/(1 - R_{\text{obs}}\tau_d)$.
-State whether the correction mattered.
+The same background estimate appears in every net rate, so those net values
+are correlated. Plot them to see the source contribution, but fit the
+independent *gross* rates $N/t$ in the terminal and floor regions below. A
+negative net rate is possible after background subtraction and is not a
+negative physical activity.
+
+Check dead-time losses at the largest gross rate using the instrument's
+measured or specified dead time. For a **nonparalyzable** model, the correction
+is $R_{\text{true}}=R_{\text{obs}}/(1-R_{\text{obs}}\tau_d)$ when
+$R_{\text{obs}}\tau_d<1$. It is not a universal GM-tube law or a substitute
+for operating below the instrument's rated count rate. Near the endpoint,
+where the rate is low, dead time should have little effect; document that
+check. See the [IAEA detector-model discussion](https://nucleus.iaea.org/sites/connect/RRIHpublic/CompendiumDB/Shared%20Documents/Czech%20Republic%20CTU/Protocols%20in%20PDF/Czech_Rep_VR1_Reactor_Neutron_detection_Laboratory_protocol.pdf).
 
 ### Finding the range
+
+First plot gross count rate against aluminum mass thickness on both log and
+linear rate axes. The log view shows the full fall; the linear view reveals
+the terminal region and the measured floor. Select a contiguous terminal
+region dominated by the $^{90}$Y component, after the low-energy $^{90}$Sr
+component has largely disappeared, and a separate set of thick-absorber
+points whose rates are consistent with a constant floor. Do **not** fit the
+steep initial semilog line and call its intersection with an arbitrary noise
+threshold a physical range.
+
+Fit a straight line to the terminal *gross* rates and take its intersection
+with the independently measured floor. In the example below, choose the three
+thickness boundaries from your plot; keep the terminal and floor selections
+disjoint.
 
 ```python
 import numpy as np
 from scipy.optimize import curve_fit
 
-x     = np.array([...])      # mass thickness, mg/cm^2 (absorber + window + air)
-R     = np.array([...])      # net rate, 1/s
-sR    = np.array([...])      # Poisson uncertainty on the net rate
+x = np.array([...], dtype=float)       # aluminum mg/cm^2, one value per run
+N = np.array([...], dtype=float)       # gross counts
+t = np.array([...], dtype=float)       # live time in seconds
 
-# Fit the falling part only: exponential plus a constant floor.
-def model(x, R0, mu, floor):
-    return R0 * np.exp(-mu * x) + floor
+x_fit_start, x_fit_end, x_floor_start = ... , ... , ...
+terminal = (x >= x_fit_start) & (x <= x_fit_end)
+tail = x >= x_floor_start
+assert terminal.sum() >= 3 and tail.sum() >= 4
+assert not np.any(terminal & tail)
+assert np.all(N[terminal | tail] > 0)   # use a Poisson fit for zero-count bins
 
-popt, pcov = curve_fit(model, x, R, p0=[R[0], 3e-3, R[-1]],
-                       sigma=sR, absolute_sigma=True)
-R0, mu, floor = popt
+rate = N / t
+srate = np.sqrt(N) / t
+w = 1 / srate[tail]**2
+floor = np.sum(w * rate[tail]) / np.sum(w)
+sfloor = np.sqrt(1 / np.sum(w))
+
+def terminal_line(x, a, b):
+    return a + b * x
+
+(a, b), cov = curve_fit(terminal_line, x[terminal], rate[terminal],
+                        sigma=srate[terminal], absolute_sigma=True)
+assert b < 0
+Rm = (floor - a) / b             # aluminum thickness, mg/cm^2
+g = np.array([-1 / b, -(floor - a) / b**2])
+sRm = np.sqrt(g @ cov @ g + (sfloor / b)**2)
+print(f"practical range = {Rm:.0f} +/- {sRm:.0f} mg/cm^2")
 ```
 
-The maximum range is where the beta term drops below the floor's own
-uncertainty. A defensible operational definition, and the one to use here: the
-mass thickness at which the fitted exponential term equals the standard
-uncertainty of the measured floor,
-
-$$
-R_0 e^{-\mu R_m} = \sigma_{\text{floor}}
-\qquad\Longrightarrow\qquad
-R_m = \frac{1}{\mu}\,\ln\!\frac{R_0}{\sigma_{\text{floor}}} .
-$$
-
-Propagate $\sigma_{R_m}$ from $\sigma_\mu$, $\sigma_{R_0}$, and
-$\sigma_{\text{floor}}$ using the full covariance matrix — $R_0$ and $\mu$ are
-strongly correlated in an exponential fit, and ignoring that will make your
-uncertainty badly wrong. See [](#uncertainty).
+The covariance term in `sRm` matters because fitted slope and intercept are
+correlated. This statistical error is only one part of the range uncertainty.
+Vary the terminal fit window and the choice of floor points, inspect the
+residuals, and include the resulting model sensitivity. If the floor is not
+observed or the terminal segment is not approximately linear, report a lower
+bound or an unresolved endpoint instead of a precise energy.
 
 :::{important} Do not forget the absorbers you did not add
-The total mass thickness between source and detector includes the GM tube's
-mica window ($\sim2\ \text{mg/cm}^2$, from the tube's data sheet), the air gap
-($1.2\ \text{mg/cm}^2$ per centimeter at room conditions), and any source
-cover. For a $3\ \text{cm}$ gap that is another $\sim6\ \text{mg/cm}^2$. It is
-a small correction to $R_m$ but it is a *known* one, so make it and say so.
+The path between source and detector can also include a source cover, air,
+and the GM tube's window. Record their actual materials and dimensions. A
+$3\ \text{cm}$ air gap alone has about $3.6\ \text{mg/cm}^2$ of mass thickness
+at ordinary room conditions, small against a $\sim1100\ \text{mg/cm}^2$ beta
+range. Mass thicknesses of different materials are not automatically
+equivalent stopping thicknesses; estimate any correction with an appropriate
+material model and include its uncertainty rather than adding guessed values.
 :::
 
 ### Energy and speed
@@ -329,7 +388,7 @@ def kp(T):                                            # Katz-Penfold, implicit
     n = 1.265 - 0.0954 * np.log(T)
     return 412 * T**n - Rm                            # Rm in mg/cm^2
 
-T_kp = brentq(kp, 0.05, 3.0)
+T_kp = brentq(kp, 0.8, 2.5)             # stay within the energy range used here
 
 mec2  = 0.51099895                                    # MeV
 gamma = 1 + T_kp / mec2
@@ -338,18 +397,25 @@ pc    = np.sqrt((T_kp + mec2)**2 - mec2**2)
 beta_classical = np.sqrt(2 * T_kp / mec2)
 ```
 
-Report $T_{\max}$ from both relations, take their spread as a systematic
-uncertainty, and combine it with the statistical uncertainty from $R_m$.
+Report $T_{\max}$ from both relations and propagate the uncertainty in $R_m$
+by recomputing each energy at $R_m \pm \sigma_{R_m}$. Their difference is a
+useful model comparison, but it is not a complete estimate of calibration or
+fit-window uncertainty. If the numerical root is not bracketed in the stated
+energy range, do not extrapolate this calibration without justification. If
+the range was only bounded, invert that bound and report the energy as a
+bound too.
 
 ## Post-lab questions
 
 :::{exercise}
 :label: q-beta-05
 
-Quote $T_{\max}$ with its total uncertainty and compare with the accepted
-$^{90}$Y endpoint of $2.280\ \text{MeV}$ in units of $\sigma$. Which
-contribution dominated your uncertainty — the statistics of the tail, or the
-disagreement between the two range–energy relations?
+Quote $T_{\max}$ with its counting uncertainty and a separate estimate of
+the sensitivity to your terminal-fit and floor selections. Compare with the
+evaluated $^{90}$Y endpoint of about $2.28\ \text{MeV}$. If you can justify a
+combined uncertainty, express the difference in units of that uncertainty;
+otherwise state which calibration and geometry effects remain unquantified.
+Did the two range–energy relations differ enough to resolve those effects?
 :::
 
 :::{exercise}
@@ -372,10 +438,12 @@ does the classical formula get less badly wrong at this energy, and why?
 :::{exercise}
 :label: q-beta-08
 
-Your absorption curve is not a single clean exponential. Identify on your plot
-(a) the region dominated by $^{90}$Sr betas, (b) the region dominated by
-$^{90}$Y betas, and (c) the bremsstrahlung tail. Explain why the tail is
-present at all, given that the betas have been stopped.
+Your absorption curve is not a single clean exponential. Identify where
+low-energy $^{90}$Sr betas cease to contribute substantially and where the
+terminal $^{90}$Y decline is most visible. Does the thick-absorber rate reach
+a constant floor? Explain why a rate above the separately measured background
+could remain after the betas have been stopped, and why the curve alone cannot
+prove that all those counts are bremsstrahlung photons.
 :::
 
 :::{exercise}
@@ -389,18 +457,18 @@ range method does not? Under what circumstances would it be the better choice?
 
 ## Going further
 
-- **Two sources, one calibration.** Measure the ranges of $^{204}$Tl
-  ($0.763\ \text{MeV}$) and $^{90}$Sr/$^{90}$Y ($0.546$ and
-  $2.28\ \text{MeV}$) and fit your own range–energy relation. Three points
-  will not settle the exponent, but comparing your fit with Katz–Penfold is a
-  real exercise in what an empirical relation is.
+- **Several sources, one calibration.** If approved sources with distinct
+  known beta endpoints are available, measure a practical range for each
+  with a common geometry and fit an empirical range–energy relation. A mixed
+  $^{90}$Sr/$^{90}$Y source does not automatically give two separately
+  measurable practical ranges. Compare your calibration with Katz–Penfold.
 - **Absorber material dependence.** Repeat a few points using plastic or
-  copper absorbers of the same *mass* thickness. The near-coincidence of the
-  curves is the justification for using mass thickness at all — and the
-  deviation for copper is a direct look at the $Z^2$ dependence of
-  bremsstrahlung.
+  copper absorbers of the same *mass* thickness. Compare their curves without
+  assuming equal stopping power per unit mass, especially for copper. A
+  changed thick-absorber floor may reflect photon production or detector
+  response; it does not by itself measure a simple $Z^2$ law.
 - **The Kurie plot.** With a scintillator and a multichannel analyzer instead
-  of a GM tube, the full beta spectrum can be recorded and linearized into a
-  Kurie plot, whose intercept gives the endpoint directly and whose shape near
-  the endpoint is sensitive to the neutrino mass. This is how the endpoint is
-  really measured, and how the tightest laboratory limits on $m_\nu$ are set.
+  of a GM tube, an energy spectrum can be recorded and analyzed with a Kurie
+  plot, subject to detector resolution and calibration. Precision neutrino-mass
+  experiments require much finer control of the spectrum near an endpoint
+  than this teaching apparatus provides.

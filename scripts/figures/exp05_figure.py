@@ -3,6 +3,7 @@ apparatus schematic, and a concept figure for the Rayleigh criterion."""
 
 import matplotlib.pyplot as plt
 import numpy as np
+from scipy.special import j1
 
 from labstyle import (
     BLUE, GRAY, ORANGE, PURPLE, RED, DARK,
@@ -23,7 +24,7 @@ def diffraction_bench_layout():
 
     rotation_stage(ax, sample, r=0.42, angle_deg=35, color=GRAY)
     ax.plot([sample[0], sample[0]], [-0.55, 0.55], color=DARK, lw=3.0, zorder=3)
-    label(ax, (sample[0], 1.05), "slit / aperture /\ngrating / CD\n(on rotation mount)", fontsize=7.3)
+    label(ax, (sample[0], 1.05), "slit / aperture /\ntransmission grating", fontsize=7.3)
 
     # zero order plus a fan of diffracted orders
     beam(ax, (sample[0] + 0.05, 0), (scr[0] - 0.05, 0), color=RED, alpha=0.9)
@@ -43,8 +44,8 @@ def diffraction_bench_layout():
     label(ax, (sample[0] + 0.85, 0.22), r"$\theta$", color=PURPLE, fontsize=9)
 
     label(ax, (-0.2, 2.0),
-          "Same rail for every part: swap the sample and, for large angles,\n"
-          "replace the screen with a rotation stage or protractor read-out.",
+          "Transmission layout: swap the sample and, for large angles,\n"
+          "use a rotating detector or protractor. Discs use reflection.",
           fontsize=8.0, color=DARK, ha="center")
 
     ax.set_xlim(-4.1, 3.6)
@@ -59,8 +60,16 @@ def rayleigh_criterion_figure():
 
     x = np.linspace(-2.6, 2.6, 1600)
     c1, c2 = -0.5, 0.5  # centres, one first-zero-width apart
-    p1 = np.sinc(x - c1) ** 2
-    p2 = np.sinc(x - c2) ** 2
+
+    def airy_cross_section(u):
+        z = 3.8317059702075125 * np.abs(u)  # J1's first zero at |u| = 1
+        out = np.ones_like(z)
+        nonzero = z > 1e-12
+        out[nonzero] = (2 * j1(z[nonzero]) / z[nonzero]) ** 2
+        return out
+
+    p1 = airy_cross_section(x - c1)
+    p2 = airy_cross_section(x - c2)
     total = p1 + p2
 
     ax.plot(x, p1, color=BLUE, lw=1.3, ls="--", zorder=2)
@@ -78,7 +87,7 @@ def rayleigh_criterion_figure():
                 fontsize=8.2, color=DARK, ha="left",
                 arrowprops=dict(arrowstyle="->", color=DARK, lw=0.9))
 
-    ax.set_xlabel("position on screen (units of the first-zero radius)")
+    ax.set_xlabel("position (units of the Airy first-zero radius)")
     ax.set_ylabel(r"intensity $I/I_0$")
     ax.set_xlim(-2.6, 2.6)
     ax.set_ylim(0, 1.35)

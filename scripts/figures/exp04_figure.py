@@ -31,13 +31,13 @@ def interference_bench_layout():
         beam(ax, (slits[0] + 0.05, 0.06 * m), (cam[0] - 0.05, 0.42 * m), color=RED, lw=0.9, alpha=0.55)
 
     screen(ax, cam, height=1.4)
-    label(ax, (cam[0], 1.05), "camera / scanning\nphotodiode", fontsize=7.5)
+    label(ax, (cam[0], 1.05), "screen / detector", fontsize=7.5)
 
     ax.annotate("", xy=(cam[0], -1.35), xytext=(slits[0], -1.35),
                 arrowprops=dict(arrowstyle="<->", color=PURPLE, lw=1.2))
     label(ax, ((slits[0] + cam[0]) / 2, -1.55), r"$L$ (optical rail)", color=PURPLE, fontsize=8)
 
-    label(ax, (laser[0] - 0.7, 1.15), "unpolarized\nbeam", fontsize=6.8, color=GRAY, ha="left")
+    label(ax, (laser[0] - 0.7, 1.15), "laser beam", fontsize=6.8, color=GRAY, ha="left")
 
     ax.set_xlim(-4.0, 3.1)
     ax.set_ylim(-2.0, 1.7)

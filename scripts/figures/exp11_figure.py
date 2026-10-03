@@ -12,11 +12,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import matplotlib.pyplot as plt
 
 from exp10_figure import spectrometer_layout
-from labstyle import BLUE, DARK, GRAY, GREEN, ORANGE, PURPLE, RED, label, save, use_style
+from labstyle import BLUE, DARK, GRAY, GREEN, ORANGE, RED, label, save, use_style
 
 SODIUM_LINES = [
-    (589.6, "D$_2$", "#d97706"),
-    (589.0, "D$_1$", "#b8860b"),
+    (589.592, "D$_1$", "#d97706"),
+    (588.995, "D$_2$", "#b8860b"),
 ]
 
 
@@ -26,18 +26,21 @@ def sodium_spectrometer():
         source_color="#ffb703",
         lines=SODIUM_LINES,
         name="exp11-sodium-spectrometer-schematic",
-        extra_note=("Same spectrometer as Experiment 10, at its highest resolving power:\n"
-                     "the sodium D lines sit close enough to test the instrument itself."),
+        extra_note=("Reflective layout as in Experiment 10; D-ray separation exaggerated.\n"
+                    "Measure the reference-line width before fitting two D centers."),
     )
 
 
 def quantum_defect_figure():
     """Hydrogenic (dashed) versus alkali (solid, defect-shifted) energy
-    levels for n = 3, 4: low-l orbitals are pulled down by penetrating the
-    ionic core; high-l orbitals stay almost hydrogenic."""
+    levels for allowed orbitals at n = 3, 4: low-l orbitals are pulled down by
+    penetrating the ionic core; high-l orbitals stay almost hydrogenic."""
     fig, ax = plt.subplots(figsize=(6.4, 5.0))
 
-    deltas = {"s": 1.373, "p": 0.883, "d": 0.010, "f": 0.000}
+    deltas = {
+        3: {"s": 1.373, "p": 0.883, "d": 0.010},
+        4: {"s": 1.357, "p": 0.867, "d": 0.012, "f": 0.001},
+    }
     colors = {"s": RED, "p": ORANGE, "d": GREEN, "f": BLUE}
     x = {"s": 0, "p": 1, "d": 2, "f": 3}
 
@@ -45,7 +48,7 @@ def quantum_defect_figure():
         E_hyd = -13.6 / n**2
         ax.plot([-0.5, 3.5], [E_hyd, E_hyd], color=GRAY, lw=1.2, ls="--", zorder=1)
         label(ax, (3.6, E_hyd), f"hydrogenic $n={n}$", fontsize=7.8, color=GRAY, ha="left", va="center")
-        for l, delta in deltas.items():
+        for l, delta in deltas[n].items():
             E_nl = -13.6 / (n - delta) ** 2
             ax.plot([x[l], x[l]], [E_hyd, E_nl], color=colors[l], lw=1.0, alpha=0.55, zorder=2)
             ax.plot(x[l], E_nl, "o", color=colors[l], ms=8, zorder=3,
@@ -54,7 +57,7 @@ def quantum_defect_figure():
               f"$n={n}$", fontsize=9, color=DARK, ha="right")
 
     ax.annotate("3$p$ splits into $3p_{1/2}, 3p_{3/2}$\n(the D-line pair — not to scale here)",
-                xy=(x["p"], -13.6 / (3 - deltas["p"]) ** 2), xytext=(1.3, -2.3),
+                xy=(x["p"], -13.6 / (3 - deltas[3]["p"]) ** 2), xytext=(1.3, -2.3),
                 fontsize=7.6, color=ORANGE,
                 arrowprops=dict(arrowstyle="->", color=ORANGE, lw=0.9))
 

@@ -3,68 +3,80 @@ schematic, and the time-dilation / length-contraction concept figure."""
 
 import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib.patches import Arc
+from matplotlib.patches import Arc, Polygon
 
 from labstyle import (
-    BLUE, GRAY, GREEN, ORANGE, PURPLE, RED, DARK,
-    absorber_stack, beam, box, gm_tube, label, new_ax, save, use_style,
+    GRAY, GREEN, PURPLE, RED, DARK,
+    beam, box, label, new_ax, save, use_style,
 )
 
 
 def muon_telescope_layout():
     fig, ax = new_ax(figsize=(6.6, 5.8))
 
-    top = (0.0, 0.9)
-    bot = (0.0, -0.4)
-
-    gm_tube(ax, top, length=1.7, angle_deg=0, color="#cfd8dc")
-    gm_tube(ax, bot, length=1.7, angle_deg=0, color="#cfd8dc")
-    label(ax, (top[0] + 1.15, top[1] + 0.45), "GM tube 1", fontsize=7.6, ha="left")
-    label(ax, (bot[0] + 1.15, bot[1] - 0.25), "GM tube 2", fontsize=7.6, ha="left")
-
-    # rigid frame at both ends, with the adjustable separation marked
-    for s in (-0.82, 0.82):
-        ax.plot([s, s], [top[1], bot[1]], color=GRAY, lw=1.3, ls=(0, (4, 2)), zorder=1)
-    ax.annotate("", xy=(-1.0, bot[1] + 0.05), xytext=(-1.0, top[1] - 0.05),
-                arrowprops=dict(arrowstyle="<->", color=PURPLE, lw=1.2))
-    label(ax, (-1.35, (top[1] + bot[1]) / 2), "separation\n(adjustable)", color=PURPLE, fontsize=6.8, ha="center")
-
-    # zenith angle, measured at the assembly's center from the local vertical
-    center = ((top[0] + bot[0]) / 2, (top[1] + bot[1]) / 2)
     zenith = 25
-    zth = np.radians(zenith)
-    ax.plot([center[0], center[0]], [center[1], center[1] + 1.7], color=GRAY, lw=1.0, ls=":", zorder=1)
-    axis_dir = np.array([np.sin(zth), np.cos(zth)])
-    ax.plot([center[0], center[0] + 1.7 * axis_dir[0]], [center[1], center[1] + 1.7 * axis_dir[1]],
-             color=GRAY, lw=1.0, ls=":", zorder=1)
-    ax.add_patch(Arc(center, 1.5, 1.5, theta1=90 - zenith, theta2=90, edgecolor=GRAY, lw=1.1))
-    label(ax, (center[0] + 0.35, center[1] + 1.05), r"$\theta$ (zenith)", color=GRAY, fontsize=8, ha="left")
-    label(ax, (center[0] - 1.7, center[1] + 1.95), "rotating mount /\nzenith-angle scale",
-          color=GRAY, fontsize=6.6, ha="center")
+    angle = np.radians(zenith)
+    center = np.array([0.0, 0.25])
+    down = np.array([np.sin(angle), -np.cos(angle)])
+    across = np.array([np.cos(angle), np.sin(angle)])
+    top = center - 0.72 * down
+    bottom = center + 0.72 * down
 
-    # muon tracks along the telescope's pointing direction, through both tubes
-    for off in (-0.35, 0.0, 0.35):
-        entry = (off - 0.75 * np.sin(zth), top[1] + 0.65 + 0.75 * np.cos(zth))
-        exitp = (off + 0.55 * np.sin(zth), bot[1] - 0.55 - 0.55 * np.cos(zth))
-        beam(ax, entry, exitp, color=RED, lw=1.3, arrow=True, alpha=0.8)
-    label(ax, (0.35 - 0.75 * np.sin(zth) + 0.3, top[1] + 0.65 + 0.75 * np.cos(zth)), r"$\mu^-$",
-          color=RED, fontsize=11, ha="left")
+    def slab(pos, width, depth, color):
+        corners = [pos + a * width / 2 * across + b * depth / 2 * down
+                   for a, b in ((-1, -1), (1, -1), (1, 1), (-1, 1))]
+        ax.add_patch(Polygon(corners, closed=True, facecolor=color,
+                             edgecolor=DARK, lw=1.2, zorder=4))
 
-    # optional lead absorbers below the lower tube
-    absorber_stack(ax, (0.0, bot[1] - 0.95), n=3, w=0.08, h=0.5, gap=0.06, color="#cfd8dc")
-    label(ax, (0.0, bot[1] - 1.5), "lead absorbers\n(optional, for range)", fontsize=6.8)
+    for off in (-0.28, 0.0, 0.28):
+        start = top - 0.66 * down + off * across
+        end = bottom + 0.65 * down + off * across
+        beam(ax, start, end, color=RED, lw=1.2, arrow=True, alpha=0.85)
 
-    box(ax, (0.0, bot[1] - 2.3), 2.3, 0.6, "microcontroller:\npulse shaping + coincidence", fontsize=7.0)
-    ax.plot([top[0] + 0.85, 1.0], [top[1], bot[1] - 2.0], color=DARK, lw=0.9, ls=":")
-    ax.plot([bot[0] + 0.85, -1.0], [bot[1], bot[1] - 2.0], color=DARK, lw=0.9, ls=":")
+    slab(top, 1.7, 0.13, "#cfd8dc")
+    slab(bottom, 1.7, 0.13, "#cfd8dc")
+    slab(center, 1.5, 0.10, "#e4d9bd")
 
-    label(ax, (0.0, 2.55),
-          "Two tubes in coincidence define a narrow solid angle; the count rate\n"
-          "measured vs. $\\theta$ tests the $\\cos^2\\theta$ zenith-angle dependence.",
-          fontsize=7.8, color=DARK, ha="center")
+    for side in (-0.9, 0.9):
+        rail_top = top + side * across
+        rail_bottom = bottom + side * across
+        ax.plot([rail_top[0], rail_bottom[0]],
+                [rail_top[1], rail_bottom[1]], color=GRAY, lw=1.2,
+                ls=(0, (4, 2)), zorder=1)
+
+    dim_top = top - 1.12 * across
+    dim_bottom = bottom - 1.12 * across
+    ax.annotate("", xy=dim_bottom, xytext=dim_top,
+                arrowprops=dict(arrowstyle="<->", color=PURPLE, lw=1.2))
+    label(ax, (-1.65, 0.2), "adjustable\nseparation", color=PURPLE,
+          fontsize=7, ha="center")
+    label(ax, (1.30, 1.18), "GM tube 1", fontsize=7.7, ha="left")
+    label(ax, (1.30, -0.38), "GM tube 2", fontsize=7.7, ha="left")
+    label(ax, (1.30, 0.28), "optional absorber\nbetween tubes",
+          fontsize=7, ha="left")
+
+    vertical = center + np.array([0.0, 1.55])
+    axis = center - 1.55 * down
+    ax.plot([center[0], vertical[0]], [center[1], vertical[1]],
+            color=GRAY, lw=1, ls=":", zorder=1)
+    ax.plot([center[0], axis[0]], [center[1], axis[1]],
+            color=GRAY, lw=1, ls=":", zorder=1)
+    ax.add_patch(Arc(center, 1.1, 1.1, theta1=90, theta2=90 + zenith,
+                     edgecolor=GRAY, lw=1.1))
+    label(ax, (-0.38, 1.05), r"$\theta$ (zenith)", color=GRAY,
+          fontsize=8, ha="right")
+
+    box(ax, (0.0, -2.2), 2.25, 0.55,
+        "isolated pulse outputs\n+ coincidence unit", fontsize=7.0)
+    for pos, x in ((top, -0.8), (bottom, 0.8)):
+        ax.plot([pos[0], x], [pos[1], -1.93], color=DARK, lw=0.8,
+                ls=":", zorder=0)
+    label(ax, (0.0, 2.34),
+          "The whole rigid frame rotates; aligned tracks cross both tubes.",
+          fontsize=8.0, color=DARK, ha="center")
 
     ax.set_xlim(-2.3, 2.5)
-    ax.set_ylim(-3.3, 2.9)
+    ax.set_ylim(-2.75, 2.7)
     save(fig, "exp14-muon-telescope-schematic")
 
 
@@ -84,7 +96,7 @@ def time_dilation_figure():
     axL.bar([1], [c_tau0_km], width=0.55, color=RED, zorder=2)
     axL.bar([2], [dilated_km], width=0.55, color=GREEN, zorder=2)
     axL.set_xticks([0, 1, 2])
-    axL.set_xticklabels(["atmosphere\n(15 km)", "decay length\nwithout dilation\n(0.66 km)",
+    axL.set_xticklabels(["assumed path\n(15 km)", "counterfactual\n$c\\tau_0$\n(0.66 km)",
                           "decay length\nwith dilation\n(13.2 km)"], fontsize=7.6)
     axL.set_ylabel("distance in the lab frame (km)")
     axL.set_ylim(0, atmosphere_km * 1.15)
@@ -94,11 +106,11 @@ def time_dilation_figure():
     axR.bar([0], [contracted_km], width=0.55, color="#dbe9f5", edgecolor=GRAY, zorder=1)
     axR.bar([1], [c_tau0_km], width=0.55, color=PURPLE, zorder=2)
     axR.set_xticks([0, 1])
-    axR.set_xticklabels(["atmosphere,\ncontracted\n(0.75 km)", "proper decay\nlength\n(0.66 km)"],
+    axR.set_xticklabels(["path in muon\nframe\n(0.75 km)", "$c\\tau_0$\n(0.66 km)"],
                          fontsize=7.6)
     axR.set_ylabel("distance in the muon's frame (km)")
     axR.set_ylim(0, 1.05)
-    axR.set_title("Muon's frame: length contraction\nshrinks the atmosphere", fontsize=9.5)
+    axR.set_title("Muon's frame: length contraction\nshrinks the path", fontsize=9.5)
 
     fig.suptitle("Same physics, two frames", fontsize=11, y=1.02)
     fig.tight_layout()

@@ -50,8 +50,8 @@ def time_of_flight_layout():
     label(ax, (-1.6, -2.05), "matched BNC cables", fontsize=6.8, color=PURPLE, ha="center")
 
     label(ax, (0.4, 2.55),
-          r"Split pulse $\to$ short reference path and folded long path $\to$ measure the time"
-          "\ndelay $\\Delta t$ between the two pulses on the scope, so $c = L/\\Delta t$",
+          "Split pulse: short reference and folded signal paths"
+          "\nMeasure delay at several path lengths; speed = 1/slope",
           fontsize=8.0, color=DARK)
 
     ax.set_xlim(-4.2, 2.9)

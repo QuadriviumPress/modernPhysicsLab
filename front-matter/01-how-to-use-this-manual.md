@@ -8,9 +8,9 @@ label: how-to-use
 
 ## The weekly rhythm
 
-A laboratory period is three hours. That is enough time to take good data
-*once*, and not enough time to take bad data twice. The schedule below is
-built around that fact.
+A laboratory period is three hours. Plan the bench work around that time;
+some counting experiments require longer supervised or approved unattended
+runs. The schedule below gives a useful rhythm for the in-room work.
 
 **Before the period (roughly one hour).** Read the experiment's Theory
 section and answer the Pre-lab questions in your notebook. The pre-lab is not
@@ -46,7 +46,8 @@ semester. It is a contemporaneous record: what you did, what you read off the
 instrument, what went wrong, and what you did about it. It is not a fair copy.
 See [](#lab-notebook).
 
-**A report**, one per experiment, due one week after the period. Reports use
+**A report**, one per experiment. Short reports are due one week after the
+period; full reports are due two weeks after it. Reports use
 the structure and the voice described in [](#lab-notebook) — the same one used
 in the physics literature. Three of the fourteen reports each semester are
 designated **full reports** (typically Weeks 4, 10, and 14); the rest are
