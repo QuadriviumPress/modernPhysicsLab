@@ -19,7 +19,7 @@ css/ images/ pwa/           site mark, stylesheet, and offline shell
 
 ## Build
 
-Use Node 22 (`nvm use` if you have nvm).
+Use Node 26 (`nvm use` if you have nvm).
 
 ```bash
 npm install
